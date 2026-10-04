@@ -37,6 +37,12 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400;
   }
 
+  .text-gradient-primary {
+    background: linear-gradient(to right, #8040f9, #ff1c83);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .glass-panel {
     @apply bg-white/[0.03] backdrop-blur-2xl border border-white/[0.05];
   }
@@ -99,9 +105,17 @@
 }
 
 @keyframes scrolldown {
-  0% { transform: translateY(-100%); }
-  50% { transform: translateY(100%); }
-  100% { transform: translateY(100%); }
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
 }
 
 .animate-scrolldown {
@@ -131,4 +145,8 @@
   border: 1px solid white;
   mix-blend-mode: normal;
   backdrop-filter: blur(4px);
+}
+
+.FeaturedCanvases {
+  padding: 30px;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,330 +8,546 @@
     <link href="./style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
 </head>
-<body class="bg-[#050505] text-white font-inter selection:bg-purple-500/30">
-    
-    <div class="noise-overlay opacity-40"></div>
 
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-follower"></div>
+<body class="bg-[#030303] text-white font-inter">
+
+    <div class="noise-overlay"></div>
+
+    <!-- Ambient Background Glows -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div
+            class="bg-glow-1 absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-purple-600/10 blur-[150px]">
+        </div>
+        <div
+            class="bg-glow-1 absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[120px]">
+        </div>
+    </div>
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 transition-all duration-500 py-6 border-b border-transparent backdrop-blur-xl bg-[#050505]/80" id="navbar">
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6 border-b border-transparent" id="navbar">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-outfit font-black tracking-widest text-white">LUMINA</a>
             <div class="hidden lg:flex gap-8 text-sm font-medium text-gray-400">
                 <a href="index.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Home</a>
-                <a href="index.html#solutions" class="hover:text-white transition-colors tracking-wide uppercase text-xs">LED Solutions</a>
-                <a href="advertise.html" class="text-white transition-colors tracking-wide uppercase text-xs">Advertise</a>
-                <a href="network.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Our Screens</a>
-                <a href="projects.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Projects</a>
-                <a href="about.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">About</a>
-                <a href="contact.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Contact</a>
+                <a href="index.html#solutions"
+                    class="hover:text-white transition-colors tracking-wide uppercase text-xs">LED Solutions</a>
+                <a href="advertise.html"
+                    class="text-white transition-colors tracking-wide uppercase text-xs">Advertise</a>
+                <a href="network.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Our
+                    Screens</a>
+                <a href="projects.html"
+                    class="hover:text-white transition-colors tracking-wide uppercase text-xs">Projects</a>
+                <a href="about.html"
+                    class="hover:text-white transition-colors tracking-wide uppercase text-xs">About</a>
+                <a href="contact.html"
+                    class="hover:text-white transition-colors tracking-wide uppercase text-xs">Contact</a>
             </div>
-            <div class="hidden md:flex gap-4">
-                <a href="index.html" class="px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-white/20 hover:bg-white hover:text-black transition-all duration-300">Get an LED Wall</a>
-                <a href="advertise.html" class="px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-white text-black hover:bg-gray-200 transition-all duration-300">Advertise</a>
+            <div class="hidden md:flex gap-3">
+                <a href="index.html"
+                    class="px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300">
+                    Get an LED Wall
+                </a>
+                <a href="advertise.html"
+                    class="px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white text-black hover:bg-cyan-400 hover:text-black hover:border-cyan-400 transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                    Advertise
+                </a>
             </div>
+            <button class="lg:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section (Editorial & Minimalist) -->
-    <section id="hero" class="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden z-10 border-b border-white/5">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-purple-900/10 to-transparent"></div>
+    <!-- Inner Page Header -->
+    <section id="hero"
+        class="relative pb-32 flex flex-col justify-center overflow-hidden bg-slate-950 z-10 border-b border-slate-800"
+        style="padding-top: 220px;">
+
+        <!-- Premium Corporate Background Shape (Midnight Blue) -->
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+
+            <!-- Sleek Base Gradient -->
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-800 via-slate-950 to-slate-950 opacity-80">
+            </div>
+
+            <!-- Giant Architectural Slash (Right) -->
+            <div
+                class="absolute right-0 top-0 w-[80%] h-[150%] bg-gradient-to-bl from-blue-500/10 via-slate-800/20 to-transparent transform rotate-[15deg] translate-x-1/3 -translate-y-1/4 border-l border-blue-400/20 shadow-[-30px_0_100px_rgba(59,130,246,0.05)]">
+            </div>
+
+            <!-- Secondary Geometric Slash (Left) -->
+            <div
+                class="absolute left-0 bottom-0 w-[60%] h-[100%] bg-gradient-to-tr from-cyan-500/5 via-transparent to-transparent transform -rotate-[15deg] -translate-x-1/4 translate-y-1/4 border-r border-cyan-400/10">
+            </div>
+
+            <!-- Refined Professional Grid -->
+            <div class="absolute inset-0 opacity-20"
+                style="background-image: radial-gradient(circle at center, #94a3b8 1px, transparent 1px); background-size: 32px 32px; mask-image: linear-gradient(to bottom, black 30%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);">
+            </div>
         </div>
 
-        <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
-            <div class="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+        <div class="relative z-20 w-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
+
+            <!-- Breadcrumb / Tag -->
+            <div
+                class="hero-fade inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-blue-400/20 bg-blue-500/10 backdrop-blur-md">
+                <span class="text-[10px] font-semibold tracking-[0.2em] text-blue-400 uppercase">Media & Network</span>
+            </div>
+
+            <!-- Page Title -->
+            <h1
+                class="hero-fade text-5xl md:text-6xl lg:text-7xl font-outfit font-black leading-tight tracking-tight mb-6 text-white drop-shadow-md">
+                Advertise With <span
+                    class="text-gradient-primary">Lumina.</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="hero-fade text-base md:text-lg text-gray-400 font-light max-w-2xl leading-relaxed mx-auto">
+                Access a meticulously curated network of ultra-premium digital displays across the most sought-after
+                global locations. Play your campaign on high-impact outdoor screens.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Location Discovery (Bento Grid) -->
+    <section class="py-24 md:py-32 text-black border-t border-black/5" style="background-color: #f8f6f0;">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            
+            <!-- Header -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 stagger-section">
+                <div class="stagger-card">
+                    <p class="text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase mb-4">Our Network</p>
+                    <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] font-outfit font-black mb-4 leading-tight text-black">
+                        Strategic <span class="text-gradient-primary">Placements</span>
+                    </h2>
+                    <p class="text-gray-600 font-light max-w-md">High-visibility locations, carefully selected for maximum brand impact and audience reach.</p>
+                </div>
+                <a href="#" class="text-sm font-semibold transition-colors flex items-center gap-2 stagger-card" style="color: #9127ff;">
+                    View All Placements &rarr;
+                </a>
+            </div>
+
+            <!-- Grid Layout -->
+            <div class="stagger-section" style="display: flex; flex-wrap: wrap; gap: 20px;">
                 
-                <div class="max-w-2xl">
-                    <div class="flex items-center gap-3 mb-8 stagger-card">
-                        <div class="w-8 h-[1px] bg-purple-500"></div>
-                        <p class="text-[10px] uppercase tracking-[0.3em] font-medium text-purple-400">Media Network</p>
+                <!-- Left 3 Rows -->
+                <div style="flex: 1 1 55%; display: flex; flex-direction: column; gap: 20px;">
+                    
+                    <!-- Row 1 -->
+                    <div style="display: flex; gap: 20px; height: 180px;">
+                        <!-- Billboards -->
+                        <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
+                            <img src="images/billboard.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Billboards">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                            <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
+                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                Billboards
+                            </div>
+                        </div>
+                        <!-- LED Screens -->
+                        <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
+                            <img src="images/led_billboard.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: transform 0.7s;" class="group-hover:scale-105" alt="LED Screens">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                            <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
+                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                LED Screens
+                            </div>
+                        </div>
                     </div>
                     
-                    <h1 class="text-5xl md:text-7xl font-outfit font-black leading-[1.05] tracking-tight mb-8 hero-title text-white">
-                        <span class="reveal-text-line block">Command the</span>
-                        <span class="reveal-text-line block">
-                            city's <span class="bg-gradient-to-r from-purple-400 to-cyan-400 text-transparent bg-clip-text" style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">attention.</span>
-                        </span>
-                    </h1>
-                    
-                    <p class="hero-fade text-lg md:text-xl text-gray-400 font-light mb-12 leading-relaxed">
-                        Access a meticulously curated network of ultra-premium digital displays across the most sought-after global locations.
-                    </p>
-                    
-                    <div class="flex items-center gap-6 hero-fade">
-                        <button class="bg-white text-black px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-gray-200 transition-colors flex items-center gap-3 group">
-                            Explore Locations
-                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </button>
+                    <!-- Row 2 -->
+                    <div style="display: flex; gap: 20px; height: 180px;">
+                        <!-- Mall Display -->
+                        <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
+                            <img src="images/retail.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Mall Display">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                            <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
+                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                                Mall Display
+                            </div>
+                        </div>
+                        <!-- Transit Media -->
+                        <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
+                            <img src="images/hero3.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Transit Media">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                            <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
+                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                                Transit Media
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 Wide -->
+                    <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="position: relative; border-radius: 16px; overflow: hidden; background-color: #111; height: 140px;">
+                        <img src="images/ad_hero.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Urban Hotspots">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                        <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
+                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Urban Hotspots
+                        </div>
                     </div>
                 </div>
 
-                <div class="relative w-full aspect-[4/5] lg:aspect-square rounded-3xl overflow-hidden border border-white/10 stagger-card group">
-                    <img src="./images/ad_hero.jpg" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[2s]" alt="Premium Screen Network">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 right-8 p-6 bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl flex justify-between items-center">
-                        <div>
-                            <div class="text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-1">Live Network</div>
-                            <div class="text-xl font-outfit font-bold">150+ Premium Displays</div>
+                <!-- Right Map Card -->
+                <div class="stagger-card shadow-xl" style="flex: 1 1 40%; position: relative; border-radius: 16px; overflow: hidden; background-color: #080a11; min-height: 540px; border: 1px solid rgba(255,255,255,0.05);">
+                    
+                    <!-- Exact Replica Dark Map via OpenStreetMap -->
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-74.02,40.70,-73.96,40.76&layer=mapnik" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(150%); pointer-events: none;" tabindex="-1"></iframe>
+                    
+                    <!-- Dark Gradient Overlay for Pin Visibility -->
+                    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(8,10,17,0.4) 0%, rgba(8,10,17,0.1) 100%); pointer-events: none;"></div>
+
+                    <!-- Top Pill -->
+                    <div style="position: absolute; top: 24px; left: 24px; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); padding: 8px 16px; border-radius: 99px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; z-index: 20; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <span class="animate-pulse" style="width: 8px; height: 8px; border-radius: 50%; background-color: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+                        <span style="color: white; font-size: 11px; font-weight: 700; letter-spacing: 0.5px;">Live Coverage</span>
+                    </div>
+
+                    <!-- Map Pins -->
+                    <!-- Downtown -->
+                    <div class="group cursor-pointer" style="position: absolute; top: 40%; left: 35%; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                        <div style="position: relative; width: 16px; height: 16px; display: flex; justify-content: center; align-items: center; z-index: 10;">
+                            <div class="animate-ping" style="position: absolute; inset: -4px; border-radius: 50%; background-color: #a22cfc; opacity: 0.7;"></div>
+                            <div style="width: 14px; height: 14px; border-radius: 50%; background-color: #a22cfc; box-shadow: 0 0 10px #a22cfc; border: 2px solid white; position: relative; z-index: 10;"></div>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
-                            <span class="text-xs font-medium text-cyan-400 uppercase tracking-widest">Active</span>
+                        <span class="group-hover:-translate-y-1 transition-transform" style="color: white; font-size: 11px; font-weight: 600; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">Downtown</span>
+                    </div>
+                    
+                    <!-- Business District -->
+                    <div class="group cursor-pointer" style="position: absolute; top: 45%; left: 70%; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                        <div style="position: relative; width: 16px; height: 16px; display: flex; justify-content: center; align-items: center; z-index: 10;">
+                            <div class="animate-ping" style="position: absolute; inset: -4px; border-radius: 50%; background-color: #a22cfc; opacity: 0.7; animation-delay: 0.5s;"></div>
+                            <div style="width: 14px; height: 14px; border-radius: 50%; background-color: #a22cfc; box-shadow: 0 0 10px #a22cfc; border: 2px solid white; position: relative; z-index: 10;"></div>
                         </div>
+                        <span class="group-hover:-translate-y-1 transition-transform" style="color: white; font-size: 11px; font-weight: 600; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">Business District</span>
+                    </div>
+                    
+                    <!-- Transit Hub -->
+                    <div class="group cursor-pointer" style="position: absolute; top: 75%; left: 25%; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                        <div style="position: relative; width: 16px; height: 16px; display: flex; justify-content: center; align-items: center; z-index: 10;">
+                            <div class="animate-ping" style="position: absolute; inset: -4px; border-radius: 50%; background-color: #a22cfc; opacity: 0.7; animation-delay: 1s;"></div>
+                            <div style="width: 14px; height: 14px; border-radius: 50%; background-color: #a22cfc; box-shadow: 0 0 10px #a22cfc; border: 2px solid white; position: relative; z-index: 10;"></div>
+                        </div>
+                        <span class="group-hover:-translate-y-1 transition-transform" style="color: white; font-size: 11px; font-weight: 600; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">Transit Hub</span>
+                    </div>
+                    
+                    <!-- Shopping Mall -->
+                    <div class="group cursor-pointer" style="position: absolute; top: 70%; left: 65%; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                        <div style="position: relative; width: 16px; height: 16px; display: flex; justify-content: center; align-items: center; z-index: 10;">
+                            <div class="animate-ping" style="position: absolute; inset: -4px; border-radius: 50%; background-color: #a22cfc; opacity: 0.7; animation-delay: 1.5s;"></div>
+                            <div style="width: 14px; height: 14px; border-radius: 50%; background-color: #a22cfc; box-shadow: 0 0 10px #a22cfc; border: 2px solid white; position: relative; z-index: 10;"></div>
+                        </div>
+                        <span class="group-hover:-translate-y-1 transition-transform" style="color: white; font-size: 11px; font-weight: 600; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">Shopping Mall</span>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
 
-    <!-- Location Discovery (Map + Cards) -->
-    <section class="py-24 md:py-32 relative z-10 bg-[#050505] border-b border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            
-            <div class="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
-                <div class="max-w-2xl stagger-section">
-                    <h2 class="text-4xl md:text-5xl font-outfit font-bold leading-tight mb-4 text-white stagger-card">Strategic Placements</h2>
-                    <p class="text-gray-400 text-lg font-light stagger-card">Discover premium screens by location, traffic, and demographics.</p>
-                </div>
-                <div class="stagger-section">
-                    <select class="px-6 py-3 rounded-lg text-xs font-semibold uppercase tracking-widest border border-white/10 bg-[#111] text-white focus:outline-none focus:border-white/30 transition-colors cursor-pointer outline-none stagger-card">
-                        <option class="bg-[#111] text-white">All Locations</option>
-                        <option class="bg-[#111] text-white">Downtown</option>
-                        <option class="bg-[#111] text-white">Highways</option>
-                        <option class="bg-[#111] text-white">Malls</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row gap-6 lg:h-[700px] stagger-section">
-                
-                <!-- Left Sidebar: Scrollable Cards -->
-                <div class="w-full lg:w-[40%] flex flex-col gap-4 lg:overflow-y-auto pr-0 lg:pr-4 custom-scrollbar" style="max-height: 700px;">
-                    
-                    <!-- Location Card 1 -->
-                    <div class="group rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 cursor-pointer hover:border-purple-500/30 transition-colors flex flex-col sm:flex-row stagger-card">
-                        <div class="w-full sm:w-[40%] h-[160px] sm:h-auto relative shrink-0">
-                            <img src="./images/billboard.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Screen 1">
-                        </div>
-                        <div class="p-6 flex flex-col justify-center flex-1">
-                            <h4 class="text-base font-bold font-outfit text-white group-hover:text-purple-400 transition-colors mb-1">The Nexus Highway</h4>
-                            <p class="text-gray-500 text-xs mb-4 font-light">45x15m • 2.5M Daily Imp.</p>
-                            <div class="flex gap-2 mb-0 mt-auto">
-                                <span class="text-[9px] px-2 py-1 bg-white/5 rounded text-gray-300">Highway</span>
-                                <span class="text-[9px] px-2 py-1 bg-white/5 rounded text-gray-300">Digital Billboard</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Location Card 2 -->
-                    <div class="group rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 cursor-pointer hover:border-purple-500/30 transition-colors flex flex-col sm:flex-row stagger-card">
-                        <div class="w-full sm:w-[40%] h-[160px] sm:h-auto relative shrink-0">
-                            <img src="./images/retail.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Screen 2">
-                        </div>
-                        <div class="p-6 flex flex-col justify-center flex-1">
-                            <h4 class="text-base font-bold font-outfit text-white group-hover:text-purple-400 transition-colors mb-1">Luxe District Mall</h4>
-                            <p class="text-gray-500 text-xs mb-4 font-light">Curved 10x4m • 800k Daily Imp.</p>
-                            <div class="flex gap-2 mb-0 mt-auto">
-                                <span class="text-[9px] px-2 py-1 bg-white/5 rounded text-gray-300">Retail</span>
-                                <span class="text-[9px] px-2 py-1 bg-white/5 rounded text-gray-300">Curved LED</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Location Card 3 -->
-                    <div class="group rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 cursor-pointer hover:border-purple-500/30 transition-colors flex flex-col sm:flex-row stagger-card">
-                        <div class="w-full sm:w-[40%] h-[160px] sm:h-auto relative shrink-0">
-                            <img src="./images/corporate.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" alt="Screen 3">
-                        </div>
-                        <div class="p-6 flex flex-col justify-center flex-1">
-                            <h4 class="text-base font-bold font-outfit text-white group-hover:text-purple-400 transition-colors mb-1">Financial Hub Plaza</h4>
-                            <p class="text-gray-500 text-xs mb-4 font-light">Pillar 20x5m • 1.2M Daily Imp.</p>
-                            <div class="flex gap-2 mb-0 mt-auto">
-                                <span class="text-[9px] px-2 py-1 bg-white/5 rounded text-gray-300">Downtown</span>
-                                <span class="text-[9px] px-2 py-1 bg-white/5 rounded text-gray-300">Pillar Wrap</span>
-                            </div>
-                        </div>
-                    </div>
+    <!-- How Advertising Works (Dark Bento Box Grid matching Custom LED Solutions) -->
+    <section class="py-32 relative z-10 bg-[#020202] overflow-hidden border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
 
-                    <!-- Location Card 4 -->
-                    <div class="group rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 cursor-pointer hover:border-purple-500/30 transition-colors flex flex-col sm:flex-row stagger-card">
-                        <div class="w-full sm:w-[40%] h-[160px] sm:h-auto relative shrink-0">
-                            <div class="w-full h-full bg-[#111] flex items-center justify-center">
-                                <p class="text-[10px] text-gray-600 uppercase tracking-widest">Image Pending</p>
-                            </div>
-                        </div>
-                        <div class="p-6 flex flex-col justify-center flex-1">
-                            <h4 class="text-base font-bold font-outfit text-white group-hover:text-purple-400 transition-colors mb-1">Westside Transit Hub</h4>
-                            <p class="text-gray-500 text-xs mb-4 font-light">Transparent 30x10m • 3M Daily Imp.</p>
-                            <div class="flex gap-2 mb-0 mt-auto">
-                                <span class="text-[9px] px-2 py-1 bg-white/5 rounded text-gray-300">Transit</span>
-                                <span class="text-[9px] px-2 py-1 bg-white/5 rounded text-gray-300">Transparent</span>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-20 stagger-section">
+                <div>
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-cyan-400 font-semibold mb-4 drop-shadow-lg">
+                        How Advertising Works</p>
+                    <h2 class="text-4xl md:text-6xl font-outfit font-black mb-0 leading-tight drop-shadow-2xl">
+                        A Frictionless<br>
+                        <span
+                            class="text-gradient-primary inline-block"
+                            style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">Campaign
+                            Journey</span>
+                    </h2>
                 </div>
-
-                <!-- Right Sidebar: Interactive Map -->
-                <div class="w-full lg:w-[60%] h-[500px] lg:h-full rounded-2xl overflow-hidden border border-white/5 relative stagger-card group">
-                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0202,40.7007,-73.9576,40.7403&layer=mapnik" class="w-full h-full object-cover grayscale opacity-80 transition-all duration-[5s] group-hover:opacity-100 group-hover:grayscale-0" style="filter: invert(100%) hue-rotate(180deg) contrast(110%) brightness(85%); pointer-events: auto;"></iframe>
-                    
-                    <div class="absolute top-6 left-6 pointer-events-none">
-                        <div class="px-4 py-2 bg-[#050505]/90 backdrop-blur-md rounded-full text-[9px] uppercase tracking-[0.2em] border border-white/10 text-white font-medium flex items-center gap-2">
-                            <div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                            Live Map
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Campaign Journey (Clean 3-column Grid) -->
-    <section class="py-24 md:py-32 relative z-10 bg-[#0a0a0a] border-b border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            
-            <div class="mb-20 stagger-section">
-                <div class="w-8 h-[1px] bg-purple-500 mb-6 stagger-card"></div>
-                <h2 class="text-4xl md:text-5xl font-outfit font-bold mb-6 text-white stagger-card">Campaign Journey</h2>
-                <p class="text-gray-400 text-lg font-light max-w-2xl stagger-card">
-                    A fully automated, frictionless platform designed for modern media buyers and brands. Deploy creative in six structured steps.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 stagger-section">
-                
-                <!-- Step 1 -->
-                <div class="stagger-card group">
-                    <div class="text-3xl font-outfit font-black text-white/20 mb-6 transition-colors group-hover:text-purple-400">01</div>
-                    <h4 class="text-xl font-bold font-outfit text-white mb-3">Location Intelligence</h4>
-                    <p class="text-gray-400 font-light text-sm leading-relaxed">Choose strategic screens based on rich demographic data, traffic patterns, and proximity to your target audience points of interest.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="stagger-card group">
-                    <div class="text-3xl font-outfit font-black text-white/20 mb-6 transition-colors group-hover:text-purple-400">02</div>
-                    <h4 class="text-xl font-bold font-outfit text-white mb-3">Duration Selection</h4>
-                    <p class="text-gray-400 font-light text-sm leading-relaxed">Select the precise ad length that fits your narrative format—ranging from quick 10s impacts to immersive 60s storytelling spots.</p>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="stagger-card group">
-                    <div class="text-3xl font-outfit font-black text-white/20 mb-6 transition-colors group-hover:text-cyan-400">03</div>
-                    <h4 class="text-xl font-bold font-outfit text-white mb-3">Frequency Control</h4>
-                    <p class="text-gray-400 font-light text-sm leading-relaxed">Set targeted plays per hour or guarantee a specific number of impressions per day to perfectly control your share of voice.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="stagger-card group">
-                    <div class="text-3xl font-outfit font-black text-white/20 mb-6 transition-colors group-hover:text-cyan-400">04</div>
-                    <h4 class="text-xl font-bold font-outfit text-white mb-3">Creative Sync</h4>
-                    <p class="text-gray-400 font-light text-sm leading-relaxed">Upload media assets in standard formats. Our intelligent engine automatically formats and crops for disparate screen ratios seamlessly.</p>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="stagger-card group">
-                    <div class="text-3xl font-outfit font-black text-white/20 mb-6 transition-colors group-hover:text-purple-400">05</div>
-                    <h4 class="text-xl font-bold font-outfit text-white mb-3">Schedule & Transact</h4>
-                    <p class="text-gray-400 font-light text-sm leading-relaxed">Approve final campaign flight dates, review transparent cost breakdowns, and process your payment securely through the platform.</p>
-                </div>
-
-                <!-- Step 6 -->
-                <div class="stagger-card group">
-                    <div class="text-3xl font-outfit font-black text-white/20 mb-6 transition-colors group-hover:text-purple-400">06</div>
-                    <h4 class="text-xl font-bold font-outfit text-white mb-3">Go Live & Monitor</h4>
-                    <p class="text-gray-400 font-light text-sm leading-relaxed">Once live, access an extensive dashboard to monitor real-time campaign delivery reports and precise live metric validation.</p>
-                </div>
-
-            </div>
-            
-            <div class="mt-16 stagger-card border-t border-white/5 pt-12">
-                <button class="bg-white text-black px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-gray-200 transition-colors inline-flex items-center gap-3 group">
+                <button
+                    class="px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 transition-all backdrop-blur-md shrink-0">
                     Start a Campaign
-                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </button>
             </div>
+
+            <!-- Bento Grid 6 Steps -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 stagger-section"
+                style="grid-auto-rows: minmax(220px, auto);">
+
+                <!-- Tile 1 -->
+                <div
+                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
+                    <span
+                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">01</span>
+                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Choose Location</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Select strategic screens based on
+                        precise demographic data and targeting goals.</p>
+                </div>
+
+                <!-- Tile 2 -->
+                <div
+                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
+                    <span
+                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">02</span>
+                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Ad Duration</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Choose your format length—from quick 10s
+                        hits to immersive 60s storytelling spots.</p>
+                </div>
+
+                <!-- Tile 3 -->
+                <div
+                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
+                    <span
+                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">03</span>
+                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Frequency</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Set plays per hour or guarantee a
+                        specific number of targeted impressions.</p>
+                </div>
+
+                <!-- Tile 4 -->
+                <div
+                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
+                    <span
+                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">04</span>
+                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Upload Creative</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Upload standard formats. Our engine
+                        intelligently crops for all screen ratios.</p>
+                </div>
+
+                <!-- Tile 5 -->
+                <div
+                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
+                    <span
+                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">05</span>
+                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Approve & Schedule</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Finalize your flight dates, review
+                        transparent cost breakdowns, and schedule.</p>
+                </div>
+
+                <!-- Tile 6 -->
+                <div
+                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
+                    <span
+                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">06</span>
+                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Go Live</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Your campaign hits the streets. Monitor
+                        real-time delivery via your dashboard.</p>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- Flexible Pricing -->
-    <section class="py-24 md:py-32 relative z-10 bg-[#050505] border-b border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            
-            <div class="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8 stagger-section">
-                <div class="max-w-2xl stagger-card">
-                    <h2 class="text-4xl md:text-5xl font-outfit font-bold mb-4 text-white">Dynamic Pricing Architecture</h2>
-                    <p class="text-gray-400 text-lg font-light">Your campaign cost scales transparently based on location tier, duration, and volume.</p>
-                </div>
-                <div class="stagger-card">
-                    <button class="border border-white/20 text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
-                        View Rate Card
+    <!-- Pricing Section (Mirror Design) -->
+    <section id="pricing" class="py-24 md:py-32 text-black" style="background-color: #f8f6f0;">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+
+            <!-- Header -->
+            <div class="mb-16 md:mb-24 stagger-section text-left">
+                <p class="text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase mb-4">Pricing</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-outfit font-black mb-4 leading-tight text-black">
+                    Flexible Pricing <span class="text-gradient-primary">Model</span>
+                </h2>
+                <p class="text-gray-600 font-light text-lg">Transparent pricing. No hidden costs. Just real value.</p>
+            </div>
+
+            <!-- Grid -->
+            <div class="stagger-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; align-items: center;">
+
+                <!-- 10s Card -->
+                <div class="stagger-card shadow-lg" style="background-color: #161821; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column;">
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="color: white; font-size: 40px; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1; margin-bottom: 8px;">10s</h3>
+                        <p style="color: #a0a3b2; font-size: 14px; font-weight: 400;">Quick Campaigns</p>
+                    </div>
+                    
+                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Strategic placements
+                        </li>
+                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Basic analytics
+                        </li>
+                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Dedicated support
+                        </li>
+                    </ul>
+
+                    <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background-color: rgba(255,255,255,0.05); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
+                        Get Started <span style="font-size: 14px;">&rarr;</span>
                     </button>
                 </div>
-            </div>
 
-            <!-- Sleek Table/Cards -->
-            <div class="grid grid-cols-2 md:grid-cols-4 border border-white/10 rounded-2xl overflow-hidden stagger-section">
-                <div class="p-8 border-b md:border-b-0 border-r border-white/10 bg-[#0a0a0a] hover:bg-[#111] transition-colors stagger-card">
-                    <div class="text-sm font-medium text-gray-500 mb-6 uppercase tracking-widest">Quick Impact</div>
-                    <div class="text-5xl font-outfit font-light text-white mb-2">10<span class="text-2xl text-gray-500">s</span></div>
-                    <p class="text-xs text-gray-500 mt-4 leading-relaxed">Ideal for high-frequency brand awareness.</p>
+                <!-- 15s Card (Highlighted) -->
+                <div class="stagger-card" style="background-color: #120f18; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column; position: relative; box-shadow: 0 20px 50px rgba(145, 39, 255, 0.2); border: 1px solid rgba(145, 39, 255, 0.3); transform: scale(1.05); z-index: 10;">
+                    
+                    <!-- Most Popular Pill -->
+                    <div style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(to right, #9127ff, #ff3b8d); color: white; padding: 6px 16px; border-radius: 99px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 15px rgba(145, 39, 255, 0.4);">
+                        Most Popular
+                    </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="color: white; font-size: 40px; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1; margin-bottom: 8px;">15s</h3>
+                        <p style="color: #e0e0e0; font-size: 14px; font-weight: 400;">Extended Reach</p>
+                    </div>
+                    
+                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="color: #e0e0e0; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #9127ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Premium locations
+                        </li>
+                        <li style="color: #e0e0e0; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #9127ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Advanced analytics
+                        </li>
+                        <li style="color: #e0e0e0; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #9127ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Priority support
+                        </li>
+                    </ul>
+
+                    <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background: linear-gradient(to right, #9127ff, #ff3b8d); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(145, 39, 255, 0.4); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                        Get Started <span style="font-size: 14px;">&rarr;</span>
+                    </button>
                 </div>
-                <div class="p-8 border-b md:border-b-0 md:border-r border-white/10 bg-[#111] hover:bg-[#1a1a1a] transition-colors relative stagger-card">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-cyan-500"></div>
-                    <div class="text-sm font-medium text-purple-400 mb-6 uppercase tracking-widest">Standard Spot</div>
-                    <div class="text-5xl font-outfit font-bold text-white mb-2">15<span class="text-2xl text-gray-500">s</span></div>
-                    <p class="text-xs text-gray-400 mt-4 leading-relaxed">The industry standard for effective messaging.</p>
+
+                <!-- 30s Card -->
+                <div class="stagger-card shadow-lg" style="background-color: #161821; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column;">
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="color: white; font-size: 40px; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1; margin-bottom: 8px;">30s</h3>
+                        <p style="color: #a0a3b2; font-size: 14px; font-weight: 400;">Maximum Impact</p>
+                    </div>
+                    
+                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Top-tier placements
+                        </li>
+                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Detailed reporting
+                        </li>
+                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Dedicated manager
+                        </li>
+                    </ul>
+
+                    <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background-color: rgba(255,255,255,0.05); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
+                        Get Started <span style="font-size: 14px;">&rarr;</span>
+                    </button>
                 </div>
-                <div class="p-8 border-r border-white/10 bg-[#0a0a0a] hover:bg-[#111] transition-colors stagger-card">
-                    <div class="text-sm font-medium text-gray-500 mb-6 uppercase tracking-widest">Storytelling</div>
-                    <div class="text-5xl font-outfit font-light text-white mb-2">30<span class="text-2xl text-gray-500">s</span></div>
-                    <p class="text-xs text-gray-500 mt-4 leading-relaxed">Extended time for narrative campaigns.</p>
+
+                <!-- 60s Card -->
+                <div class="stagger-card shadow-lg" style="background-color: #161821; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column;">
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="color: white; font-size: 40px; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1; margin-bottom: 8px;">60s</h3>
+                        <p style="color: #a0a3b2; font-size: 14px; font-weight: 400;">Full Brand Story</p>
+                    </div>
+                    
+                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Nationwide coverage
+                        </li>
+                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Custom reporting
+                        </li>
+                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
+                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            VIP support
+                        </li>
+                    </ul>
+
+                    <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background-color: rgba(255,255,255,0.05); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
+                        Get Started <span style="font-size: 14px;">&rarr;</span>
+                    </button>
                 </div>
-                <div class="p-8 bg-[#0a0a0a] hover:bg-[#111] transition-colors stagger-card">
-                    <div class="text-sm font-medium text-gray-500 mb-6 uppercase tracking-widest">Domination</div>
-                    <div class="text-5xl font-outfit font-light text-white mb-2">60<span class="text-2xl text-gray-500">s</span></div>
-                    <p class="text-xs text-gray-500 mt-4 leading-relaxed">Complete takeover for maximum brand impact.</p>
-                </div>
+
             </div>
-            
         </div>
     </section>
 
-    <!-- Footer CTA (Clean) -->
-    <footer class="relative z-10 bg-[#020202] pt-32 pb-12 overflow-hidden">
+    <!-- Full Bleed Image CTA Section -->
+    <section style="position: relative; width: 100%; min-height: 550px; display: flex; align-items: center; background-color: #020202; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05);">
         
+        <!-- Background Image -->
+        <div style="position: absolute; inset: 0; background-image: url('images/bg-0.png'); background-size: cover; background-position: center;"></div>
+        
+        <!-- Left Dark Gradient Overlay for Text Legibility -->
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(2,2,2,0.95) 0%, rgba(2,2,2,0.8) 40%, rgba(2,2,2,0) 100%); pointer-events: none;"></div>
+
+        <!-- Content -->
+        <div class="max-w-[1200px] w-full mx-auto px-6 md:px-12 relative z-10">
+            <div style="max-width: 500px;" class="stagger-section">
+                
+                <p class="stagger-card" style="font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: #a0a3b2; text-transform: uppercase; margin-bottom: 24px;">Let's Get Started</p>
+                
+                <h2 class="stagger-card" style="font-size: 64px; font-weight: 800; font-family: 'Outfit', sans-serif; color: white; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em;">
+                    Ready to <span class="text-gradient-primary">Illuminate?</span>
+                </h2>
+                
+                <p class="stagger-card" style="font-size: 16px; color: #d1d5db; font-weight: 300; line-height: 1.6; margin-bottom: 40px;">
+                    Your brand deserves to be seen. Let's create something unforgettable together.
+                </p>
+                
+                <a href="contact.html" class="stagger-card" style="display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: linear-gradient(to right, #813cff, #ff3b8d); color: white; padding: 18px 40px; border-radius: 99px; font-weight: 600; font-size: 15px; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 10px 30px rgba(129, 60, 255, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 40px rgba(129, 60, 255, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(129, 60, 255, 0.3)'">
+                    Get in Touch <span style="font-size: 16px;">&rarr;</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA (Clean, matches index) -->
+    <footer class="relative z-10 bg-[#020202] pt-32 pb-12 overflow-hidden border-t border-black/5">
+
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-            <h2 class="text-4xl md:text-5xl font-outfit font-bold text-center mb-24 sec-title text-white">Ready to proceed?</h2>
-            
+            <h2 class="text-4xl md:text-5xl font-outfit font-bold text-center mb-24 sec-title text-white">Ready to
+                proceed?</h2>
+
             <div class="grid md:grid-cols-3 gap-6 mb-32 stagger-section">
-                <a href="index.html" class="block p-10 rounded-2xl border border-white/5 bg-[#0a0a0a] hover:bg-[#111] transition-all duration-300 group stagger-card">
+                <a href="index.html"
+                    class="block p-10 rounded-2xl border border-white/5 bg-[#0a0a0a] hover:bg-[#111] transition-all duration-300 group stagger-card">
                     <p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-6">Hardware</p>
-                    <h3 class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">I Need an LED Wall</h3>
+                    <h3
+                        class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
+                        I Need an LED Wall</h3>
                     <p class="text-gray-400 text-sm font-light">Custom builds for architecture, venues, and retail.</p>
                 </a>
-                <a href="advertise.html" class="block p-10 rounded-2xl border border-white/10 bg-[#111] hover:bg-[#1a1a1a] transition-all duration-300 group stagger-card relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-purple-500 opacity-50 group-hover:opacity-100 transition-opacity"></div>
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-purple-400 mb-6">Media</p>
-                    <h3 class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-purple-400 transition-colors">I Want to Advertise</h3>
+                <a href="advertise.html"
+                    class="block p-10 rounded-2xl border border-white/10 bg-[#111] hover:bg-[#1a1a1a] transition-all duration-300 group stagger-card relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-[2px] bg-cyan-400 opacity-50 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-cyan-400 mb-6">Media</p>
+                    <h3
+                        class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors">
+                        I Want to Advertise</h3>
                     <p class="text-gray-400 text-sm font-light">Launch campaigns on our premium global network.</p>
                 </a>
-                <a href="partners.html" class="block p-10 rounded-2xl border border-white/5 bg-[#0a0a0a] hover:bg-[#111] transition-all duration-300 group stagger-card">
+                <a href="partners.html"
+                    class="block p-10 rounded-2xl border border-white/5 bg-[#0a0a0a] hover:bg-[#111] transition-all duration-300 group stagger-card">
                     <p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-6">Partnership</p>
-                    <h3 class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-pink-400 transition-colors">I Have a Location</h3>
+                    <h3
+                        class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-pink-400 transition-colors">
+                        I Have a Location</h3>
                     <p class="text-gray-400 text-sm font-light">Monetize your property with a digital display.</p>
                 </a>
             </div>
-            
-            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-gray-500 text-[10px] tracking-widest uppercase">
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-gray-500 text-[10px] tracking-widest uppercase">
                 <div class="font-outfit font-black text-white mb-4 md:mb-0 text-sm">LUMINA</div>
                 <div class="flex gap-8 mb-4 md:mb-0">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -343,10 +560,15 @@
     </footer>
 
     <!-- Mobile Sticky Action Bar -->
-    <div class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-[#050505]/90 border-t border-white/10 p-4 flex justify-between gap-2 backdrop-blur-xl">
-        <button class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-white">Call</button>
-        <button class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-white">WhatsApp</button>
-        <button class="flex-1 py-3 rounded-lg bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-gray-200">Get Quote</button>
+    <div
+        class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-[#050505]/90 border-t border-white/10 p-4 flex justify-between gap-2 backdrop-blur-xl">
+        <button
+            class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-white">Call</button>
+        <button
+            class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-white">WhatsApp</button>
+        <button
+            class="flex-1 py-3 rounded-lg bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-gray-200">Get
+            Quote</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -355,4 +577,5 @@
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
     <script src="./main.js"></script>
 </body>
+
 </html>
