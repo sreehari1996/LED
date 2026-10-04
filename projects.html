@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Lumina Network</title>
+    <link href="./style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#030303] text-white font-inter">
+    <div class="noise-overlay"></div>
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div class="bg-glow-1 absolute top-[50%] right-[10%] w-[600px] h-[600px] rounded-full bg-pink-600/10 blur-[150px]"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6 border-b border-transparent" id="navbar">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-outfit font-black tracking-widest text-white">LUMINA</a>
+            <div class="hidden lg:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="index.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Home</a>
+                <a href="index.html#solutions" class="hover:text-white transition-colors tracking-wide uppercase text-xs">LED Solutions</a>
+                <a href="advertise.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Advertise</a>
+                <a href="network.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Our Screens</a>
+                <a href="projects.html" class="text-white transition-colors tracking-wide uppercase text-xs">Projects</a>
+                <a href="contact.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Contact</a>
+            </div>
+            <div class="hidden md:flex gap-4">
+                <button class="px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-white/20 hover:bg-white hover:text-black transition-all duration-300">Contact Us</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Gallery (Section 14) -->
+    <section class="min-h-screen pt-40 pb-24 relative z-10">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 sec-title">
+                <h1 class="text-5xl md:text-7xl font-outfit font-black mb-6">Our <span class="text-gradient">Work</span></h1>
+                <p class="text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12">A portfolio of bespoke LED installations defining modern spaces.</p>
+                
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-widest bg-white text-black">All Projects</button>
+                    <button class="px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-widest border border-white/20 hover:bg-white/10 transition-all">Outdoor Façades</button>
+                    <button class="px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-widest border border-white/20 hover:bg-white/10 transition-all">Retail</button>
+                    <button class="px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-widest border border-white/20 hover:bg-white/10 transition-all">Corporate</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-section">
+                <!-- Portfolio Items -->
+                <div class="group relative rounded-3xl overflow-hidden glass-panel stagger-card aspect-[4/5] glow-border cursor-pointer">
+                    <div class="absolute inset-0 img-wrapper">
+                        <img src="./images/hero.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Outdoor">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#030303]/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8">
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-blue-400 mb-2 font-semibold">Outdoor Façade</p>
+                        <h3 class="text-2xl font-outfit font-bold mb-2">Orion Arcology</h3>
+                        <p class="text-gray-400 text-xs transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">Tokyo • 800sqm Transparent LED</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden glass-panel stagger-card aspect-[4/5] glow-border cursor-pointer">
+                    <div class="absolute inset-0 img-wrapper">
+                        <img src="./images/retail.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Retail">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#030303]/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8">
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-pink-400 mb-2 font-semibold">Luxury Retail</p>
+                        <h3 class="text-2xl font-outfit font-bold mb-2">Lumiere Boutique</h3>
+                        <p class="text-gray-400 text-xs transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">Paris • Curved 1.2mm Pixel Pitch</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden glass-panel stagger-card aspect-[4/5] glow-border cursor-pointer">
+                    <div class="absolute inset-0 img-wrapper">
+                        <img src="./images/corporate.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Corporate">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#030303]/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8">
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-purple-400 mb-2 font-semibold">Corporate HQ</p>
+                        <h3 class="text-2xl font-outfit font-bold mb-2">Nexus Tower Lobby</h3>
+                        <p class="text-gray-400 text-xs transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">New York • Seamless Pillar LED</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <button class="px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest border border-white/20 hover:bg-white hover:text-black transition-all">Load More Projects</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
+
+

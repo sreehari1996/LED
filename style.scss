@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-blue: #00f0ff;
+  --neon-purple: #8a2be2;
+  --neon-pink: #ff007f;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: none;
+    /* Next-gen custom cursor */
+  }
+
+  body {
+    @apply bg-black text-gray-100 antialiased selection:bg-white selection:text-black;
+    overflow-x: hidden;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    cursor: none;
+    /* Let custom cursor handle hover states */
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400;
+  }
+
+  .glass-panel {
+    @apply bg-white/[0.03] backdrop-blur-2xl border border-white/[0.05];
+  }
+}
+
+/* Premium Reveal Utils */
+.reveal-text-line {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-text-line>span {
+  display: block;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* Subtle Glowing Borders */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.glow-border:hover::before {
+  opacity: 0.4;
+  filter: blur(8px);
+}
+
+/* Smooth Image Scale */
+.img-wrapper {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.img-wrapper img {
+  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.group:hover .img-wrapper img {
+  transform: scale(1.05);
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+}
+
+@keyframes scrolldown {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-scrolldown {
+  animation: scrolldown 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+/* Next-Gen Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s, mix-blend-mode 0.3s;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.hover {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  mix-blend-mode: normal;
+  backdrop-filter: blur(4px);
+}
