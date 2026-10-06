@@ -65,56 +65,28 @@
         </div>
     </nav>
 
-    <!-- Inner Page Header -->
-    <section id="hero"
-        class="relative pb-32 flex flex-col justify-center overflow-hidden bg-slate-950 z-10 border-b border-slate-800"
-        style="padding-top: 220px;">
-
-        <!-- Premium Corporate Background Shape (Midnight Blue) -->
-        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-
-            <!-- Sleek Base Gradient -->
-            <div
-                class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-800 via-slate-950 to-slate-950 opacity-80">
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[700px] flex items-center pt-20" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.2) 100%), url('./images/led_billboard.jpg'); background-size: cover; background-position: center;">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full">
+            <div class="max-w-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-[2px] bg-[#3b82f6]"></div>
+                    <p class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-300">MEDIA & NETWORK</p>
+                </div>
+                <h1 class="text-6xl md:text-7xl lg:text-[80px] font-outfit font-black leading-[1.05] mb-6 tracking-tight">
+                    Advertise With<br>
+                    <span class="text-gradient">Lumina.</span>
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-xl">
+                    Access a meticulously curated network of ultra-premium digital displays across the most sought-after global locations. Play your campaign on high-impact outdoor screens.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <!-- Since bg-gradient-btn might not be in advertise.html, we use inline style to ensure it works just like about.html -->
+                    <button class="px-10 py-4 rounded-full text-base font-semibold flex items-center gap-2 text-white transition-all hover:-translate-y-1" style="background: linear-gradient(to right, #3b82f6, #a855f7); box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);">
+                        Explore Advertising Locations &rarr;
+                    </button>
+                </div>
             </div>
-
-            <!-- Giant Architectural Slash (Right) -->
-            <div
-                class="absolute right-0 top-0 w-[80%] h-[150%] bg-gradient-to-bl from-blue-500/10 via-slate-800/20 to-transparent transform rotate-[15deg] translate-x-1/3 -translate-y-1/4 border-l border-blue-400/20 shadow-[-30px_0_100px_rgba(59,130,246,0.05)]">
-            </div>
-
-            <!-- Secondary Geometric Slash (Left) -->
-            <div
-                class="absolute left-0 bottom-0 w-[60%] h-[100%] bg-gradient-to-tr from-cyan-500/5 via-transparent to-transparent transform -rotate-[15deg] -translate-x-1/4 translate-y-1/4 border-r border-cyan-400/10">
-            </div>
-
-            <!-- Refined Professional Grid -->
-            <div class="absolute inset-0 opacity-20"
-                style="background-image: radial-gradient(circle at center, #94a3b8 1px, transparent 1px); background-size: 32px 32px; mask-image: linear-gradient(to bottom, black 30%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);">
-            </div>
-        </div>
-
-        <div class="relative z-20 w-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
-
-            <!-- Breadcrumb / Tag -->
-            <div
-                class="hero-fade inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-blue-400/20 bg-blue-500/10 backdrop-blur-md">
-                <span class="text-[10px] font-semibold tracking-[0.2em] text-blue-400 uppercase">Media & Network</span>
-            </div>
-
-            <!-- Page Title -->
-            <h1
-                class="hero-fade text-5xl md:text-6xl lg:text-7xl font-outfit font-black leading-tight tracking-tight mb-6 text-white drop-shadow-md">
-                Advertise With <span
-                    class="text-gradient-primary">Lumina.</span>
-            </h1>
-
-            <!-- Subtitle -->
-            <p class="hero-fade text-base md:text-lg text-gray-400 font-light max-w-2xl leading-relaxed mx-auto">
-                Access a meticulously curated network of ultra-premium digital displays across the most sought-after
-                global locations. Play your campaign on high-impact outdoor screens.
-            </p>
-
         </div>
     </section>
 
@@ -144,56 +116,71 @@
                     
                     <!-- Row 1 -->
                     <div style="display: flex; gap: 20px; height: 180px;">
-                        <!-- Billboards -->
+                        <!-- Location 1 -->
                         <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
-                            <img src="images/billboard.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Billboards">
+                            <img src="images/billboard.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Times Square Digital">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
                             <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                Billboards
+                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                                Times Square Digital
                             </div>
+                            <a href="#" style="position: absolute; bottom: 16px; right: 16px; font-size: 11px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
+                                View Screen <span style="font-size: 14px;">&rarr;</span>
+                            </a>
                         </div>
-                        <!-- LED Screens -->
+                        <!-- Location 2 -->
                         <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
-                            <img src="images/led_billboard.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: transform 0.7s;" class="group-hover:scale-105" alt="LED Screens">
+                            <img src="images/led_billboard.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: transform 0.7s;" class="group-hover:scale-105" alt="Dubai Marina Screen">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
                             <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                                LED Screens
+                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                                Dubai Marina Screen
                             </div>
+                            <a href="#" style="position: absolute; bottom: 16px; right: 16px; font-size: 11px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
+                                View Screen <span style="font-size: 14px;">&rarr;</span>
+                            </a>
                         </div>
                     </div>
                     
                     <!-- Row 2 -->
                     <div style="display: flex; gap: 20px; height: 180px;">
-                        <!-- Mall Display -->
+                        <!-- Location 3 -->
                         <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
-                            <img src="images/retail.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Mall Display">
+                            <img src="images/retail.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Shinjuku Station LED">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
                             <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                                Mall Display
+                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                                Shinjuku Station LED
                             </div>
+                            <a href="#" style="position: absolute; bottom: 16px; right: 16px; font-size: 11px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
+                                View Screen <span style="font-size: 14px;">&rarr;</span>
+                            </a>
                         </div>
-                        <!-- Transit Media -->
+                        <!-- Location 4 -->
                         <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
-                            <img src="images/hero3.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Transit Media">
+                            <img src="images/hero3.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Piccadilly Circus Board">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
                             <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                                Transit Media
+                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                                Piccadilly Circus Board
                             </div>
+                            <a href="#" style="position: absolute; bottom: 16px; right: 16px; font-size: 11px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
+                                View Screen <span style="font-size: 14px;">&rarr;</span>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Row 3 Wide -->
                     <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="position: relative; border-radius: 16px; overflow: hidden; background-color: #111; height: 140px;">
-                        <img src="images/ad_hero.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Urban Hotspots">
+                        <img src="images/ad_hero.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Las Vegas Strip Mega-Screen">
                         <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
                         <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            Urban Hotspots
+                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                            Las Vegas Strip Mega-Screen
                         </div>
+                        <a href="#" style="position: absolute; bottom: 16px; right: 24px; font-size: 12px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
+                            View Screen Details <span style="font-size: 14px;">&rarr;</span>
+                        </a>
                     </div>
                 </div>
 
@@ -248,6 +235,79 @@
                         </div>
                         <span class="group-hover:-translate-y-1 transition-transform" style="color: white; font-size: 11px; font-weight: 600; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">Shopping Mall</span>
                     </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen Detail Spotlight (Section 08 Requirement) -->
+    <section class="py-32 relative z-10 bg-[#080a11] overflow-hidden border-t border-white/5">
+        
+        <!-- Background subtle glow -->
+        <div style="position: absolute; top: -20%; right: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(145,39,255,0.05) 0%, transparent 70%); pointer-events: none;"></div>
+
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                
+                <!-- Left: Large Screen Visual -->
+                <div class="flex-1 relative w-full group stagger-section">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(45deg, #3b82f6, #a855f7); transform: translate(-10px, 10px); border-radius: 24px; opacity: 0.2; filter: blur(20px);"></div>
+                    <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl" style="aspect-ratio: 4/3; background: #000;">
+                        <img src="images/billboard.jpg" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" alt="Times Square Digital">
+                        
+                        <!-- Overlay Tech Details -->
+                        <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px;">
+                            <span class="animate-pulse w-2 h-2 rounded-full bg-green-400"></span>
+                            <span class="text-white text-xs font-semibold tracking-wider">LIVE FEED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Specifications -->
+                <div class="flex-1 w-full stagger-section">
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-blue-400 font-semibold mb-4 drop-shadow-lg">Featured Placement Spotlight</p>
+                    <h2 class="text-4xl md:text-5xl font-outfit font-black mb-6 text-white leading-tight drop-shadow-2xl">
+                        Times Square <span class="text-gradient">Digital</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg font-light leading-relaxed mb-10 max-w-lg">
+                        Dominate the world's most iconic intersection. This ultra-high-definition mega screen offers unparalleled brand visibility and millions of daily impressions.
+                    </p>
+
+                    <!-- Specs Grid -->
+                    <div class="mb-12" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+                        <!-- Location -->
+                        <div class="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors" style="padding: 24px;">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Location</p>
+                            <p class="text-white font-semibold text-sm md:text-base">Broadway & 45th St, NY</p>
+                        </div>
+                        <!-- Size -->
+                        <div class="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors" style="padding: 24px;">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Dimensions / Size</p>
+                            <p class="text-white font-semibold text-sm md:text-base">18,000 sq ft (4K LED)</p>
+                        </div>
+                        <!-- Operating Hours -->
+                        <div class="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors" style="padding: 24px;">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Operating Hours</p>
+                            <p class="text-white font-semibold text-sm md:text-base">24/7 Continuous</p>
+                        </div>
+                        <!-- Formats -->
+                        <div class="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors" style="padding: 24px;">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Supported Formats</p>
+                            <p class="text-white font-semibold text-sm md:text-base">MP4, MOV, Static (16:9)</p>
+                        </div>
+                    </div>
+
+                    <!-- Campaign Options & CTA -->
+                    <div class="flex flex-col sm:flex-row items-center gap-6">
+                        <button class="w-full sm:w-auto px-10 py-4 rounded-full text-sm font-semibold text-white shadow-xl transition-all hover:scale-105" style="background: linear-gradient(to right, #3b82f6, #a855f7); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);">
+                            Request Advertising Rates &rarr;
+                        </button>
+                        <p class="text-xs text-gray-500 font-light">
+                            <strong class="text-gray-300">Campaign Options:</strong> Flexible 10s, 15s, 30s loops
+                        </p>
+                    </div>
+
                 </div>
 
             </div>
@@ -354,7 +414,7 @@
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-outfit font-black mb-4 leading-tight text-black">
                     Flexible Pricing <span class="text-gradient-primary">Model</span>
                 </h2>
-                <p class="text-gray-600 font-light text-lg">Transparent pricing. No hidden costs. Just real value.</p>
+                <p class="text-gray-600 font-light text-lg">Our pricing is highly flexible and dynamically calculated based on your specific location, chosen screen, campaign duration, frequency of plays, and overall campaign period.</p>
             </div>
 
             <!-- Grid -->
@@ -383,7 +443,7 @@
                     </ul>
 
                     <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background-color: rgba(255,255,255,0.05); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
-                        Get Started <span style="font-size: 14px;">&rarr;</span>
+                        Get Advertising Rates <span style="font-size: 14px;">&rarr;</span>
                     </button>
                 </div>
 
@@ -416,7 +476,7 @@
                     </ul>
 
                     <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background: linear-gradient(to right, #9127ff, #ff3b8d); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(145, 39, 255, 0.4); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-                        Get Started <span style="font-size: 14px;">&rarr;</span>
+                        Get Advertising Rates <span style="font-size: 14px;">&rarr;</span>
                     </button>
                 </div>
 
@@ -443,7 +503,7 @@
                     </ul>
 
                     <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background-color: rgba(255,255,255,0.05); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
-                        Get Started <span style="font-size: 14px;">&rarr;</span>
+                        Get Advertising Rates <span style="font-size: 14px;">&rarr;</span>
                     </button>
                 </div>
 
@@ -470,7 +530,7 @@
                     </ul>
 
                     <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background-color: rgba(255,255,255,0.05); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
-                        Get Started <span style="font-size: 14px;">&rarr;</span>
+                        Get Advertising Rates <span style="font-size: 14px;">&rarr;</span>
                     </button>
                 </div>
 
@@ -562,13 +622,13 @@
     <!-- Mobile Sticky Action Bar -->
     <div
         class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-[#050505]/90 border-t border-white/10 p-4 flex justify-between gap-2 backdrop-blur-xl">
-        <button
-            class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-white">Call</button>
-        <button
-            class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-white">WhatsApp</button>
-        <button
-            class="flex-1 py-3 rounded-lg bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-gray-200">Get
-            Quote</button>
+        <a href="tel:+1234567890"
+            class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-white text-center">Call</a>
+        <a href="https://wa.me/1234567890"
+            class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-green-400 text-center">WhatsApp</a>
+        <a href="contact.html"
+            class="flex-1 py-3 rounded-lg bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-gray-200 text-center">Get
+            Quote</a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
