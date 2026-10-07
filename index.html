@@ -14,6 +14,15 @@
 </head>
 
 <body class="bg-[#030303] text-white font-inter">
+    <!-- Ultra Premium Loader -->
+    <div id="premium-loader" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #030303; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="overflow: hidden;">
+            <h1 class="loader-brand" style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 3rem; letter-spacing: 0.4em; color: white; margin: 0; transform: translateY(100%); opacity: 0;">LUMINA</h1>
+        </div>
+        <div style="width: 120px; height: 1px; background-color: rgba(255,255,255,0.1); margin-top: 2rem; position: relative; overflow: hidden;">
+            <div class="loader-line" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.8); transform: scaleX(0); transform-origin: left;"></div>
+        </div>
+    </div>
 
     <div class="noise-overlay"></div>
 
@@ -868,7 +877,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
     <script src="./main.js"></script>
+    <!-- Premium Loader Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Ensure body cannot scroll
+            document.body.style.overflow = 'hidden';
+            
+            const loaderTl = gsap.timeline();
+            
+            // 1. Reveal Brand Name smoothly
+            loaderTl.to('.loader-brand', {
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: 'power3.out',
+                delay: 0.3
+            })
+            // 2. Expand thin LED line
+            .to('.loader-line', {
+                scaleX: 1,
+                duration: 1.2,
+                ease: 'power2.inOut'
+            }, "-=0.6")
+            // 3. Fade out the entire loader gently
+            .to('#premium-loader', {
+                opacity: 0,
+                duration: 1,
+                ease: 'power2.inOut',
+                delay: 0.4,
+                onComplete: () => {
+                    // Remove loader from DOM completely so it doesn't break the page or block clicks
+                    const loader = document.getElementById('premium-loader');
+                    if(loader) loader.remove();
+                    
+                    // Restore scrolling
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
+
 
