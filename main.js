@@ -23,12 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   gsap.ticker.lagSmoothing(0);
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
   // Navbar blur effect
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
