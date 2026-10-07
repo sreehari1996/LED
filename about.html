@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,30 @@
     <link href="./style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
 
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
 <body class="bg-[#0a0b10] text-white font-inter overflow-x-hidden">
     <style>
-        .hero-bg {
-            background-image: linear-gradient(to right, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%), url('./images/2.png');
+        .hero-bg-layer {
+            background-image: url('./images/2.png');
             background-size: cover;
             background-position: center;
+            width: 100%;
+            height: 100%;
         }
+
         .bg-gradient-btn {
             background: linear-gradient(to right, #a855f7, #3b82f6);
             color: white;
             box-shadow: 0 4px 14px 0 rgba(168, 85, 247, 0.39);
         }
+
         .bg-gradient-btn:hover {
             box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
             transform: translateY(-1px);
@@ -31,32 +41,30 @@
     <!-- Navbar -->
     <nav class="fixed w-full z-50 transition-all duration-500 py-6 border-b border-transparent" id="navbar">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
-            <div class="text-2xl font-outfit font-black tracking-widest text-white">LUMINA</div>
+            <a href="index.html" class="text-2xl font-outfit font-black tracking-widest text-white">LUMINA</a>
             <div class="hidden lg:flex gap-8 text-sm font-medium text-gray-400">
                 <a href="index.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Home</a>
-                <a href="index.html#solutions"
-                    class="hover:text-white transition-colors tracking-wide uppercase text-xs">LED
-                    Solutions</a>
-                <a href="advertise.html"
-                    class="hover:text-white transition-colors tracking-wide uppercase text-xs">Advertise</a>
+                <a href="about.html" class="text-white transition-colors tracking-wide uppercase text-xs">About</a>
                 <a href="network.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Our
                     Screens</a>
+                <a href="advertise.html"
+                    class="hover:text-white transition-colors tracking-wide uppercase text-xs">Advertise</a>
+                <a href="partners.html"
+                    class="hover:text-white transition-colors tracking-wide uppercase text-xs">Partners</a>
                 <a href="projects.html"
                     class="hover:text-white transition-colors tracking-wide uppercase text-xs">Projects</a>
-                <a href="about.html"
-                    class="hover:text-white transition-colors tracking-wide uppercase text-xs">About</a>
                 <a href="contact.html"
                     class="hover:text-white transition-colors tracking-wide uppercase text-xs">Contact</a>
             </div>
             <div class="hidden md:flex gap-3">
-                <button
+                <a href="contact.html"
                     class="px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300">
                     Get an LED Wall
-                </button>
-                <button
+                </a>
+                <a href="advertise.html"
                     class="px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white text-black hover:bg-cyan-400 hover:text-black hover:border-cyan-400 transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                     Advertise
-                </button>
+                </a>
             </div>
             <button class="lg:hidden text-white">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,27 +76,40 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative h-screen min-h-[700px] flex items-center pt-20 hero-bg">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full">
+    <section class="relative h-screen min-h-[700px] flex items-center pt-20 overflow-hidden">
+        <!-- Animated Background Layer -->
+        <div class="absolute inset-0 z-0">
+            <div class="hero-bg-layer"></div>
+        </div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 z-0 pointer-events-none" style="background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 10%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.1) 100%);"></div>
+        
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full hero-content-layer">
             <div class="max-w-2xl">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-8 h-[2px] bg-[#a855f7]"></div>
                     <p class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-300">LED SCREEN SOLUTIONS</p>
                 </div>
-                <h1 class="text-6xl md:text-7xl lg:text-[80px] font-outfit font-black leading-[1.05] mb-6 tracking-tight">
+                <h1
+                    class="text-6xl md:text-7xl lg:text-[80px] font-outfit font-black leading-[1.05] mb-6 tracking-tight">
                     Big Screens.<br>
                     Bigger <span class="text-gradient">Impressions.</span>
                 </h1>
                 <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-xl">
-                    We design, supply and install high-quality LED screens for events, retail, corporate and public spaces. Turn your ideas into stunning visual experiences.
+                    We design, supply and install high-quality LED screens for events, retail, corporate and public
+                    spaces. Turn your ideas into stunning visual experiences.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <button class="bg-gradient-btn px-10 py-4 rounded-full text-base font-semibold flex items-center gap-2">
+                    <button
+                        class="bg-gradient-btn px-10 py-4 rounded-full text-base font-semibold flex items-center gap-2">
                         Get a Quote &rarr;
                     </button>
-                    <button class="px-10 py-4 rounded-full text-base font-semibold border border-white/20 hover:bg-white/10 flex items-center gap-2 transition-all">
+                    <button
+                        class="px-10 py-4 rounded-full text-base font-semibold border border-white/20 hover:bg-white/10 flex items-center gap-2 transition-all">
                         <div class="w-6 h-6 rounded-full border border-white flex items-center justify-center">
-                            <div class="w-0 h-0 border-t-4 border-t-transparent border-l-6 border-l-white border-b-4 border-b-transparent ml-1"></div>
+                            <div
+                                class="w-0 h-0 border-t-4 border-t-transparent border-l-6 border-l-white border-b-4 border-b-transparent ml-1">
+                            </div>
                         </div>
                         Watch Our Showreel
                     </button>
@@ -107,45 +128,86 @@
                     for a <span class="text-gradient">Brighter Tomorrow</span>
                 </h2>
                 <p class="text-gray-600 text-[15px] leading-relaxed mb-10">
-                    We are a leading LED screen solution provider, delivering immersive visual experiences for brands, businesses and events. From concept to installation, we bring your vision to life with cutting-edge technology and unmatched support.
+                    We are a leading LED screen solution provider, delivering immersive visual experiences for brands,
+                    businesses and events. From concept to installation, we bring your vision to life with cutting-edge
+                    technology and unmatched support.
                 </p>
-                
+
                 <style>
                     @media (min-width: 768px) {
-                        .custom-features-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
-                        .feature-border-r { border-right: 1px solid #e5e7eb; padding-right: 1.5rem; padding-left: 1.5rem; }
-                        .feature-item-first { padding-left: 0 !important; }
-                        .feature-item-last { border-right: none !important; padding-right: 0 !important; padding-left: 1.5rem !important; }
+                        .custom-features-grid {
+                            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+                        }
+
+                        .feature-border-r {
+                            border-right: 1px solid #e5e7eb;
+                            padding-right: 1.5rem;
+                            padding-left: 1.5rem;
+                        }
+
+                        .feature-item-first {
+                            padding-left: 0 !important;
+                        }
+
+                        .feature-item-last {
+                            border-right: none !important;
+                            padding-right: 0 !important;
+                            padding-left: 1.5rem !important;
+                        }
                     }
                 </style>
                 <div class="grid grid-cols-2 gap-y-8 mb-10 custom-features-grid">
                     <div class="flex flex-col items-center justify-center pr-4 feature-border-r feature-item-first">
-                        <div class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                        <div
+                            class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
                         </div>
-                        <span class="text-[13px] font-semibold leading-tight text-gray-800 text-center">Premium<br>LED Displays</span>
+                        <span class="text-[13px] font-semibold leading-tight text-gray-800 text-center">Premium<br>LED
+                            Displays</span>
                     </div>
                     <div class="flex flex-col items-center justify-center feature-border-r">
-                        <div class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <div
+                            class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
                         </div>
-                        <span class="text-[13px] font-semibold leading-tight text-gray-800 text-center">Expert<br>Installation</span>
+                        <span
+                            class="text-[13px] font-semibold leading-tight text-gray-800 text-center">Expert<br>Installation</span>
                     </div>
                     <div class="flex flex-col items-center justify-center feature-border-r">
-                        <div class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <div
+                            class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
                         </div>
-                        <span class="text-[13px] font-semibold leading-tight text-gray-800 text-center">24/7<br>Support</span>
+                        <span
+                            class="text-[13px] font-semibold leading-tight text-gray-800 text-center">24/7<br>Support</span>
                     </div>
                     <div class="flex flex-col items-center justify-center feature-border-r feature-item-last">
-                        <div class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg>
+                        <div
+                            class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                            </svg>
                         </div>
-                        <span class="text-[13px] font-semibold leading-tight text-gray-800 text-center">Custom<br>Solutions</span>
+                        <span
+                            class="text-[13px] font-semibold leading-tight text-gray-800 text-center">Custom<br>Solutions</span>
                     </div>
                 </div>
 
-                <button class="rounded-full text-sm font-semibold border border-gray-300 hover:border-gray-900 transition-colors flex items-center justify-center gap-2" style="padding: 16px 36px; width: fit-content;">
+                <button
+                    class="rounded-full text-sm font-semibold border border-gray-300 hover:border-gray-900 transition-colors flex items-center justify-center gap-2"
+                    style="padding: 16px 36px; width: fit-content;">
                     Learn More &rarr;
                 </button>
             </div>
@@ -156,23 +218,29 @@
                     <img src="./images/hero3.jpg" alt="About Us Stage" class="w-full h-auto object-cover aspect-[4/3]">
                 </div>
                 <!-- Floating Card -->
-                <div class="absolute text-white shadow-2xl" style="background-color: #0f1015; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1rem; width: 280px; padding: 1.5rem; bottom: -2.5rem; right: -2.5rem; z-index: 30;">
+                <div class="absolute text-white shadow-2xl"
+                    style="background-color: #0f1015; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1rem; width: 280px; padding: 1.5rem; bottom: -2.5rem; right: -2.5rem; z-index: 30;">
                     <div class="mb-3">
                         <svg class="w-8 h-8 text-[#a855f7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                                d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
                         </svg>
                     </div>
                     <h4 class="font-outfit font-bold text-lg mb-2">Crystal Clear</h4>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4" style="color: #9ca3af;">Vibrant colors, high brightness, stunning clarity &mdash; even in daylight.</p>
-                    <a href="#" class="text-xs flex items-center gap-2 hover:text-[#a855f7] transition-colors" style="color: #9ca3af;">&rarr;</a>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4" style="color: #9ca3af;">Vibrant colors, high
+                        brightness, stunning clarity &mdash; even in daylight.</p>
+                    <a href="#" class="text-xs flex items-center gap-2 hover:text-[#a855f7] transition-colors"
+                        style="color: #9ca3af;">&rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Solutions -->
-    <section id="solutions" class="bg-[#0a0b10] border-t border-white/5 relative z-10" style="padding-top: 8rem; padding-bottom: 8rem;">
+    <section id="solutions" class="bg-[#0a0b10] border-t border-white/5 relative z-10"
+        style="padding-top: 8rem; padding-bottom: 8rem;">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                 <div>
@@ -180,54 +248,72 @@
                     <h2 class="text-4xl md:text-5xl font-outfit font-black">
                         LED Screens for <span class="text-gradient">Every Space</span>
                     </h2>
-                    <p class="text-gray-400 text-sm mt-4 max-w-lg">From indoor displays to massive outdoor screens, we offer versatile LED solutions tailored to your needs.</p>
+                    <p class="text-gray-400 text-sm mt-4 max-w-lg">From indoor displays to massive outdoor screens, we
+                        offer versatile LED solutions tailored to your needs.</p>
                 </div>
-                <button class="px-8 py-3.5 rounded-full text-sm font-semibold border border-white/20 hover:bg-white hover:text-black transition-all">
+                <button
+                    class="px-8 py-3.5 rounded-full text-sm font-semibold border border-white/20 hover:bg-white hover:text-black transition-all">
                     View All Solutions &rarr;
                 </button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
-                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group" style="background-color: #121319;">
+                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group"
+                    style="background-color: #121319;">
                     <div class="h-40 overflow-hidden">
-                        <img src="./images/retail.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Indoor LED">
+                        <img src="./images/retail.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            alt="Indoor LED">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-outfit font-bold text-lg mb-2 group-hover:text-[#3b82f6] transition-colors">Indoor LED</h3>
+                        <h3 class="font-outfit font-bold text-lg mb-2 group-hover:text-[#3b82f6] transition-colors">
+                            Indoor LED</h3>
                         <p class="text-xs text-gray-400 mb-4">Retail, corporate, studio & more</p>
                         <a href="#" class="text-white hover:text-[#3b82f6]">&rarr;</a>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group" style="background-color: #121319;">
+                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group"
+                    style="background-color: #121319;">
                     <div class="h-40 overflow-hidden">
-                        <img src="./images/led_billboard.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Outdoor LED">
+                        <img src="./images/led_billboard.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            alt="Outdoor LED">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-outfit font-bold text-lg mb-2 group-hover:text-[#a855f7] transition-colors">Outdoor LED</h3>
+                        <h3 class="font-outfit font-bold text-lg mb-2 group-hover:text-[#a855f7] transition-colors">
+                            Outdoor LED</h3>
                         <p class="text-xs text-gray-400 mb-4">Billboards, stadiums, public spaces</p>
                         <a href="#" class="text-white hover:text-[#a855f7]">&rarr;</a>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group" style="background-color: #121319;">
+                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group"
+                    style="background-color: #121319;">
                     <div class="h-40 overflow-hidden">
-                        <img src="./images/hero3.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Event LED">
+                        <img src="./images/hero3.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            alt="Event LED">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-outfit font-bold text-lg mb-2 group-hover:text-[#3b82f6] transition-colors">Event LED</h3>
+                        <h3 class="font-outfit font-bold text-lg mb-2 group-hover:text-[#3b82f6] transition-colors">
+                            Event LED</h3>
                         <p class="text-xs text-gray-400 mb-4">Concerts, exhibitions, live shows</p>
                         <a href="#" class="text-white hover:text-[#3b82f6]">&rarr;</a>
                     </div>
                 </div>
                 <!-- Card 4 -->
-                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group" style="background-color: #121319;">
+                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group"
+                    style="background-color: #121319;">
                     <div class="h-40 overflow-hidden">
-                        <img src="./images/hero_macro.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Custom LED">
+                        <img src="./images/hero_macro.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            alt="Custom LED">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-outfit font-bold text-lg mb-2 group-hover:text-[#a855f7] transition-colors">Custom LED</h3>
+                        <h3 class="font-outfit font-bold text-lg mb-2 group-hover:text-[#a855f7] transition-colors">
+                            Custom LED</h3>
                         <p class="text-xs text-gray-400 mb-4">Curved, flexible & innovative designs</p>
                         <a href="#" class="text-white hover:text-[#a855f7]">&rarr;</a>
                     </div>
@@ -242,11 +328,13 @@
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Left Image -->
                 <div class="rounded-3xl overflow-hidden shadow-2xl relative group">
-                    <img src="./images/Neon Reflections Over a Futuristic Boulevard.png" alt="Projects" class="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700">
+                    <img src="./images/Neon Reflections Over a Futuristic Boulevard.png" alt="Projects"
+                        class="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6">
                         <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl text-white">
-                            <p class="text-xs font-bold uppercase tracking-widest text-[#a855f7] mb-1">NEXT LEVEL VISUALS</p>
+                            <p class="text-xs font-bold uppercase tracking-widest text-[#a855f7] mb-1">NEXT LEVEL
+                                VISUALS</p>
                             <p class="text-sm">Pushing boundaries of digital display</p>
                         </div>
                     </div>
@@ -264,41 +352,61 @@
 
                     <div class="flex flex-col gap-4 mb-10">
                         <!-- List Item 1 -->
-                        <div class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group">
+                        <div
+                            class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group">
                             <div class="flex items-center gap-4">
-                                <img src="./images/led_billboard.jpg" class="w-16 h-12 rounded-lg object-cover" alt="Billboard">
+                                <img src="./images/led_billboard.jpg" class="w-16 h-12 rounded-lg object-cover"
+                                    alt="Billboard">
                                 <div>
                                     <h4 class="font-outfit font-bold text-sm">City Billboard - Dubai</h4>
                                     <p class="text-xs text-gray-500">Outdoor LED Screen</p>
                                 </div>
                             </div>
-                            <svg class="w-5 h-5 text-gray-400 group-hover:text-[#3b82f6] transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-[#3b82f6] transform group-hover:translate-x-1 transition-all"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
                         </div>
                         <!-- List Item 2 -->
-                        <div class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group">
+                        <div
+                            class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group">
                             <div class="flex items-center gap-4">
-                                <img src="./images/retail.jpg" class="w-16 h-12 rounded-lg object-cover" alt="Retail Store">
+                                <img src="./images/retail.jpg" class="w-16 h-12 rounded-lg object-cover"
+                                    alt="Retail Store">
                                 <div>
                                     <h4 class="font-outfit font-bold text-sm">Retail Store - Kochi</h4>
                                     <p class="text-xs text-gray-500">Indoor LED Screen</p>
                                 </div>
                             </div>
-                            <svg class="w-5 h-5 text-gray-400 group-hover:text-[#a855f7] transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-[#a855f7] transform group-hover:translate-x-1 transition-all"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
                         </div>
                         <!-- List Item 3 -->
-                        <div class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group">
+                        <div
+                            class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group">
                             <div class="flex items-center gap-4">
-                                <img src="./images/hero3.jpg" class="w-16 h-12 rounded-lg object-cover" alt="Event Stage">
+                                <img src="./images/hero3.jpg" class="w-16 h-12 rounded-lg object-cover"
+                                    alt="Event Stage">
                                 <div>
                                     <h4 class="font-outfit font-bold text-sm">Event Stage - Calicut</h4>
                                     <p class="text-xs text-gray-500">Rental LED Screen</p>
                                 </div>
                             </div>
-                            <svg class="w-5 h-5 text-gray-400 group-hover:text-[#3b82f6] transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-[#3b82f6] transform group-hover:translate-x-1 transition-all"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <button class="bg-gradient-btn rounded-full text-sm font-semibold flex items-center justify-center gap-2" style="padding: 16px 36px; width: fit-content;">
+                    <button
+                        class="bg-gradient-btn rounded-full text-sm font-semibold flex items-center justify-center gap-2"
+                        style="padding: 16px 36px; width: fit-content;">
                         View Our Projects &rarr;
                     </button>
                 </div>
@@ -307,55 +415,108 @@
     </section>
 
     <!-- Our Numbers -->
-    <section class="relative overflow-hidden" style="padding: 6rem 0; background-color: #050608; background-image: linear-gradient(to right, rgba(5,6,8,1) 0%, rgba(5,6,8,0.95) 35%, rgba(5,6,8,0.7) 65%, rgba(5,6,8,0.2) 100%), url('./images/3.png'); background-size: cover; background-position: center;">
-        
+    <section class="relative overflow-hidden"
+        style="padding: 6rem 0; background-color: #050608; background-image: linear-gradient(to right, rgba(5,6,8,1) 0%, rgba(5,6,8,0.95) 35%, rgba(5,6,8,0.7) 65%, rgba(5,6,8,0.2) 100%), url('./images/3.png'); background-size: cover; background-position: center;">
+
         <style>
-            .numbers-layout { display: flex; align-items: center; justify-content: space-between; flex-direction: row; width: 100%; }
-            .numbers-title { width: 25%; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 2.5rem; }
-            .numbers-stats { width: 75%; display: flex; justify-content: space-around; padding-left: 2.5rem; flex-wrap: wrap; }
+            .numbers-layout {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                width: 100%;
+            }
+
+            .numbers-title {
+                width: 25%;
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                padding-right: 2.5rem;
+            }
+
+            .numbers-stats {
+                width: 75%;
+                display: flex;
+                justify-content: space-around;
+                padding-left: 2.5rem;
+                flex-wrap: wrap;
+            }
+
             @media (max-width: 1024px) {
-                .numbers-layout { flex-direction: column; gap: 3rem; }
-                .numbers-title { width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-right: 0; padding-bottom: 2rem; text-align: center; }
-                .numbers-stats { width: 100%; padding-left: 0; gap: 2rem; }
+                .numbers-layout {
+                    flex-direction: column;
+                    gap: 3rem;
+                }
+
+                .numbers-title {
+                    width: 100%;
+                    border-right: none;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    padding-right: 0;
+                    padding-bottom: 2rem;
+                    text-align: center;
+                }
+
+                .numbers-stats {
+                    width: 100%;
+                    padding-left: 0;
+                    gap: 2rem;
+                }
             }
         </style>
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 numbers-layout">
             <!-- Title Block -->
             <div class="numbers-title">
                 <h2 class="text-3xl font-outfit font-bold text-white mb-2">Our Numbers</h2>
-                <p class="text-xs text-gray-400 leading-relaxed mx-auto lg:mx-0" style="max-width: 220px;">A track record of delivering impactful visual solutions.</p>
+                <p class="text-xs text-gray-400 leading-relaxed mx-auto lg:mx-0" style="max-width: 220px;">A track
+                    record of delivering impactful visual solutions.</p>
             </div>
 
             <!-- Stats Container -->
             <div class="numbers-stats">
                 <!-- Stat 1 -->
                 <div class="flex flex-col items-start">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);">
-                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+                        style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
                     </div>
                     <h3 class="text-3xl font-outfit font-bold text-white mb-1">500+</h3>
                     <p class="text-[11px] text-gray-400">Projects Completed</p>
                 </div>
                 <!-- Stat 2 -->
                 <div class="flex flex-col items-start">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);">
-                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+                        style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                     </div>
                     <h3 class="text-3xl font-outfit font-bold text-white mb-1">200+</h3>
                     <p class="text-[11px] text-gray-400">Happy Clients</p>
                 </div>
                 <!-- Stat 3 -->
                 <div class="flex flex-col items-start">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);">
-                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+                        style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                     </div>
                     <h3 class="text-3xl font-outfit font-bold text-white mb-1">50+</h3>
                     <p class="text-[11px] text-gray-400">Cities Covered</p>
                 </div>
                 <!-- Stat 4 -->
                 <div class="flex flex-col items-start">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);">
-                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+                        style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                     </div>
                     <h3 class="text-3xl font-outfit font-bold text-white mb-1">8+</h3>
                     <p class="text-[11px] text-gray-400">Years of Experience</p>
@@ -364,95 +525,207 @@
         </div>
     </section>
 
-    <!-- Trusted By -->
-    <section class="py-16 bg-white text-black border-b border-gray-100">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
-                <div>
-                    <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">TRUSTED BY</p>
-                    <h3 class="text-2xl font-outfit font-bold">Leading Brands & Businesses</h3>
+    <!-- Trusted By Dark Premium Layout -->
+    <section class="trusted-dark-section">
+        <div class="trusted-dark-container">
+            <!-- Header Row -->
+            <div class="trusted-header-row">
+                <div class="trusted-text-content">
+                    <div class="trusted-eyebrow">
+                        <span class="eyebrow-line"></span> TRUSTED BY
+                    </div>
+                    <h2 class="trusted-title">Leading <span class="text-gradient-purple">Brands & Businesses</span></h2>
+                    <p class="trusted-subtitle">We're proud to partner with global brands and innovative
+                        businesses<br>that trust us to bring their vision to life through powerful LED solutions.</p>
                 </div>
-                <a href="#" class="text-xs font-semibold text-[#3b82f6] hover:text-[#a855f7] flex items-center gap-1 transition-colors">
-                    View All Clients &rarr;
-                </a>
+
+                <div class="trusted-action">
+                    <a href="#" class="btn-outline-glow">
+                        View All Clients <span>&rarr;</span>
+                    </a>
+                </div>
             </div>
-            
-            <div class="flex flex-wrap justify-between items-center gap-8 opacity-60">
-                <span class="text-xl font-black tracking-tighter">TATA</span>
-                <span class="text-xl font-bold italic text-blue-800">Reliance</span>
-                <span class="text-lg font-bold text-blue-900 border border-blue-900 px-2 rounded-sm">HDFC BANK</span>
-                <span class="text-xl font-black text-red-600">airtel</span>
-                <span class="text-2xl font-black text-blue-600 tracking-tighter">SAMSUNG</span>
-                <span class="text-xl font-bold">amazon</span>
-                <span class="text-xl font-serif italic font-bold text-red-600">Coca-Cola</span>
-                <span class="text-xl font-bold tracking-widest">adidas</span>
+
+            <!-- Logos Carousel -->
+            <div class="trusted-carousel-wrapper">
+                <button class="nav-arrow left">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <div class="logos-track owl-carousel owl-theme">
+                    <div class="logo-card">
+                        <div class="logo-icon-span">
+                            <svg viewBox="0 0 40 40" style="width:28px;height:28px;">
+                                <path
+                                    d="M20 10 C14 10 10 14 10 14 L15 14 L15 30 L25 30 L25 14 L30 14 C30 14 26 10 20 10 Z"
+                                    fill="white" />
+                            </svg>
+                            <span class="tracking-widest" style="font-weight: 900;">TATA</span>
+                        </div>
+                    </div>
+                    <div class="logo-card">
+                        <div class="logo-icon-span">
+                            <svg viewBox="0 0 40 40" style="width:28px;height:28px;">
+                                <circle cx="20" cy="20" r="10" stroke="white" stroke-width="3" fill="none" />
+                                <path d="M18 15 L22 25 M22 15 L18 25" stroke="white" stroke-width="2" />
+                            </svg>
+                            <span class="font-serif italic font-normal text-lg">Reliance</span>
+                        </div>
+                    </div>
+                    <div class="logo-card">
+                        <div class="logo-icon-span flex-row gap-2" style="flex-direction: row; align-items: center;">
+                            <div class="w-5 h-5 border-2 border-white flex items-center justify-center p-0.5"
+                                style="width:20px;height:20px;">
+                                <div class="w-full h-full bg-white" style="width:100%;height:100%;"></div>
+                            </div>
+                            <span class="font-black text-sm uppercase">HDFC BANK</span>
+                        </div>
+                    </div>
+                    <div class="logo-card active-card">
+                        <div class="logo-icon-span flex-row gap-2" style="flex-direction: row; align-items: center;">
+                            <svg viewBox="0 0 30 30" style="width:24px;height:24px;">
+                                <path d="M5 25 C5 10 15 5 25 15 C20 15 15 20 15 25" stroke="white" stroke-width="4"
+                                    fill="none" stroke-linecap="round" />
+                            </svg>
+                            <span class="font-bold lowercase text-xl tracking-tight">airtel</span>
+                        </div>
+                    </div>
+                    <div class="logo-card">
+                        <div class="logo-icon-span">
+                            <span class="font-black text-2xl tracking-tighter"
+                                style="font-family: Arial, sans-serif;">SAMSUNG</span>
+                        </div>
+                    </div>
+                    <div class="logo-card">
+                        <div class="logo-icon-span relative" style="position: relative;">
+                            <span class="font-bold lowercase text-2xl tracking-tighter"
+                                style="line-height: 1;">amazon</span>
+                            <svg class="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 100 20"
+                                style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 12px;">
+                                <path d="M10 5 Q 50 20 90 5" stroke="white" stroke-width="2" fill="none"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="logo-card">
+                        <div class="logo-icon-span">
+                            <span class="font-serif italic text-3xl"
+                                style="font-family: 'Georgia', serif;">Coca-Cola</span>
+                        </div>
+                    </div>
+                    <div class="logo-card">
+                        <div class="logo-icon-span" style="flex-direction: column;">
+                            <svg viewBox="0 0 40 30" style="width:40px;height:24px;">
+                                <path d="M5 30 L15 10 L25 30 Z M15 30 L25 15 L35 30 Z M25 30 L32 20 L40 30 Z"
+                                    fill="white" />
+                            </svg>
+                            <span class="font-bold lowercase text-sm mt-1" style="margin-top: 4px;">adidas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="nav-arrow right">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Our Process -->
-    <section class="relative overflow-hidden bg-white text-black" style="color: #000000; padding-top: 8rem; padding-bottom: 8rem; background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 55%, rgba(255, 255, 255, 0) 80%), linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/4.png'); background-size: cover; background-position: right center;">
+    <section class="relative overflow-hidden bg-white text-black"
+        style="color: #000000; padding-top: 8rem; padding-bottom: 8rem; background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 55%, rgba(255, 255, 255, 0) 80%), linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/4.png'); background-size: cover; background-position: right center;">
 
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
             <!-- Decorative Handwritten Text on the right -->
             <div class="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 rotate-[-5deg] z-20">
-                <p style="font-family: 'Brush Script MT', 'Caveat', cursive; font-size: 3.5rem; color: #ffffff; line-height: 1.1; text-shadow: 0px 4px 20px rgba(0,0,0,0.8);">Your Vision<br>Our Setup</p>
+                <p
+                    style="font-family: 'Brush Script MT', 'Caveat', cursive; font-size: 3.5rem; color: #ffffff; line-height: 1.1; text-shadow: 0px 4px 20px rgba(0,0,0,0.8);">
+                    Your Vision<br>Our Setup</p>
             </div>
-            
+
             <div style="width: 100%; max-width: 65%; position: relative; z-index: 30;">
                 <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 mb-3">OUR PROCESS</p>
                 <h2 class="text-4xl md:text-5xl font-outfit font-black mb-4">From Concept to On-Screen</h2>
-                <p class="text-gray-500 text-sm mb-16">We make the entire process simple, transparent and hassle-free.</p>
-    
+                <p class="text-gray-500 text-sm mb-16">We make the entire process simple, transparent and hassle-free.
+                </p>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Step 1 -->
-                <div class="relative group">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-[#3b82f6] group-hover:border-[#3b82f6]/30 transition-all">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                    <!-- Step 1 -->
+                    <div class="relative group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-[#3b82f6] group-hover:border-[#3b82f6]/30 transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-300 font-outfit font-black text-2xl">01</span>
                         </div>
-                        <span class="text-gray-300 font-outfit font-black text-2xl">01</span>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2">Consultation</h4>
-                    <p class="text-gray-500 text-xs leading-relaxed">Understand your needs and goals.</p>
-                    <div class="hidden lg:block absolute top-6 left-16 right-4 border-t border-dashed border-gray-200"></div>
-                </div>
-                <!-- Step 2 -->
-                <div class="relative group">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-[#a855f7] group-hover:border-[#a855f7]/30 transition-all">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                        <h4 class="font-bold text-lg mb-2">Consultation</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Understand your needs and goals.</p>
+                        <div
+                            class="hidden lg:block absolute top-6 left-16 right-4 border-t border-dashed border-gray-200">
                         </div>
-                        <span class="text-gray-300 font-outfit font-black text-2xl">02</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Design</h4>
-                    <p class="text-gray-500 text-xs leading-relaxed">Create the perfect visual solution.</p>
-                    <div class="hidden lg:block absolute top-6 left-16 right-4 border-t border-dashed border-gray-200"></div>
-                </div>
-                <!-- Step 3 -->
-                <div class="relative group">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-[#3b82f6] group-hover:border-[#3b82f6]/30 transition-all">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <!-- Step 2 -->
+                    <div class="relative group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-[#a855f7] group-hover:border-[#a855f7]/30 transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-300 font-outfit font-black text-2xl">02</span>
                         </div>
-                        <span class="text-gray-300 font-outfit font-black text-2xl">03</span>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2">Installation</h4>
-                    <p class="text-gray-500 text-xs leading-relaxed">Professional setup and testing.</p>
-                    <div class="hidden lg:block absolute top-6 left-16 right-4 border-t border-dashed border-gray-200"></div>
-                </div>
-                <!-- Step 4 -->
-                <div class="relative group">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-[#a855f7] group-hover:border-[#a855f7]/30 transition-all">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        <h4 class="font-bold text-lg mb-2">Design</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Create the perfect visual solution.</p>
+                        <div
+                            class="hidden lg:block absolute top-6 left-16 right-4 border-t border-dashed border-gray-200">
                         </div>
-                        <span class="text-gray-300 font-outfit font-black text-2xl">04</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Support</h4>
-                    <p class="text-gray-500 text-xs leading-relaxed">Ongoing support when you need it.</p>
-                </div>
-            </div> <!-- Close grid -->
+                    <!-- Step 3 -->
+                    <div class="relative group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-[#3b82f6] group-hover:border-[#3b82f6]/30 transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-300 font-outfit font-black text-2xl">03</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Installation</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Professional setup and testing.</p>
+                        <div
+                            class="hidden lg:block absolute top-6 left-16 right-4 border-t border-dashed border-gray-200">
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:text-[#a855f7] group-hover:border-[#a855f7]/30 transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-300 font-outfit font-black text-2xl">04</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Support</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Ongoing support when you need it.</p>
+                    </div>
+                </div> <!-- Close grid -->
             </div> <!-- Close 65% width container -->
         </div>
     </section>
@@ -461,16 +734,21 @@
     <section class="py-24 bg-[#0a0b10] relative z-10 border-t border-white/5">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
-                
+
                 <div class="lg:w-1/3">
-                    <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-3">CLIENT TESTIMONIALS</p>
-                    <h2 class="text-4xl md:text-5xl font-outfit font-black mb-4">What Our Clients <span class="text-gradient">Say</span></h2>
-                    <p class="text-gray-400 text-sm mb-8">Trusted by businesses, event organizers and brands worldwide.</p>
+                    <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-3">CLIENT TESTIMONIALS
+                    </p>
+                    <h2 class="text-4xl md:text-5xl font-outfit font-black mb-4">What Our Clients <span
+                            class="text-gradient">Say</span></h2>
+                    <p class="text-gray-400 text-sm mb-8">Trusted by businesses, event organizers and brands worldwide.
+                    </p>
                     <div class="flex gap-4">
-                        <button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+                        <button
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
                             &larr;
                         </button>
-                        <button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+                        <button
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
                             &rarr;
                         </button>
                     </div>
@@ -479,8 +757,12 @@
                 <div class="lg:w-2/3 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Testimonial 1 -->
                     <div class="bg-white rounded-2xl p-6 text-black shadow-xl">
-                        <svg class="w-6 h-6 text-[#3b82f6] mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        <p class="text-sm font-medium leading-relaxed mb-6">"Lumière transformed our product launch. The LED screen quality was outstanding and the team was incredibly professional."</p>
+                        <svg class="w-6 h-6 text-[#3b82f6] mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                        <p class="text-sm font-medium leading-relaxed mb-6">"Lumière transformed our product launch. The
+                            LED screen quality was outstanding and the team was incredibly professional."</p>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
                                 <img src="./images/retail.jpg" class="w-full h-full object-cover" alt="Avatar">
@@ -494,8 +776,12 @@
                     </div>
                     <!-- Testimonial 2 -->
                     <div class="bg-white rounded-2xl p-6 text-black shadow-xl">
-                        <svg class="w-6 h-6 text-[#a855f7] mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        <p class="text-sm font-medium leading-relaxed mb-6">"We've worked with many vendors, but Lumière stands out for their quality, support and attention to detail."</p>
+                        <svg class="w-6 h-6 text-[#a855f7] mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                        <p class="text-sm font-medium leading-relaxed mb-6">"We've worked with many vendors, but Lumière
+                            stands out for their quality, support and attention to detail."</p>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
                                 <img src="./images/corporate.jpg" class="w-full h-full object-cover" alt="Avatar">
@@ -509,8 +795,12 @@
                     </div>
                     <!-- Testimonial 3 -->
                     <div class="bg-white rounded-2xl p-6 text-black shadow-xl hidden md:block">
-                        <svg class="w-6 h-6 text-[#3b82f6] mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                        <p class="text-sm font-medium leading-relaxed mb-6">"The best LED screen experience we've had. Crystal clear visuals and on-time installation."</p>
+                        <svg class="w-6 h-6 text-[#3b82f6] mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                        <p class="text-sm font-medium leading-relaxed mb-6">"The best LED screen experience we've had.
+                            Crystal clear visuals and on-time installation."</p>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
                                 <img src="./images/hero3.jpg" class="w-full h-full object-cover" alt="Avatar">
@@ -534,7 +824,8 @@
             <img src="./images/hero2.jpg" class="w-full h-full object-cover opacity-10" alt="Concert Background">
             <div class="absolute inset-0 bg-gradient-to-r from-[#10121a] via-[#10121a]/80 to-transparent"></div>
         </div>
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div
+            class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
             <div>
                 <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">READY TO GET STARTED?</p>
                 <h2 class="text-3xl md:text-4xl font-outfit font-black mb-2">Let's Bring Your Vision to Life</h2>
@@ -544,7 +835,8 @@
                 <button class="bg-gradient-btn px-10 py-4 rounded-full text-sm font-semibold">
                     Get a Quote &rarr;
                 </button>
-                <button class="px-10 py-4 rounded-full text-sm font-semibold border border-white/20 hover:bg-white hover:text-black transition-all">
+                <button
+                    class="px-10 py-4 rounded-full text-sm font-semibold border border-white/20 hover:bg-white hover:text-black transition-all">
                     Contact Us
                 </button>
             </div>
@@ -555,10 +847,12 @@
     <footer class="py-10 bg-[#050608] border-t border-white/5">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-[#a855f7]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15 9H22L16.5 14L18.5 21L12 16.5L5.5 21L7.5 14L2 9H9L12 2Z"/></svg>
+                <svg class="w-5 h-5 text-[#a855f7]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L15 9H22L16.5 14L18.5 21L12 16.5L5.5 21L7.5 14L2 9H9L12 2Z" />
+                </svg>
                 <span class="text-xl font-outfit font-black tracking-widest text-white">LUMIÈRE</span>
             </div>
-            
+
             <div class="flex gap-6 text-xs text-gray-400 font-medium">
                 <a href="#" class="hover:text-white transition-colors">Home</a>
                 <a href="#" class="hover:text-white transition-colors">Solutions</a>
@@ -569,11 +863,20 @@
             </div>
 
             <div class="flex items-center gap-4 text-gray-400">
-                <a href="#" class="hover:text-white"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
-                <a href="#" class="hover:text-white"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                <a href="#" class="hover:text-white"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="#" class="hover:text-white"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg></a>
+                <a href="#" class="hover:text-white"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg></a>
+                <a href="#" class="hover:text-white"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg></a>
             </div>
-            
+
             <div class="text-[10px] text-gray-500">
                 &copy; 2026 Lumière. All rights reserved.
             </div>
@@ -584,6 +887,101 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
     <script src="./main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var owl = $('.logos-track');
+            owl.owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: false, // Using our custom arrows
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 2 },
+                    600: { items: 4 },
+                    1000: { items: 6 }
+                }
+            });
+
+            // Custom Navigation Events
+            $('.nav-arrow.right').click(function () {
+                owl.trigger('next.owl.carousel');
+            });
+            $('.nav-arrow.left').click(function () {
+                owl.trigger('prev.owl.carousel');
+            });
+
+            // Keep the premium entrance animation
+            if (typeof gsap !== 'undefined') {
+                gsap.from('.owl-item', {
+                    scrollTrigger: {
+                        trigger: '.trusted-dark-section',
+                        start: "top 85%"
+                    },
+                    y: 40,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "back.out(1.2)"
+                });
+                // Cinematic & Interactive Hero Background Animation
+                if (document.querySelector('.hero-bg-layer')) {
+                    // Initial entrance
+                    gsap.fromTo('.hero-bg-layer', 
+                        { scale: 1.2, filter: 'blur(10px)' },
+                        { scale: 1, filter: 'blur(0px)', duration: 3, ease: 'power3.out' }
+                    );
+                    
+                    // Interactive Mouse Parallax (Makes the screen FEEL like it's moving)
+                    const heroSection = document.querySelector('.hero-bg-layer').parentElement.parentElement;
+                    
+                    heroSection.addEventListener("mousemove", (e) => {
+                        // Calculate mouse position relative to center of screen (-0.5 to 0.5)
+                        const xPos = (e.clientX / window.innerWidth - 0.5) * 60; 
+                        const yPos = (e.clientY / window.innerHeight - 0.5) * 60;
+                        
+                        // Move the background slightly opposite to mouse, with subtle 3D tilt
+                        gsap.to('.hero-bg-layer', {
+                            x: xPos,
+                            y: yPos,
+                            rotation: xPos * 0.05,
+                            scale: 1.05, // keep slightly scaled so edges don't show when panning
+                            duration: 1.5,
+                            ease: "power2.out"
+                        });
+                    });
+
+                    // When mouse leaves, slowly return to center and breathe
+                    heroSection.addEventListener("mouseleave", () => {
+                        gsap.to('.hero-bg-layer', {
+                            x: 0,
+                            y: 0,
+                            rotation: 0,
+                            scale: 1,
+                            duration: 3,
+                            ease: "power2.inOut"
+                        });
+                    });
+
+                    // Staggered entrance for hero text
+                    gsap.from('.hero-content-layer > div > *', {
+                        y: 40,
+                        opacity: 0,
+                        duration: 1,
+                        stagger: 0.15,
+                        ease: 'power3.out',
+                        delay: 0.5
+                    });
+                }}
+        });
+    </script>
 </body>
+
 </html>
+
