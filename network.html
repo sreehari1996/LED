@@ -13,7 +13,15 @@
         rel="stylesheet">
 </head>
 
-<body class="bg-[#030303] text-white font-inter">
+<body class="bg-[#030303] text-white font-inter overflow-x-hidden">
+    <style>
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100vw !important;
+            width: 100% !important;
+            position: relative;
+        }
+    </style>
     <div class="noise-overlay"></div>
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div
@@ -41,7 +49,7 @@
                     Advertise
                 </a>
             </div>
-            <button class="lg:hidden text-white">
+            <button id="mobile-menu-open" class="lg:hidden text-white">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -49,17 +57,44 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu Drawer (Inline Styles - No Tailwind dependency) -->
+    <div id="mobile-menu" style="position: fixed; inset: 0; z-index: 200; display: none;">
+        <!-- Overlay -->
+        <div id="mobile-menu-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); opacity: 0; transition: opacity 0.3s ease;"></div>
+        <!-- Panel -->
+        <div id="mobile-menu-panel" style="position: absolute; top: 0; right: 0; width: 80%; max-width: 320px; height: 100%; background: #0a0a0a; border-left: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; padding: 2rem; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);">
+            <!-- Header -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
+                <span style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.25rem; letter-spacing: 0.15em; color: #fff;">LUMINA</span>
+                <button id="mobile-menu-close" style="color: #9ca3af; background: none; border: none; cursor: pointer; padding: 0.25rem;">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <!-- Links -->
+            <nav style="display: flex; flex-direction: column; gap: 1.5rem; flex: 1;">
+                <a href="index.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Home</a>
+                <a href="about.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">About</a>
+                <a href="network.html" style="color: #ffffff; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Our Screens</a>
+                <a href="advertise.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Advertise</a>
+                <a href="partners.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Partners</a>
+                <a href="projects.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Projects</a>
+                <a href="contact.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Contact</a>
+            </nav>
+            <!-- CTAs -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; padding-top: 2rem;">
+                <a href="contact.html" style="padding: 0.75rem 1.5rem; border-radius: 9999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; border: 1px solid rgba(255,255,255,0.2); color: #fff; text-align: center; text-decoration: none;">Get an LED Wall</a>
+                <a href="advertise.html" style="padding: 0.75rem 1.5rem; border-radius: 9999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; background: #ffffff; color: #000; text-align: center; text-decoration: none;">Advertise</a>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Hero Section -->
-    <section class="relative min-h-[450px] pt-40 pb-20 flex items-center network-hero-bg">
+    <section class="relative min-h-[450px] flex items-center network-hero-bg" style="padding-top: clamp(6rem, 15vh, 10rem); padding-bottom: 5rem;">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full">
             <div class="max-w-2xl network-hero-content">
-                <div class="flex items-center gap-3 mb-6 nh-tag">
-                    <div class="w-8 h-[2px] bg-blue-500 nh-tag-line origin-left transform"></div>
-                    <p class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-400 nh-tag-text">OUR GLOBAL REACH</p>
-                </div>
-                <h1
-                    class="text-6xl md:text-7xl lg:text-[80px] font-outfit font-black leading-[1.05] mb-6 tracking-tight nh-title">
+                <div class="flex items-center gap-3 mb-6 nh-tag" style="flex-wrap: wrap; overflow: hidden; max-width: 100%;"><div class="w-8 h-[2px] bg-blue-500 nh-tag-line origin-left transform shrink-0"></div><p class="text-[10px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em] font-semibold text-gray-400 nh-tag-text truncate">OUR GLOBAL REACH</p></div>
+                <h1 class="font-outfit font-black mb-6 tracking-tight nh-title" style="font-size: clamp(2.5rem, 10vw, 5rem); line-height: 1.05; overflow-wrap: break-word; word-break: break-word;">
                     <span class="overflow-hidden inline-block pb-2"><span class="inline-block nh-word">Connecting Brands.</span></span><br>
                     <span class="overflow-hidden inline-block pb-2"><span class="inline-block nh-word">Everywhere <span class="text-gradient">You Look.</span></span></span>
                 </h1>
@@ -67,16 +102,7 @@
                     Discover our rapidly expanding network of 150+ premium digital displays across major metropolitan
                     hubs. Unleash the power of high-impact advertising globally.
                 </p>
-                <div class="flex flex-wrap gap-4 nh-buttons">
-                    <a href="#network-map"
-                        class="bg-gradient-btn px-10 py-4 rounded-full text-base font-semibold flex items-center gap-2 transition-all">
-                        Explore Screens &rarr;
-                    </a>
-                    <a href="advertise.html"
-                        class="px-10 py-4 rounded-full text-base font-semibold border border-white/20 hover:bg-white/10 flex items-center gap-2 transition-all">
-                        Start a Campaign
-                    </a>
-                </div>
+                <div class="flex gap-4 nh-buttons" style="flex-wrap: wrap; width: 100%; max-width: 500px;"><a href="#network-map" class="bg-gradient-btn px-6 py-4 rounded-full text-sm md:text-base font-semibold flex items-center justify-center gap-2 transition-all" style="flex: 1 1 200px;">Explore Screens &rarr;</a><a href="advertise.html" class="px-6 py-4 rounded-full text-sm md:text-base font-semibold border border-white/20 hover:bg-white/10 flex items-center justify-center gap-2 transition-all" style="flex: 1 1 200px;">Start a Campaign</a></div>
             </div>
         </div>
     </section>
@@ -621,8 +647,7 @@
     </footer>
 
     <!-- Mobile Sticky Action Bar -->
-    <div
-        class="fixed bottom-0 left-0 w-full z-50 md:hidden glass-panel border-t border-white/10 p-4 flex justify-between gap-2 backdrop-blur-3xl bg-[#030303]/90">
+    <div class="fixed bottom-0 left-0 w-full z-50 md:hidden glass-panel border-t border-white/10 p-4 flex justify-between gap-2" style="background-color: rgba(3, 3, 3, 0.95); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);">
         <a href="tel:+1234567890"
             class="flex-1 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 text-white">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
