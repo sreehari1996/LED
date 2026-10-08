@@ -36,6 +36,16 @@
             box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
             transform: translateY(-1px);
         }
+
+        /* Equal height cards for OwlCarousel */
+        .testimonials-carousel .owl-stage {
+            display: flex;
+            align-items: stretch;
+        }
+        .testimonials-carousel .owl-item {
+            display: flex;
+            align-items: stretch;
+        }
     </style>
 
     <!-- Navbar -->
@@ -82,24 +92,29 @@
             <div class="hero-bg-layer"></div>
         </div>
         <!-- Gradient Overlay -->
-        <div class="absolute inset-0 z-0 pointer-events-none" style="background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 10%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.1) 100%);"></div>
-        
+        <div class="absolute inset-0 z-0 pointer-events-none"
+            style="background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 10%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.1) 100%);">
+        </div>
+
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full hero-content-layer">
-            <div class="max-w-2xl">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-[2px] bg-[#a855f7]"></div>
-                    <p class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-300">LED SCREEN SOLUTIONS</p>
+            <div class="max-w-2xl about-hero-content">
+                <div class="flex items-center gap-3 mb-6 ah-tag">
+                    <div class="w-8 h-[2px] bg-[#a855f7] ah-tag-line origin-left transform"></div>
+                    <p class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-300 ah-tag-text">LED SCREEN
+                        SOLUTIONS</p>
                 </div>
                 <h1
-                    class="text-6xl md:text-7xl lg:text-[80px] font-outfit font-black leading-[1.05] mb-6 tracking-tight">
-                    Big Screens.<br>
-                    Bigger <span class="text-gradient">Impressions.</span>
+                    class="text-6xl md:text-7xl lg:text-[80px] font-outfit font-black leading-[1.05] mb-6 tracking-tight ah-title">
+                    <span class="overflow-hidden inline-block pb-2"><span class="inline-block ah-word">Big
+                            Screens.</span></span><br>
+                    <span class="overflow-hidden inline-block pb-2"><span class="inline-block ah-word">Bigger <span
+                                class="text-gradient">Impressions.</span></span></span>
                 </h1>
-                <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-xl">
+                <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-xl ah-desc">
                     We design, supply and install high-quality LED screens for events, retail, corporate and public
                     spaces. Turn your ideas into stunning visual experiences.
                 </p>
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap gap-4 ah-buttons">
                     <button
                         class="bg-gradient-btn px-10 py-4 rounded-full text-base font-semibold flex items-center gap-2">
                         Get a Quote &rarr;
@@ -119,9 +134,10 @@
     </section>
 
     <!-- About Us -->
-    <section id="about" class="bg-white text-black relative" style="padding-top: 8rem; padding-bottom: 8rem;">
+    <section id="about" class="bg-white text-black relative stagger-section"
+        style="padding-top: 8rem; padding-bottom: 8rem;">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 items-center" style="gap: 4rem;">
-            <div>
+            <div class="gsap-fade-up">
                 <p class="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-4">ABOUT US</p>
                 <h2 class="text-4xl md:text-5xl font-outfit font-black leading-tight mb-6">
                     Visual Technology<br>
@@ -157,7 +173,8 @@
                     }
                 </style>
                 <div class="grid grid-cols-2 gap-y-8 mb-10 custom-features-grid">
-                    <div class="flex flex-col items-center justify-center pr-4 feature-border-r feature-item-first">
+                    <div
+                        class="flex flex-col items-center justify-center pr-4 feature-border-r feature-item-first stagger-card">
                         <div
                             class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,7 +185,7 @@
                         <span class="text-[13px] font-semibold leading-tight text-gray-800 text-center">Premium<br>LED
                             Displays</span>
                     </div>
-                    <div class="flex flex-col items-center justify-center feature-border-r">
+                    <div class="flex flex-col items-center justify-center feature-border-r stagger-card">
                         <div
                             class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -181,7 +198,7 @@
                         <span
                             class="text-[13px] font-semibold leading-tight text-gray-800 text-center">Expert<br>Installation</span>
                     </div>
-                    <div class="flex flex-col items-center justify-center feature-border-r">
+                    <div class="flex flex-col items-center justify-center feature-border-r stagger-card">
                         <div
                             class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,7 +209,8 @@
                         <span
                             class="text-[13px] font-semibold leading-tight text-gray-800 text-center">24/7<br>Support</span>
                     </div>
-                    <div class="flex flex-col items-center justify-center feature-border-r feature-item-last">
+                    <div
+                        class="flex flex-col items-center justify-center feature-border-r feature-item-last stagger-card">
                         <div
                             class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 bg-transparent mb-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -213,7 +231,7 @@
             </div>
 
             <!-- Right Image with Floating Card -->
-            <div class="relative">
+            <div class="relative gsap-fade-up">
                 <div class="rounded-2xl overflow-hidden shadow-2xl">
                     <img src="./images/hero3.jpg" alt="About Us Stage" class="w-full h-auto object-cover aspect-[4/3]">
                 </div>
@@ -239,10 +257,10 @@
     </section>
 
     <!-- Our Solutions -->
-    <section id="solutions" class="bg-[#0a0b10] border-t border-white/5 relative z-10"
+    <section id="solutions" class="bg-[#0a0b10] border-t border-white/5 relative z-10 stagger-section"
         style="padding-top: 8rem; padding-bottom: 8rem;">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 gsap-fade-up">
                 <div>
                     <p class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-500 mb-3">OUR SOLUTIONS</p>
                     <h2 class="text-4xl md:text-5xl font-outfit font-black">
@@ -259,7 +277,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
-                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group"
+                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group stagger-card"
                     style="background-color: #121319;">
                     <div class="h-40 overflow-hidden">
                         <img src="./images/retail.jpg"
@@ -274,7 +292,7 @@
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group"
+                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group stagger-card"
                     style="background-color: #121319;">
                     <div class="h-40 overflow-hidden">
                         <img src="./images/led_billboard.jpg"
@@ -289,7 +307,7 @@
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group"
+                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group stagger-card"
                     style="background-color: #121319;">
                     <div class="h-40 overflow-hidden">
                         <img src="./images/hero3.jpg"
@@ -304,7 +322,7 @@
                     </div>
                 </div>
                 <!-- Card 4 -->
-                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group"
+                <div class="rounded-2xl overflow-hidden border border-white/5 hover:border-white/20 transition-all group stagger-card"
                     style="background-color: #121319;">
                     <div class="h-40 overflow-hidden">
                         <img src="./images/hero_macro.jpg"
@@ -323,11 +341,11 @@
     </section>
 
     <!-- Featured Projects -->
-    <section id="projects" class="py-24 bg-white text-black">
+    <section id="projects" class="py-24 bg-white text-black stagger-section">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Left Image -->
-                <div class="rounded-3xl overflow-hidden shadow-2xl relative group">
+                <div class="rounded-3xl overflow-hidden shadow-2xl relative group gsap-fade-up">
                     <img src="./images/Neon Reflections Over a Futuristic Boulevard.png" alt="Projects"
                         class="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -341,7 +359,7 @@
                 </div>
 
                 <!-- Right Content -->
-                <div>
+                <div class="gsap-fade-up">
                     <p class="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-4">FEATURED PROJECTS</p>
                     <h2 class="text-4xl md:text-5xl font-outfit font-black leading-tight mb-6">
                         Real Screens. <span class="text-gradient">Real Impact.</span>
@@ -353,7 +371,7 @@
                     <div class="flex flex-col gap-4 mb-10">
                         <!-- List Item 1 -->
                         <div
-                            class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group">
+                            class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group stagger-card">
                             <div class="flex items-center gap-4">
                                 <img src="./images/led_billboard.jpg" class="w-16 h-12 rounded-lg object-cover"
                                     alt="Billboard">
@@ -370,7 +388,7 @@
                         </div>
                         <!-- List Item 2 -->
                         <div
-                            class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group">
+                            class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group stagger-card">
                             <div class="flex items-center gap-4">
                                 <img src="./images/retail.jpg" class="w-16 h-12 rounded-lg object-cover"
                                     alt="Retail Store">
@@ -387,7 +405,7 @@
                         </div>
                         <!-- List Item 3 -->
                         <div
-                            class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group">
+                            class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all cursor-pointer group stagger-card">
                             <div class="flex items-center gap-4">
                                 <img src="./images/hero3.jpg" class="w-16 h-12 rounded-lg object-cover"
                                     alt="Event Stage">
@@ -744,19 +762,19 @@
                     </p>
                     <div class="flex gap-4">
                         <button
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+                            class="testi-prev w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
                             &larr;
                         </button>
                         <button
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+                            class="testi-next w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
                             &rarr;
                         </button>
                     </div>
                 </div>
 
-                <div class="lg:w-2/3 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="lg:w-2/3 min-w-0 overflow-hidden owl-carousel testimonials-carousel">
                     <!-- Testimonial 1 -->
-                    <div class="bg-white rounded-2xl p-6 text-black shadow-xl">
+                    <div class="bg-white rounded-2xl p-6 text-black shadow-xl h-full flex flex-col justify-between">
                         <svg class="w-6 h-6 text-[#3b82f6] mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
@@ -775,7 +793,7 @@
                         </div>
                     </div>
                     <!-- Testimonial 2 -->
-                    <div class="bg-white rounded-2xl p-6 text-black shadow-xl">
+                    <div class="bg-white rounded-2xl p-6 text-black shadow-xl h-full flex flex-col justify-between">
                         <svg class="w-6 h-6 text-[#a855f7] mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
@@ -794,7 +812,7 @@
                         </div>
                     </div>
                     <!-- Testimonial 3 -->
-                    <div class="bg-white rounded-2xl p-6 text-black shadow-xl hidden md:block">
+                    <div class="bg-white rounded-2xl p-6 text-black shadow-xl h-full flex flex-col justify-between">
                         <svg class="w-6 h-6 text-[#3b82f6] mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
@@ -888,100 +906,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
 
-    <script src="./main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var owl = $('.logos-track');
-            owl.owlCarousel({
-                loop: true,
-                margin: 20,
-                nav: false, // Using our custom arrows
-                dots: false,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: { items: 2 },
-                    600: { items: 4 },
-                    1000: { items: 6 }
-                }
-            });
-
-            // Custom Navigation Events
-            $('.nav-arrow.right').click(function () {
-                owl.trigger('next.owl.carousel');
-            });
-            $('.nav-arrow.left').click(function () {
-                owl.trigger('prev.owl.carousel');
-            });
-
-            // Keep the premium entrance animation
-            if (typeof gsap !== 'undefined') {
-                gsap.from('.owl-item', {
-                    scrollTrigger: {
-                        trigger: '.trusted-dark-section',
-                        start: "top 85%"
-                    },
-                    y: 40,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "back.out(1.2)"
-                });
-                // Cinematic & Interactive Hero Background Animation
-                if (document.querySelector('.hero-bg-layer')) {
-                    // Initial entrance
-                    gsap.fromTo('.hero-bg-layer', 
-                        { scale: 1.2, filter: 'blur(10px)' },
-                        { scale: 1, filter: 'blur(0px)', duration: 3, ease: 'power3.out' }
-                    );
-                    
-                    // Interactive Mouse Parallax (Makes the screen FEEL like it's moving)
-                    const heroSection = document.querySelector('.hero-bg-layer').parentElement.parentElement;
-                    
-                    heroSection.addEventListener("mousemove", (e) => {
-                        // Calculate mouse position relative to center of screen (-0.5 to 0.5)
-                        const xPos = (e.clientX / window.innerWidth - 0.5) * 60; 
-                        const yPos = (e.clientY / window.innerHeight - 0.5) * 60;
-                        
-                        // Move the background slightly opposite to mouse, with subtle 3D tilt
-                        gsap.to('.hero-bg-layer', {
-                            x: xPos,
-                            y: yPos,
-                            rotation: xPos * 0.05,
-                            scale: 1.05, // keep slightly scaled so edges don't show when panning
-                            duration: 1.5,
-                            ease: "power2.out"
-                        });
-                    });
-
-                    // When mouse leaves, slowly return to center and breathe
-                    heroSection.addEventListener("mouseleave", () => {
-                        gsap.to('.hero-bg-layer', {
-                            x: 0,
-                            y: 0,
-                            rotation: 0,
-                            scale: 1,
-                            duration: 3,
-                            ease: "power2.inOut"
-                        });
-                    });
-
-                    // Staggered entrance for hero text
-                    gsap.from('.hero-content-layer > div > *', {
-                        y: 40,
-                        opacity: 0,
-                        duration: 1,
-                        stagger: 0.15,
-                        ease: 'power3.out',
-                        delay: 0.5
-                    });
-                }}
-        });
-    </script>
+    <script src="./main.js"></script>
 </body>
 
 </html>
-
