@@ -3752,6 +3752,7 @@ a,
     .partner-left-col { width: 33% !important; padding-right: 40px !important; }
     .partner-right-col { width: 67% !important; padding-top: 15px !important; }
     .partner-grid-2 { grid-template-columns: 1fr 2.5fr !important; }
+    .partner-grid-3 { grid-template-columns: 1fr 1fr 1fr !important; gap: 1.5rem; }
 }
 @media (max-width: 1023px) {
     .partner-left-col { width: 100% !important; padding-right: 0 !important; margin-bottom: 2rem !important; }
