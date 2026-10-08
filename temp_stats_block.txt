@@ -1,0 +1,27 @@
+            <!-- RIGHT: Statistics List -->
+            <div class="gsap-fade-up relative z-10" style="flex: 1 1 12%; min-width: 160px; display: flex; flex-direction: column; gap: 0; justify-content: center;">
+                <!-- Stat 1 -->
+                <div style="padding: 2rem 0 2rem 2.5rem; border-left: 2px solid transparent; background-image: linear-gradient(white, white), linear-gradient(to bottom, #3b82f6, #9333ea); background-origin: border-box; background-clip: padding-box, border-box; position: relative; margin-left: 1rem;">
+                    <div style="position: absolute; top: 50%; left: -0.45rem; transform: translateY(-50%); width: 0.8rem; height: 0.8rem; border-radius: 9999px; background: linear-gradient(to bottom, #3b82f6, #9333ea);"></div>
+                    <h3 class="font-outfit" style="font-weight: 900; line-height: 1; margin: 0 0 0.6rem 0; font-size: 3rem; letter-spacing: -0.04em; color: #0f172a;">150<span style="font-size: 1.75rem; color: #3b82f6;">+</span></h3>
+                    <p style="color: #94a3b8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin: 0;">Projects Delivered</p>
+                </div>
+                <!-- Stat 2 -->
+                <div style="padding: 2rem 0 2rem 2.5rem; border-left: 2px solid transparent; background-image: linear-gradient(white, white), linear-gradient(to bottom, #6366f1, #8b5cf6); background-origin: border-box; background-clip: padding-box, border-box; position: relative; margin-left: 1rem;">
+                    <div style="position: absolute; top: 50%; left: -0.45rem; transform: translateY(-50%); width: 0.8rem; height: 0.8rem; border-radius: 9999px; background: linear-gradient(to bottom, #6366f1, #8b5cf6);"></div>
+                    <h3 class="font-outfit" style="font-weight: 900; line-height: 1; margin: 0 0 0.6rem 0; font-size: 3rem; letter-spacing: -0.04em; color: #0f172a;">25<span style="font-size: 1.75rem; color: #6366f1;">+</span></h3>
+                    <p style="color: #94a3b8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin: 0;">Cities</p>
+                </div>
+                <!-- Stat 3 -->
+                <div style="padding: 2rem 0 2rem 2.5rem; border-left: 2px solid transparent; background-image: linear-gradient(white, white), linear-gradient(to bottom, #8b5cf6, #a855f7); background-origin: border-box; background-clip: padding-box, border-box; position: relative; margin-left: 1rem;">
+                    <div style="position: absolute; top: 50%; left: -0.45rem; transform: translateY(-50%); width: 0.8rem; height: 0.8rem; border-radius: 9999px; background: linear-gradient(to bottom, #8b5cf6, #a855f7);"></div>
+                    <h3 class="font-outfit" style="font-weight: 900; line-height: 1; margin: 0 0 0.6rem 0; font-size: 3rem; letter-spacing: -0.04em; color: #0f172a;">12<span style="font-size: 1.75rem; color: #8b5cf6;">+</span></h3>
+                    <p style="color: #94a3b8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin: 0;">Industries</p>
+                </div>
+                <!-- Stat 4 -->
+                <div style="padding: 2rem 0 2rem 2.5rem; border-left: 2px solid transparent; background-image: linear-gradient(white, white), linear-gradient(to bottom, #a855f7, #ec4899); background-origin: border-box; background-clip: padding-box, border-box; position: relative; margin-left: 1rem;">
+                    <div style="position: absolute; top: 50%; left: -0.45rem; transform: translateY(-50%); width: 0.8rem; height: 0.8rem; border-radius: 9999px; background: linear-gradient(to bottom, #a855f7, #ec4899);"></div>
+                    <h3 class="font-outfit" style="font-weight: 900; line-height: 1; margin: 0 0 0.6rem 0; font-size: 3rem; letter-spacing: -0.04em; color: #0f172a;">99<span style="font-size: 1.75rem; color: #a855f7;">%</span></h3>
+                    <p style="color: #94a3b8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin: 0;">Client Satisfaction</p>
+                </div>
+            </div>

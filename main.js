@@ -5,28 +5,35 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize Lenis for premium smooth scrolling
   const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth ease out
-    direction: 'vertical',
-    gestureDirection: 'vertical',
-    smooth: true,
-    mouseMultiplier: 1,
+    duration: 1.1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
     smoothTouch: false,
     touchMultiplier: 2,
     infinite: false,
   });
 
-  // Sync GSAP ScrollTrigger with Lenis
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-  gsap.ticker.lagSmoothing(0);
+  // Sync GSAP ScrollTrigger with Lenis using RAF loop (correct pattern)
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
 
-  // Navbar blur effect
+  lenis.on('scroll', ScrollTrigger.update);
+  ScrollTrigger.scrollerProxy(document.body, {
+    scrollTop(value) {
+      return arguments.length ? lenis.scrollTo(value, { immediate: true }) : lenis.scroll;
+    },
+    getBoundingClientRect() {
+      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    }
+  });
+
+  // Navbar blur effect — use Lenis scroll event (not native) to avoid conflict
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+  lenis.on('scroll', ({ scroll }) => {
+    if (scroll > 50) {
       navbar.classList.add('bg-[#030303]/80', 'backdrop-blur-xl', 'border-white/10');
       navbar.classList.remove('bg-transparent', 'border-transparent');
     } else {
