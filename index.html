@@ -57,13 +57,44 @@
                     Advertise
                 </a>
             </div>
-            <button class="lg:hidden text-white">
+            <button id="mobile-menu-open" class="lg:hidden text-white">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Drawer (Inline Styles - No Tailwind dependency) -->
+    <div id="mobile-menu" style="position: fixed; inset: 0; z-index: 200; display: none;">
+        <!-- Overlay -->
+        <div id="mobile-menu-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); opacity: 0; transition: opacity 0.3s ease;"></div>
+        <!-- Panel -->
+        <div id="mobile-menu-panel" style="position: absolute; top: 0; right: 0; width: 80%; max-width: 320px; height: 100%; background: #0a0a0a; border-left: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; padding: 2rem; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);">
+            <!-- Header -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
+                <span style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.25rem; letter-spacing: 0.15em; color: #fff;">LUMINA</span>
+                <button id="mobile-menu-close" style="color: #9ca3af; background: none; border: none; cursor: pointer; padding: 0.25rem;">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <!-- Links -->
+            <nav style="display: flex; flex-direction: column; gap: 1.5rem; flex: 1;">
+                <a href="index.html" style="color: #ffffff; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Home</a>
+                <a href="about.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">About</a>
+                <a href="network.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Our Screens</a>
+                <a href="advertise.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Advertise</a>
+                <a href="partners.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Partners</a>
+                <a href="projects.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Projects</a>
+                <a href="contact.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Contact</a>
+            </nav>
+            <!-- CTAs -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; padding-top: 2rem;">
+                <a href="contact.html" style="padding: 0.75rem 1.5rem; border-radius: 9999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; border: 1px solid rgba(255,255,255,0.2); color: #fff; text-align: center; text-decoration: none;">Get an LED Wall</a>
+                <a href="advertise.html" style="padding: 0.75rem 1.5rem; border-radius: 9999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; background: #ffffff; color: #000; text-align: center; text-decoration: none;">Advertise</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section (Next-Gen Spatial Layout) -->
     <section id="hero" class="relative h-screen flex flex-col justify-center overflow-hidden bg-black z-10">
@@ -142,12 +173,12 @@
     </section>
 
     <!-- Core Ecosystem (Matches Reference Image Exactly - Bulletproof Inline Layout v2) -->
-    <section id="ecosystem" class="relative z-20 w-full overflow-hidden bg-white text-black font-inter pt-32 pb-16">
+    <section id="ecosystem" class="relative z-20 w-full overflow-hidden bg-white text-black font-inter" style="padding: clamp(4rem, 8vw, 8rem) 0 clamp(2rem, 4vw, 4rem);">
         <!-- TOP SECTION -->
-        <div class="relative" style="max-width: 1400px; margin: 0 auto; padding: 0 3rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4rem; margin-bottom: 6rem;">
+        <div class="relative" style="max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(2rem, 4vw, 4rem); margin-bottom: clamp(2rem, 5vw, 6rem);">
             
             <!-- LEFT: Text & Features Grid -->
-            <div class="gsap-fade-up relative z-10" style="flex: 1 1 32%; min-width: 320px;">
+            <div class="gsap-fade-up relative z-10" style="flex: 1 1 300px; min-width: 280px;">
                 <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
                     <div style="width: 2.5rem; height: 2px; background: linear-gradient(to right, #3b82f6, #a855f7);"></div>
                     <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; font-weight: 800; color: #9ca3af; margin: 0;">Core Ecosystem</p>
@@ -156,14 +187,14 @@
                     Two Paths.<br>
                     Endless <span style="background: linear-gradient(to right, #2563eb, #9333ea); -webkit-background-clip: text; color: transparent;">Scale.</span>
                 </h2>
-                <p style="color: #6b7280; margin-bottom: 3rem; max-width: 26rem; font-size: 14px; line-height: 1.7;">
+                <p style="color: #6b7280; margin-bottom: 2rem; max-width: 26rem; font-size: 14px; line-height: 1.7;">
                     Whether you need a bespoke architectural display or want to reach millions on our existing network, we provide the ultimate digital canvas.
                 </p>
 
-                <!-- 2x2 Feature Grid -->
-                <div style="display: flex; flex-wrap: wrap; gap: 2.5rem 1.5rem; margin-bottom: 3.5rem;">
+                <!-- 2x2 Feature Grid - responsive: 1 col mobile, 2 col desktop -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.75rem 1.5rem; margin-bottom: 2.5rem;">
                     <!-- Feature 1 -->
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 0.75rem);">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
                         <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background-color: #f3e8ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                             <svg style="width: 1.25rem; height: 1.25rem; color: #9333ea;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </div>
@@ -173,17 +204,17 @@
                         </div>
                     </div>
                     <!-- Feature 2 -->
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 0.75rem);">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
                         <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background-color: #eff6ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                             <svg style="width: 1.25rem; height: 1.25rem; color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                         </div>
                         <div>
-                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.25rem 0;">3D & Motion Design</h4>
+                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.25rem 0;">3D &amp; Motion Design</h4>
                             <p style="color: #9ca3af; font-size: 11px; margin: 0;">Ideas in motion.</p>
                         </div>
                     </div>
                     <!-- Feature 3 -->
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 0.75rem);">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
                         <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background-color: #f0fdfa; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                             <svg style="width: 1.25rem; height: 1.25rem; color: #14b8a6;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
@@ -193,7 +224,7 @@
                         </div>
                     </div>
                     <!-- Feature 4 -->
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 0.75rem);">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
                         <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background-color: #fdf2f8; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                             <svg style="width: 1.25rem; height: 1.25rem; color: #ec4899;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
                         </div>
@@ -204,14 +235,16 @@
                     </div>
                 </div>
 
-                <button style="padding: 1rem 2.5rem; border-radius: 9999px; font-weight: 800; text-transform: uppercase; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 0.75rem; font-size: 11px; letter-spacing: 0.15em; color: #0f172a; cursor: pointer; background: transparent; transition: all 0.3s ease;">
-                    Explore Our Ecosystem 
-                    <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </button>
+                <div style="margin-top: 1rem; margin-bottom: 2rem;">
+                    <button style="padding: 1rem 2.5rem; border-radius: 9999px; font-weight: 800; text-transform: uppercase; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 0.75rem; font-size: 11px; letter-spacing: 0.15em; color: #0f172a; cursor: pointer; background: transparent; transition: all 0.3s ease;">
+                        Explore Our Ecosystem 
+                        <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </button>
+                </div>
             </div>
 
             <!-- CENTER: 3D Stacked Cards -->
-            <div class="relative gsap-fade-up" style="flex: 1 1 40%; height: 500px; min-width: 400px; display: flex; justify-content: center; align-items: center;">
+            <div class="relative gsap-fade-up" style="flex: 1 1 340px; min-width: 280px; height: clamp(320px, 40vw, 500px); display: flex; justify-content: center; align-items: center;">
                 
                 <!-- Background decorative rings -->
                 <div class="absolute inset-0 z-0 overflow-hidden" style="pointer-events: none;">
@@ -257,8 +290,8 @@
         </div>
 
         <!-- BOTTOM SECTION (Light Gray Background Strip) -->
-        <div style="width: 100%; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; padding: 5rem 0; background-color: #f8fafc;">
-            <div class="relative" style="max-width: 1400px; margin: 0 auto; padding: 0 3rem; display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;">
+        <div style="width: 100%; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; padding: clamp(4rem, 8vw, 5rem) 0; background-color: #f8fafc;">
+            <div class="relative" style="max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); display: flex; flex-wrap: wrap; gap: clamp(3rem, 6vw, 4rem); align-items: center;">
                 
                 <!-- LEFT: Our Advantage -->
                 <div class="gsap-fade-up" style="flex: 1 1 28%; min-width: 300px;">
@@ -276,8 +309,8 @@
                 </div>
 
                 <!-- MIDDLE: Smaller Features Grid -->
-                <div class="gsap-fade-up" style="flex: 1 1 32%; min-width: 320px; display: flex; flex-wrap: wrap; gap: 3rem 2rem;">
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 1rem);">
+                <div class="gsap-fade-up" style="flex: 1 1 32%; min-width: 280px; display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 2rem 1.5rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
                         <div style="margin-top: 0.25rem; flex-shrink: 0; color: #9333ea;">
                             <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
@@ -286,7 +319,7 @@
                             <p style="color: #9ca3af; line-height: 1.6; font-size: 11px; margin: 0;">Brilliant visuals, built<br>to last.</p>
                         </div>
                     </div>
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 1rem);">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
                         <div style="margin-top: 0.25rem; flex-shrink: 0; color: #3b82f6;">
                             <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                         </div>
@@ -295,7 +328,7 @@
                             <p style="color: #9ca3af; line-height: 1.6; font-size: 11px; margin: 0;">Skilled professionals<br>with years of experience.</p>
                         </div>
                     </div>
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 1rem);">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
                         <div style="margin-top: 0.25rem; flex-shrink: 0; color: #1d4ed8;">
                             <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         </div>
@@ -304,7 +337,7 @@
                             <p style="color: #9ca3af; line-height: 1.6; font-size: 11px; margin: 0;">From planning to<br>performance.</p>
                         </div>
                     </div>
-                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 1rem);">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
                         <div style="margin-top: 0.25rem; flex-shrink: 0; color: #06b6d4;">
                             <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
                         </div>
@@ -854,7 +887,7 @@
 
     <!-- Mobile Sticky Action Bar (Section 19) -->
     <div
-        class="fixed bottom-0 left-0 w-full z-50 md:hidden glass-panel border-t border-white/10 p-4 flex justify-between gap-2 backdrop-blur-3xl bg-[#030303]/90">
+        class="fixed bottom-0 left-0 w-full z-50 md:hidden glass-panel border-t border-white/10 p-4 flex justify-between gap-2" style="background-color: rgba(3, 3, 3, 0.95); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);">
         <a href="tel:+1234567890"
             class="flex-1 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 text-white">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -917,6 +950,7 @@
                 }
             });
         });
+    </script>
     </script>
 </body>
 

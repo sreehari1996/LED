@@ -34,11 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
   lenis.on('scroll', ({ scroll }) => {
     if (scroll > 50) {
-      navbar.classList.add('bg-[#030303]/80', 'backdrop-blur-xl', 'border-white/10');
-      navbar.classList.remove('bg-transparent', 'border-transparent');
+      navbar.style.backgroundColor = 'rgba(3, 3, 3, 0.85)';
+      navbar.style.backdropFilter = 'blur(16px)';
+      navbar.style.WebkitBackdropFilter = 'blur(16px)';
+      navbar.style.borderColor = 'rgba(255, 255, 255, 0.1)';
     } else {
-      navbar.classList.remove('bg-[#030303]/80', 'backdrop-blur-xl', 'border-white/10');
-      navbar.classList.add('bg-transparent', 'border-transparent');
+      navbar.style.backgroundColor = 'transparent';
+      navbar.style.backdropFilter = 'none';
+      navbar.style.WebkitBackdropFilter = 'none';
+      navbar.style.borderColor = 'transparent';
     }
   });
 
@@ -522,5 +526,34 @@ document.addEventListener('DOMContentLoaded', () => {
         testiOwl.trigger('prev.owl.carousel');
       });
     }
+  }
+
+  // Mobile Menu
+  const mobileMenuEl = document.getElementById('mobile-menu');
+  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const mobileMenuOpenBtn = document.getElementById('mobile-menu-open');
+  const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+
+  if (mobileMenuEl && mobileMenuOpenBtn) {
+    function openMobileMenu() {
+      mobileMenuEl.style.display = 'block';
+      requestAnimationFrame(() => {
+        mobileMenuOverlay.style.opacity = '1';
+        mobileMenuPanel.style.transform = 'translateX(0)';
+      });
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileMenu() {
+      mobileMenuOverlay.style.opacity = '0';
+      mobileMenuPanel.style.transform = 'translateX(100%)';
+      setTimeout(() => {
+        mobileMenuEl.style.display = 'none';
+      }, 350);
+      document.body.style.overflow = '';
+    }
+    mobileMenuOpenBtn.addEventListener('click', openMobileMenu);
+    if (mobileMenuCloseBtn) mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+    if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
   }
 });
