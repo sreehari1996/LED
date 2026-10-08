@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -141,205 +141,225 @@
         </div>
     </section>
 
-    <!-- Core Ecosystem (Dark — Matches Reference) -->
-    <section id="ecosystem" class="py-24 relative overflow-hidden bg-white border-b border-black/5 z-20 w-full">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-            <!-- LEFT: Text Content -->
-            <div>
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-[2px] bg-purple-600"></div>
-                    <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-600">Core Ecosystem</p>
+    <!-- Core Ecosystem (Matches Reference Image Exactly - Bulletproof Inline Layout v2) -->
+    <section id="ecosystem" class="relative z-20 w-full overflow-hidden bg-white text-black font-inter pt-32 pb-16">
+        <!-- TOP SECTION -->
+        <div class="relative" style="max-width: 1400px; margin: 0 auto; padding: 0 3rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4rem; margin-bottom: 6rem;">
+            
+            <!-- LEFT: Text & Features Grid -->
+            <div class="gsap-fade-up relative z-10" style="flex: 1 1 32%; min-width: 320px;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="width: 2.5rem; height: 2px; background: linear-gradient(to right, #3b82f6, #a855f7);"></div>
+                    <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; font-weight: 800; color: #9ca3af; margin: 0;">Core Ecosystem</p>
                 </div>
-                <h2
-                    class="text-4xl md:text-5xl lg:text-[3.5rem] font-outfit font-black leading-[1.05] mb-5 tracking-tight text-black">
+                <h2 class="font-outfit font-black" style="font-size: clamp(3rem, 4.5vw, 4.5rem); line-height: 1.05; letter-spacing: -0.03em; color: #0f172a; margin-bottom: 1.5rem;">
                     Two Paths.<br>
-                    Endless <span
-                        class="text-gradient-primary inline-block"
-                        style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">Scale.</span>
+                    Endless <span style="background: linear-gradient(to right, #2563eb, #9333ea); -webkit-background-clip: text; color: transparent;">Scale.</span>
                 </h2>
-                <p class="text-gray-600 mb-10 max-w-md text-sm md:text-[15px] leading-relaxed">
-                    Whether you need a bespoke architectural display or want to reach millions on our existing network,
-                    we provide the ultimate digital canvas.
+                <p style="color: #6b7280; margin-bottom: 3rem; max-width: 26rem; font-size: 14px; line-height: 1.7;">
+                    Whether you need a bespoke architectural display or want to reach millions on our existing network, we provide the ultimate digital canvas.
                 </p>
 
-                <!-- 2x2 Feature Grid — always 2 columns -->
-                <div class="grid grid-cols-2 gap-6 mb-10">
+                <!-- 2x2 Feature Grid -->
+                <div style="display: flex; flex-wrap: wrap; gap: 2.5rem 1.5rem; margin-bottom: 3.5rem;">
                     <!-- Feature 1 -->
-                    <div class="flex gap-3 items-start">
-                        <div
-                            class="w-10 h-10 rounded-xl bg-purple-600/10 text-purple-600 flex items-center justify-center shrink-0 border border-purple-600/20">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 0.75rem);">
+                        <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background-color: #f3e8ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg style="width: 1.25rem; height: 1.25rem; color: #9333ea;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-black text-[13px] mb-0.5">Hardware Integration</h4>
-                            <p class="text-[11px] text-gray-500 leading-relaxed">Custom bespoke displays.</p>
+                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.25rem 0;">Hardware Integration</h4>
+                            <p style="color: #9ca3af; font-size: 11px; margin: 0;">Custom bespoke displays.</p>
                         </div>
                     </div>
                     <!-- Feature 2 -->
-                    <div class="flex gap-3 items-start">
-                        <div
-                            class="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-600 flex items-center justify-center shrink-0 border border-blue-600/20">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 0.75rem);">
+                        <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background-color: #eff6ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg style="width: 1.25rem; height: 1.25rem; color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-black text-[13px] mb-0.5">3D & Motion Design</h4>
-                            <p class="text-[11px] text-gray-500 leading-relaxed">Ideas in motion.</p>
+                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.25rem 0;">3D & Motion Design</h4>
+                            <p style="color: #9ca3af; font-size: 11px; margin: 0;">Ideas in motion.</p>
                         </div>
                     </div>
                     <!-- Feature 3 -->
-                    <div class="flex gap-3 items-start">
-                        <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border"
-                            style="color: #0891b2; background-color: rgba(8, 145, 178, 0.1); border-color: rgba(8, 145, 178, 0.2);">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 0.75rem);">
+                        <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background-color: #f0fdfa; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg style="width: 1.25rem; height: 1.25rem; color: #14b8a6;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-black text-[13px] mb-0.5">Digital Media</h4>
-                            <p class="text-[11px] text-gray-500 leading-relaxed">Across every screen.</p>
+                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.25rem 0;">Digital Media</h4>
+                            <p style="color: #9ca3af; font-size: 11px; margin: 0;">Across every screen.</p>
                         </div>
                     </div>
                     <!-- Feature 4 -->
-                    <div class="flex gap-3 items-start">
-                        <div
-                            class="w-10 h-10 rounded-xl bg-purple-600/10 text-purple-600 flex items-center justify-center shrink-0 border border-purple-600/20">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
-                                </path>
-                            </svg>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 0.75rem);">
+                        <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background-color: #fdf2f8; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg style="width: 1.25rem; height: 1.25rem; color: #ec4899;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-black text-[13px] mb-0.5">End-to-End Support</h4>
-                            <p class="text-[11px] text-gray-500 leading-relaxed">From concept to launch.</p>
+                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.25rem 0;">End-to-End Support</h4>
+                            <p style="color: #9ca3af; font-size: 11px; margin: 0;">From concept to launch.</p>
                         </div>
                     </div>
                 </div>
 
-                <button
-                    class="px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest border border-black/20 bg-transparent hover:bg-black/5 text-black transition-all duration-300 flex items-center gap-3">
-                    Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
+                <button style="padding: 1rem 2.5rem; border-radius: 9999px; font-weight: 800; text-transform: uppercase; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 0.75rem; font-size: 11px; letter-spacing: 0.15em; color: #0f172a; cursor: pointer; background: transparent; transition: all 0.3s ease;">
+                    Explore Our Ecosystem 
+                    <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </button>
             </div>
 
-            <!-- RIGHT: Glass Panel Stack — matches reference shape exactly -->
-            <div class="flex justify-center items-center py-16">
-                <!-- Fixed-size scene wrapper so absolute children have real dimensions -->
-                <div style="position: relative; width: 380px; height: 320px;">
+            <!-- CENTER: 3D Stacked Cards -->
+            <div class="relative gsap-fade-up" style="flex: 1 1 40%; height: 500px; min-width: 400px; display: flex; justify-content: center; align-items: center;">
+                
+                <!-- Background decorative rings -->
+                <div class="absolute inset-0 z-0 overflow-hidden" style="pointer-events: none;">
+                    <div style="position: absolute; top: -10%; right: -10%; width: 600px; height: 600px; border: 1px solid #faf5ff; border-radius: 9999px;"></div>
+                    <div style="position: absolute; bottom: -10%; left: -10%; width: 500px; height: 500px; border: 1px solid #eff6ff; border-radius: 9999px;"></div>
+                </div>
 
-                    <!-- Ambient glow behind everything -->
-                    <div
-                        style="position:absolute; inset:-40px; background:radial-gradient(ellipse at center, rgba(99,60,220,0.55) 0%, rgba(37,99,235,0.25) 50%, transparent 75%); filter:blur(40px); z-index:0; border-radius:50%;">
-                    </div>
-
-                    <!-- Back Panel LEFT — tilted purple/fuchsia glass, peeks left & above -->
-                    <div style="
-                        position: absolute;
-                        width: 310px;
-                        height: 290px;
-                        top: -20px;
-                        left: -30px;
-                        background: linear-gradient(135deg, rgba(168,85,247,0.35) 0%, rgba(139,92,246,0.15) 100%);
-                        border: 1px solid rgba(192,132,252,0.4);
-                        border-radius: 28px;
-                        backdrop-filter: blur(12px);
-                        box-shadow: 0 0 60px rgba(139,92,246,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-                        transform: rotate(-10deg);
-                        z-index: 1;
-                    "></div>
-
-                    <!-- Back Panel RIGHT — tilted blue glass, peeks right & below -->
-                    <div style="
-                        position: absolute;
-                        width: 310px;
-                        height: 290px;
-                        bottom: -20px;
-                        right: -30px;
-                        background: linear-gradient(135deg, rgba(59,130,246,0.35) 0%, rgba(6,182,212,0.15) 100%);
-                        border: 1px solid rgba(96,165,250,0.4);
-                        border-radius: 28px;
-                        backdrop-filter: blur(12px);
-                        box-shadow: 0 0 60px rgba(59,130,246,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-                        transform: rotate(8deg);
-                        z-index: 1;
-                    "></div>
-
-                    <!-- Main Front Card -->
-                    <div class="group cursor-pointer" style="
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 300px;
-                        background: rgba(13,13,22,0.9);
-                        border: 1px solid rgba(255,255,255,0.12);
-                        border-radius: 24px;
-                        padding: 12px;
-                        box-shadow: 0 25px 80px rgba(0,0,0,0.8);
-                        z-index: 10;
-                    ">
-                        <!-- Image -->
-                        <div style="position:relative; border-radius:18px; overflow:hidden; aspect-ratio:4/3;">
-                            <img src="./images/billboard.jpg"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                alt="Media Network">
-                            <div
-                                style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);">
-                            </div>
-                            <!-- Badge -->
-                            <div
-                                style="position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);color:white;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 10px;border-radius:999px;display:flex;align-items:center;gap:5px;">
-                                <svg width="10" height="10" fill="#60a5fa" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 2l2.09 6.26L21 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                </svg>
-                                Branding &amp; Media
-                            </div>
-                            <!-- Ghost 02 -->
-                            <div
-                                style="position:absolute;top:8px;left:14px;font-family:'Outfit',sans-serif;font-size:3.5rem;font-weight:900;color:rgba(255,255,255,0.15);line-height:1;pointer-events:none;">
-                                02</div>
+                <!-- 3D Card Stack Container -->
+                <div style="position: relative; width: 100%; max-width: 550px; height: 380px; z-index: 10;">
+                    
+                    <!-- Card 3 (Back/Light Blue) -->
+                    <div style="position: absolute; right: -8%; top: -6%; width: 85%; height: 90%; border-radius: 1.25rem; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.8); background-color: #e0f2fe; z-index: 1;"></div>
+                    
+                    <!-- Card 2 (Middle/Blue) -->
+                    <div style="position: absolute; right: -4%; top: -3%; width: 90%; height: 95%; border-radius: 1.25rem; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.6); background-color: #bae6fd; z-index: 2;"></div>
+                    
+                    <!-- Card 1 (Front/Dark) -->
+                    <div class="group" style="position: absolute; right: 4%; top: 4%; width: 96%; height: 100%; border-radius: 1.25rem; overflow: hidden; background-color: #000; box-shadow: -10px 20px 40px rgba(0,0,0,0.25); z-index: 3;">
+                        <img src="./images/billboard.jpg" alt="Media Network" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s;">
+                        
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.3), transparent);"></div>
+                        
+                        <!-- Badge -->
+                        <div style="position: absolute; top: 1.5rem; left: 1.5rem; background: linear-gradient(to right, #a855f7, #3b82f6); border-radius: 9999px; padding: 0.35rem 1.25rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);">
+                            <span style="font-weight: 800; color: #fff; text-transform: uppercase; font-size: 9px; letter-spacing: 0.15em;">Branding & Media</span>
                         </div>
-                        <!-- Footer -->
-                        <div
-                            style="display:flex;justify-content:space-between;align-items:flex-end;padding:12px 8px 4px;">
+
+                        <!-- Content -->
+                        <div style="position: absolute; bottom: 2rem; left: 2rem; right: 2rem; display: flex; justify-content: space-between; align-items: flex-end;">
                             <div>
-                                <h3
-                                    style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:900;color:white;margin-bottom:3px;">
-                                    Media Network</h3>
-                                <p style="font-size:10px;color:#9ca3af;max-width:160px;line-height:1.5;">Creating
-                                    powerful digital campaigns for global brands.</p>
+                                <h3 class="font-outfit" style="font-weight: 800; font-size: 1.75rem; color: #fff; margin: 0 0 0.5rem 0;">Media Network</h3>
+                                <p style="color: #cbd5e1; font-size: 12px; max-width: 240px; margin: 0; line-height: 1.5;">Creating powerful digital campaigns for global brands.</p>
                             </div>
-                            <button class="hover:bg-white hover:text-black transition-all duration-300"
-                                style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);background:transparent;color:white;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;">
-                                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
+                            <button style="width: 2.75rem; height: 2.75rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; color: #fff; background: rgba(255,255,255,0.1); backdrop-filter: blur(4px); cursor: pointer; flex-shrink: 0;">
+                                <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </button>
                         </div>
                     </div>
-
                 </div>
             </div>
 
+            <!-- RIGHT: Statistics List -->
+            <div class="gsap-fade-up relative z-10" style="flex: 1 1 12%; min-width: 140px; display: flex; flex-direction: column; gap: 3rem; justify-content: center; padding-left: 3rem; border-left: 1px solid #e5e7eb;">
+                <div>
+                    <h3 class="font-outfit" style="font-weight: 900; line-height: 1; margin: 0 0 0.5rem 0; font-size: 2.25rem; color: #0f172a;">150+</h3>
+                    <p style="color: #6b7280; font-size: 11px; margin: 0; text-transform: capitalize;">Project Delivered</p>
+                </div>
+                <div>
+                    <h3 class="font-outfit" style="font-weight: 900; line-height: 1; margin: 0 0 0.5rem 0; font-size: 2.25rem; color: #0f172a;">25+</h3>
+                    <p style="color: #6b7280; font-size: 11px; margin: 0; text-transform: capitalize;">Cities</p>
+                </div>
+                <div>
+                    <h3 class="font-outfit" style="font-weight: 900; line-height: 1; margin: 0 0 0.5rem 0; font-size: 2.25rem; color: #0f172a;">12+</h3>
+                    <p style="color: #6b7280; font-size: 11px; margin: 0; text-transform: capitalize;">Industries</p>
+                </div>
+                <div>
+                    <h3 class="font-outfit" style="font-weight: 900; line-height: 1; margin: 0 0 0.5rem 0; font-size: 2.25rem; color: #0f172a;">99%</h3>
+                    <p style="color: #6b7280; font-size: 11px; margin: 0; text-transform: capitalize;">Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM SECTION (Light Gray Background Strip) -->
+        <div style="width: 100%; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; padding: 5rem 0; background-color: #f8fafc;">
+            <div class="relative" style="max-width: 1400px; margin: 0 auto; padding: 0 3rem; display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;">
+                
+                <!-- LEFT: Our Advantage -->
+                <div class="gsap-fade-up" style="flex: 1 1 28%; min-width: 300px;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 1.5rem; height: 2px; background-color: #2563eb;"></div>
+                        <p style="text-transform: uppercase; font-weight: 800; color: #9ca3af; font-size: 10px; letter-spacing: 0.25em; margin: 0;">Our Advantage</p>
+                    </div>
+                    <h2 class="font-outfit" style="font-weight: 900; line-height: 1.1; margin: 0 0 1.5rem 0; font-size: clamp(2rem, 3vw, 2.5rem); color: #0f172a;">
+                        More Than Displays.<br>
+                        <span style="background: linear-gradient(to right, #3b82f6, #9333ea); -webkit-background-clip: text; color: transparent;">Real Connections.</span>
+                    </h2>
+                    <p style="color: #6b7280; line-height: 1.7; font-size: 13px; max-width: 300px; margin: 0;">
+                        We combine creativity, technology and experience to deliver LED solutions that create real impact — for brands, cities and communities.
+                    </p>
+                </div>
+
+                <!-- MIDDLE: Smaller Features Grid -->
+                <div class="gsap-fade-up" style="flex: 1 1 32%; min-width: 320px; display: flex; flex-wrap: wrap; gap: 3rem 2rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 1rem);">
+                        <div style="margin-top: 0.25rem; flex-shrink: 0; color: #9333ea;">
+                            <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.5rem 0;">Premium Quality</h4>
+                            <p style="color: #9ca3af; line-height: 1.6; font-size: 11px; margin: 0;">Brilliant visuals, built<br>to last.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 1rem);">
+                        <div style="margin-top: 0.25rem; flex-shrink: 0; color: #3b82f6;">
+                            <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.5rem 0;">Expert Team</h4>
+                            <p style="color: #9ca3af; line-height: 1.6; font-size: 11px; margin: 0;">Skilled professionals<br>with years of experience.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 1rem);">
+                        <div style="margin-top: 0.25rem; flex-shrink: 0; color: #1d4ed8;">
+                            <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.5rem 0;">End-to-End Support</h4>
+                            <p style="color: #9ca3af; line-height: 1.6; font-size: 11px; margin: 0;">From planning to<br>performance.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: calc(50% - 1rem);">
+                        <div style="margin-top: 0.25rem; flex-shrink: 0; color: #06b6d4;">
+                            <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 800; color: #0f172a; font-size: 13px; margin: 0 0 0.5rem 0;">Creative Excellence</h4>
+                            <p style="color: #9ca3af; line-height: 1.6; font-size: 11px; margin: 0;">Turn ideas into<br>unforgettable visuals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Call to Action Image Card -->
+                <div class="gsap-fade-up" style="flex: 1 1 25%; min-width: 280px;">
+                    <div class="group" style="position: relative; width: 100%; height: 200px; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);">
+                        <img src="./images/hero4.jpg" alt="Next Project" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s;">
+                        
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(15,23,42,0.9), rgba(15,23,42,0.4), transparent);"></div>
+                        
+                        <div style="position: absolute; inset: 0; padding: 2rem; display: flex; flex-direction: column; justify-content: flex-end;">
+                            <p style="font-weight: 800; color: #9ca3af; text-transform: uppercase; margin: 0 0 0.5rem 0; font-size: 9px; letter-spacing: 0.25em;">Let's Create Together</p>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                                <h4 class="font-outfit" style="color: #fff; font-weight: 800; line-height: 1.25; font-size: 18px; max-width: 200px; margin: 0;">Ready to Illuminate<br>Your Next Project?</h4>
+                                <button style="width: 2.5rem; height: 2.5rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; background: rgba(255,255,255,0.1); cursor: pointer; backdrop-filter: blur(4px);">
+                                    <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
-
     <!-- Custom LED Solutions (Bento Box Grid) -->
+
+
+
+
     <section id="solutions" class="py-32 relative z-10 bg-[#020202] overflow-hidden">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
 
@@ -919,5 +939,9 @@
 </body>
 
 </html>
+
+
+
+
 
 
