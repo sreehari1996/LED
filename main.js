@@ -70,4 +70,65 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start auto-slide
     resetInterval();
   }
+
+  // Number Counting Animation
+  const counters = document.querySelectorAll('.stat-counter');
+
+  if (counters.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = +counter.getAttribute('data-target');
+          const duration = 2000; // 2 seconds
+          const increment = target / (duration / 16); // roughly 60fps
+
+          let current = 0;
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              counter.innerText = Math.ceil(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.innerText = target;
+            }
+          };
+
+          updateCounter();
+          observer.unobserve(counter); // Only animate once
+        }
+      });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  }
+
+  // Back to Top Button
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY || document.documentElement.scrollTop;
+      if (scrollPos > 400) {
+        backToTopBtn.style.opacity = '1';
+        backToTopBtn.style.transform = 'translateY(0)';
+        backToTopBtn.style.pointerEvents = 'auto';
+      } else {
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.transform = 'translateY(1rem)';
+        backToTopBtn.style.pointerEvents = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
