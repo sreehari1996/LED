@@ -159,7 +159,79 @@ document.addEventListener('DOMContentLoaded', () => {
         once: true
       });
     }
+  }
+  // Portfolio Filtering Logic
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
 
+  if (filterBtns.length > 0 && portfolioItems.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active styling from all buttons
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-[#0B1E36]', 'text-white');
+          b.classList.add('text-gray-500', 'hover:text-[#0B1E36]', 'hover:bg-gray-100');
+        });
+
+        // Add active styling to clicked button
+        btn.classList.add('bg-[#0B1E36]', 'text-white');
+        btn.classList.remove('text-gray-500', 'hover:text-[#0B1E36]', 'hover:bg-gray-100');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        // Filter items
+        portfolioItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+  // Testimonial Slider Logic
+  const testiSlider = document.getElementById('testimonial-slider');
+  const testiPrev = document.getElementById('testi-prev');
+  const testiNext = document.getElementById('testi-next');
+  
+  if (testiSlider && testiPrev && testiNext) {
+    let currentTestiSlide = 0;
+    const slides = testiSlider.children;
+    
+    function getMaxSlides() {
+      if (window.innerWidth >= 1024) return slides.length - 3;
+      if (window.innerWidth >= 768) return slides.length - 2;
+      return slides.length - 1;
     }
+    
+    function updateTestiSlider() {
+      const maxSlides = getMaxSlides();
+      if (currentTestiSlide > maxSlides) currentTestiSlide = maxSlides;
+      if (currentTestiSlide < 0) currentTestiSlide = 0;
+      
+      let slidePercentage = 100; // mobile
+      if (window.innerWidth >= 1024) slidePercentage = 33.333333; // lg
+      else if (window.innerWidth >= 768) slidePercentage = 50; // md
+      
+      testiSlider.style.transform = `translateX(-${currentTestiSlide * slidePercentage}%)`;
+    }
+
+    testiNext.addEventListener('click', () => {
+      const maxSlides = getMaxSlides();
+      if (currentTestiSlide < maxSlides) {
+        currentTestiSlide++;
+        updateTestiSlider();
+      }
+    });
+
+    testiPrev.addEventListener('click', () => {
+      if (currentTestiSlide > 0) {
+        currentTestiSlide--;
+        updateTestiSlider();
+      }
+    });
+    
+    window.addEventListener('resize', updateTestiSlider);
   }
 });
