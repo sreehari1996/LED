@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroCounter = document.getElementById('hero-counter');
 
   if (heroSlider && heroPrev && heroNext && heroCounter) {
-    const totalSlides = 3;
+    const totalSlides = 6;
     let currentSlide = 0;
     let slideInterval;
 
@@ -130,5 +130,34 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+
+  // GSAP Animations
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const nextStepsSection = document.getElementById('next-steps-section');
+    if (nextStepsSection) {
+      const cards = nextStepsSection.querySelectorAll('.grid > div');
+      
+      // Set initial state
+      gsap.set(cards, { y: 60, opacity: 0 });
+
+      // Animate on scroll
+      ScrollTrigger.create({
+        trigger: nextStepsSection,
+        start: 'top 80%',
+        onEnter: () => {
+          gsap.to(cards, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power3.out'
+          });
+        },
+        once: true
+      });
+    }
   }
 });
