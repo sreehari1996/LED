@@ -7,499 +7,149 @@
     <link href="./style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="./partners.scss" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#050508] text-white font-inter" style="overflow-x: hidden;">
-    <div class="noise-overlay"></div>
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div class="absolute top-[20%] left-[20%] w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[150px]"></div>
-        <div class="absolute bottom-[20%] right-[20%] w-[600px] h-[600px] rounded-full bg-purple-600/10 blur-[150px]"></div>
-    </div>
+
+<body class="bg-white text-[#111827] font-inter antialiased selection:bg-[#E5B05C] selection:text-white">
 
     <!-- Navbar -->
-        <nav class="fixed w-full z-50 transition-all duration-500 py-6 border-b border-transparent" id="navbar">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="index.html" class="flex items-center"><img src="./images/sanspng.png" alt="SANS GLOWMETRIC Logo" class="h-8 md:h-10 object-contain" style="height: 32px;"></a>
-            <div class="hidden lg:flex gap-8 text-sm font-medium text-gray-400">
-                <a href="index.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Home</a>
-                <a href="about.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">About</a>
-                <a href="index.html#led-solutions" class="hover:text-white transition-colors tracking-wide uppercase text-xs">LED Solutions</a>
-                <a href="advertise.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Advertise</a>
-                <a href="network.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Our Screens</a>
-                <a href="projects.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Projects</a>
-                <a href="contact.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Contact</a>
+    <nav class="w-full bg-white border-b border-gray-100 py-4 px-6 md:px-12 fixed top-0 z-[100]">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="./images/sanspng_dark.png" alt="Logo" class="h-8 object-contain">
+            </a>
+
+            <!-- Center Links -->
+            <div class="hidden lg:flex gap-8 text-[13px] font-medium text-gray-500">
+                <a href="index.html" class="hover:text-[#0B1E36] transition-colors pb-1">Home</a>
+                <a href="about.html" class="hover:text-[#0B1E36] transition-colors pb-1">About</a>
+                <a href="index.html#led-solutions" class="hover:text-[#0B1E36] transition-colors pb-1">LED Solutions</a>
+                <a href="advertise.html" class="hover:text-[#0B1E36] transition-colors pb-1">Advertise</a>
+                <a href="network.html" class="hover:text-[#0B1E36] transition-colors pb-1">Our Screens</a>
+                <a href="projects.html" class="hover:text-[#0B1E36] transition-colors pb-1">Projects</a>
+                <a href="contact.html" class="hover:text-[#0B1E36] transition-colors pb-1">Contact</a>
             </div>
-            <div class="hidden md:flex gap-3">
-                <a href="contact.html" class="px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300">
+
+            <!-- Right Buttons -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-5 py-2 rounded-sm text-[13px] font-semibold text-[#0B1E36] border border-gray-300 hover:border-[#0B1E36] transition-colors">
                     Get an LED Wall
                 </a>
-                <a href="advertise.html" class="px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white text-black hover:bg-cyan-400 hover:text-black hover:border-cyan-400 transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                <a href="advertise.html"
+                    class="px-6 py-2 rounded-sm text-[13px] font-semibold text-white bg-[#0B1E36] hover:bg-[#1a365d] transition-colors">
                     Advertise
                 </a>
             </div>
-            <button id="mobile-menu-open" class="lg:hidden text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[85vh] flex items-center pt-24 pb-20 bg-[#050508]" style="background-image: url('./images/bg-0.png'); background-size: cover; background-position: center;">
-        <!-- Gradients to match design -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#050508] via-[#050508]/80 to-transparent"></div>
-        <div class="absolute inset-0 bg-black/20"></div>
-
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full flex justify-between items-center">
-            
-            <!-- Left Content -->
-            <div class="max-w-xl pt-10">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="text-[10px] uppercase tracking-widest font-bold text-gray-400">PARTNERS</span>
-                    <div class="w-8 h-[1px] bg-gray-500"></div>
-                </div>
-                <h1 class="text-5xl md:text-7xl font-outfit font-black mb-6 leading-[1.1] text-white">
-                    Stronger Together. <br>
-                    <span style="background: linear-gradient(to right, #3b82f6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Greater Impact.</span>
-                </h1>
-                <p class="text-gray-300 text-lg mb-10 leading-relaxed font-light">
-                    We believe in the power of collaboration. Our partner network helps us bring innovative LED solutions to more brands, events and communities — creating unforgettable visual experiences, together.
-                </p>
-                <a href="#" class="inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm font-bold text-white transition-transform hover:scale-105" style="background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);">
-                    Become a Partner &rarr;
-                </a>
+    <section class="relative w-full overflow-hidden flex mt-[72px] bg-[#0B1E36] py-24 lg:py-32">
+        <div class="relative z-50 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col items-center text-center">
+            <!-- Eyebrow -->
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                <span class="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase">Partnerships</span>
+                <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
             </div>
 
-            <!-- Right Content (Floating Text) -->
-            <div class="hidden lg:flex flex-col gap-4 mt-20">
-                <p class="text-[10px] text-gray-400 tracking-[0.2em] font-medium leading-loose text-left">
-                    BETTER <br>
-                    TECHNOLOGY. <br>
-                    BIGGER <br>
-                    OPPORTUNITIES.
-                </p>
-                <div class="w-8 h-[1px] bg-gray-500"></div>
-            </div>
-            
+            <h1 class="font-bold text-white leading-[1.05] mb-6 tracking-tight text-4xl md:text-5xl lg:text-[56px] max-w-[800px]">
+                Stronger Together. <br> Greater Impact.
+            </h1>
+
+            <p class="text-gray-300 text-[15px] md:text-base mb-10 max-w-[600px] leading-relaxed">
+                We believe in the power of collaboration. Our partner network helps us bring innovative LED solutions to more brands, events and communities.
+            </p>
         </div>
     </section>
 
-    <!-- Why Partner With Us -->
-    <!-- Why Partner With Us -->
-    <style>
-        @media (min-width: 768px) {
-            .partner-divider { border-right: 1px solid #f3f4f6; }
-        }
-    </style>
-    <section class="py-24 bg-white" style="border-top: 10px solid #050508;">
+    <!-- Agency Partners Section -->
+    <section class="py-24 bg-white border-b border-gray-100">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            
-            <div class="flex flex-col lg:flex-row items-start">
-                <!-- Left text -->
-                <div class="w-full pt-2 partner-left-col">
-                    <span class="uppercase font-bold mb-6 block" style="font-size: 10px; letter-spacing: 0.2em; color: #8b5cf6;">WHY PARTNER WITH US</span>
-                    
-                    <h2 class="text-4xl md:text-5xl font-outfit font-black mb-4 leading-tight" style="color: #0a0a0f;">
-                        More Value. <br>
-                        <span style="background: linear-gradient(to right, #3b82f6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">More Possibilities.</span>
-                    </h2>
-                    <p class="mb-10 leading-relaxed" style="color: #6b7280; font-size: 13px;">
-                        When you partner with SANS GLOWMETRIC, you get more than just a product — you get a long-term collaboration built on trust, innovation and shared success.
-                    </p>
-                    
-                    <!-- Gradient Border Button -->
-                    <div style="display: inline-flex; padding: 1.5px; border-radius: 999px; background: linear-gradient(to right, #3b82f6, #ec4899);">
-                        <a href="#" class="inline-flex items-center gap-3 px-6 py-3 rounded-full font-bold transition-colors shadow-sm hover:shadow-md bg-white" style="color: #6d28d9; font-size: 14px;">
-                            Partner With Us &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right grid (using Flexbox) -->
-                <div class="w-full flex flex-col md:flex-row partner-right-col">
-                    <!-- Icon 1 -->
-                    <div class="flex-1 partner-divider" style="padding-right: 25px;">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-6" style="background-color: #f5f3ff; color: #4338ca;">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                        </div>
-                        <h4 class="font-bold mb-3" style="color: #0a0a0f; font-size: 13px;">Trusted Technology</h4>
-                        <p class="leading-relaxed" style="color: #6b7280; font-size: 12px;">Industry-leading LED solutions with proven reliability.</p>
-                    </div>
-                    <!-- Icon 2 -->
-                    <div class="flex-1 partner-divider" style="padding: 0 25px;">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-6" style="background-color: #f5f3ff; color: #4338ca;">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h4 class="font-bold mb-3" style="color: #0a0a0f; font-size: 13px;">Dedicated Support</h4>
-                        <p class="leading-relaxed" style="color: #6b7280; font-size: 12px;">From planning to execution, we're with you at every step.</p>
-                    </div>
-                    <!-- Icon 3 -->
-                    <div class="flex-1 partner-divider" style="padding: 0 25px;">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-6" style="background-color: #f5f3ff; color: #4338ca;">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                        </div>
-                        <h4 class="font-bold mb-3" style="color: #0a0a0f; font-size: 13px;">Shared Growth</h4>
-                        <p class="leading-relaxed" style="color: #6b7280; font-size: 12px;">More projects, more reach, more opportunities.</p>
-                    </div>
-                    <!-- Icon 4 -->
-                    <div class="flex-1" style="padding-left: 25px;">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-6" style="background-color: #f5f3ff; color: #4338ca;">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
-                        </div>
-                        <h4 class="font-bold mb-3" style="color: #0a0a0f; font-size: 13px;">Exclusive Access</h4>
-                        <p class="leading-relaxed" style="color: #6b7280; font-size: 12px;">Get early access to new products, updates and special partner programs.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Partners -->
-    <section class="py-24 bg-[#050508] relative border-y border-white/5">
-        <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute top-1/2 right-0 w-[800px] h-[800px] rounded-full bg-purple-900/10 blur-[120px] -translate-y-1/2"></div>
-        </div>
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-            <div class="grid items-center partner-grid-2" style="gap: 4rem;">
-                <!-- Left -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span class="text-[10px] uppercase tracking-widest font-bold text-gray-400 block mb-4">OUR PARTNERS</span>
-                    <h2 class="text-4xl md:text-5xl font-outfit font-black mb-4 text-white leading-tight">
-                        Trusted by Industry Leaders
+                    <span class="text-[#E5B05C] font-bold text-sm tracking-wider uppercase mb-4 block">For Agencies</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#0B1E36] mb-6 leading-tight">
+                        Advertising & Marketing Agencies
                     </h2>
-                    <p class="text-gray-400 mb-8 text-sm leading-relaxed">
-                        We collaborate with a diverse network of partners including event companies, AV integrators, creative agencies and technology providers.
+                    <p class="text-gray-500 mb-8 leading-relaxed">
+                        Present multi-client, multi-location campaign support and agency partnership opportunities. Access our agency dashboard to streamline your client campaigns and expand your digital out-of-home offerings.
                     </p>
-                    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold text-white border border-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300">
-                        View All Partners &rarr;
+                    <a href="contact.html" class="inline-block px-8 py-3 bg-[#0B1E36] text-white font-semibold rounded-sm hover:bg-[#1a365d] transition-colors">
+                        Become an Agency Partner
                     </a>
                 </div>
-                <!-- Right Logos -->
-                <div class="border-l border-white/10">
-                                                                                <div class="relative w-full max-w-4xl ml-auto">
-                        
-                        <!-- Main Grid Container -->
-                        <div style="position: relative; width: 100%; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
-                            
-                            <!-- Continuous Absolute Dividers -->
-                            <!-- Horizontal Line -->                            <div class="grid-hline" style="position: absolute; transform-origin: center left; top: 50%; left: 0; width: 100%; height: 1px; background-color: rgba(255,255,255,0.1); transform: translateY(-50%); z-index: 0;"></div>
-                            
-                            <!-- Vertical Lines (at 20%, 40%, 60%, 80%) -->                            <div class="grid-vline" style="position: absolute; transform-origin: top center; top: 0; bottom: 0; left: 20%; width: 1px; background-color: rgba(255,255,255,0.1); z-index: 0;"></div>
-                            <div class="grid-vline" style="position: absolute; transform-origin: top center; top: 0; bottom: 0; left: 40%; width: 1px; background-color: rgba(255,255,255,0.1); z-index: 0;"></div>
-                            <div class="grid-vline" style="position: absolute; transform-origin: top center; top: 0; bottom: 0; left: 60%; width: 1px; background-color: rgba(255,255,255,0.1); z-index: 0;"></div>
-                            <div class="grid-vline" style="position: absolute; transform-origin: top center; top: 0; bottom: 0; left: 80%; width: 1px; background-color: rgba(255,255,255,0.1); z-index: 0;"></div>
-
-                            <!-- Row 1 -->
-                            <div class="partner-logo-grid" style="width: 100%; position: relative; z-index: 10;">
-                                <!-- Logo 1 (TATA) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
-                                    <svg viewBox="0 0 40 40" style="width:32px;height:32px;"><path d="M20 10 C14 10 10 14 10 14 L15 14 L15 30 L25 30 L25 14 L30 14 C30 14 26 10 20 10 Z" fill="white"/></svg>
-                                    <span class="tracking-widest font-black text-[11px]">TATA</span>
-                                </div>
-                                
-                                <!-- Logo 2 (Reliance) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
-                                    <svg viewBox="0 0 40 40" style="width:32px;height:32px;"><circle cx="20" cy="20" r="10" stroke="white" stroke-width="3" fill="none"/><path d="M18 15 L22 25 M22 15 L18 25" stroke="white" stroke-width="2"/></svg>
-                                    <span class="font-serif italic font-normal text-sm">Reliance</span>
-                                </div>
-                                
-                                <!-- Logo 3 (airtel) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 6px;">
-                                    <svg viewBox="0 0 30 30" style="width:24px;height:24px;"><path d="M5 25 C5 10 15 5 25 15 C20 15 15 20 15 25" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
-                                    <span class="font-bold lowercase text-xl tracking-tight">airtel</span>
-                                </div>
-                                
-                                <!-- Logo 4 (SAMSUNG) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; align-items: center; justify-content: center;">
-                                    <span class="font-black text-xl tracking-tighter" style="font-family: Arial, sans-serif;">SAMSUNG</span>
-                                </div>
-                                
-                                <!-- Logo 5 (Coca-Cola) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; align-items: center; justify-content: center;">
-                                    <span class="font-serif italic text-[26px]" style="font-family: 'Georgia', serif;">Coca-Cola</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Row 2 -->
-                            <div class="partner-logo-grid" style="width: 100%; position: relative; z-index: 10;">
-                                <!-- Logo 6 (adidas) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
-                                    <svg viewBox="0 0 40 30" style="width:40px;height:24px;"><path d="M5 30 L15 10 L25 30 Z M15 30 L25 15 L35 30 Z M25 30 L32 20 L40 30 Z" fill="white"/></svg>
-                                    <span class="font-bold lowercase text-xs">adidas</span>
-                                </div>
-                                
-                                <!-- Logo 7 (amazon) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                    <div style="position: relative; display: inline-block;">
-                                        <span class="font-bold lowercase text-2xl tracking-tighter" style="line-height: 1;">amazon</span>
-                                        <svg style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 12px;" viewBox="0 0 100 20"><path d="M10 5 Q 50 20 90 5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-                                    </div>
-                                </div>
-                                
-                                <!-- Logo 8 (Deloitte.) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; align-items: center; justify-content: center;">
-                                    <span class="font-bold text-xl" style="font-family: Arial, sans-serif;">Deloitte.</span>
-                                </div>
-                                
-                                <!-- Logo 9 (TATA MOTORS) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; align-items: center; justify-content: center;">
-                                    <span class="font-black text-sm text-center font-outfit">TATA MOTORS</span>
-                                </div>
-                                
-                                <!-- Logo 10 (intel) -->
-                                <div class="partner-logo-item grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all cursor-pointer" style="padding: 50px 10px; display: flex; align-items: center; justify-content: center;">
-                                    <span class="font-normal text-2xl" style="font-family: 'Arial', sans-serif;">intel</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="relative">
+                    <img src="./images/screen-1.webp" alt="Agency Dashboard Montage" class="w-full h-auto rounded-lg shadow-xl object-cover aspect-[4/3] bg-gray-200">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Success Stories -->
-    <section class="py-24 bg-white">
-        <div class="mx-auto px-6 md:px-12" style="max-width: 1400px;">
-            <div class="grid items-start partner-grid-2" style="gap: 3rem;">
-                <!-- Left -->
-                <div>
-                    <span class="text-xs uppercase tracking-widest font-bold block mb-4" style="color: #6d28d9;">PARTNER SUCCESS STORIES</span>
-                    <h2 class="text-4xl md:text-5xl font-outfit font-black mb-4 leading-tight" style="color: black;">
-                        Real Partnerships.<br>
-                        <span style="background: linear-gradient(to right, #3b82f6, #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Real Impact.</span>
+    <!-- Property Owners Section -->
+    <section class="py-24 bg-gray-50 border-b border-gray-100">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-col-reverse md:flex-row">
+                <div class="order-2 md:order-1 relative">
+                    <img src="./images/sr-3.png" alt="Property LED Mockup" class="w-full h-auto rounded-lg shadow-xl object-cover aspect-[4/3] bg-gray-200">
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-[#E5B05C] font-bold text-sm tracking-wider uppercase mb-4 block">For Property Owners</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#0B1E36] mb-6 leading-tight">
+                        Monetize Your Prime Location
                     </h2>
-                    <p class="text-gray-500 mb-8 text-sm leading-relaxed pr-4">
-                        From large-scale events to immersive brand activations, our partners have helped us bring groundbreaking LED experiences to life.
+                    <p class="text-gray-500 mb-8 leading-relaxed">
+                        Generate new revenue streams from your high-visibility commercial or roadside locations. We provide end-to-end LED screen installation and manage advertising sales to maximize your property's value.
                     </p>
-                    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-purple-600 border border-purple-500 hover:bg-purple-50 transition-colors">
-                        Explore Success Stories &rarr;
-                    </a>
-                </div>
-                <!-- Right Cards -->
-                <div class="grid gap-6 partner-grid-3">
-                    <!-- Card 1 -->
-                    <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col group">
-                        <div class="h-40 overflow-hidden bg-gray-100">
-                            <img src="./images/hero.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="flex-1 flex flex-col" style="padding: 1.5rem;">
-                            <h4 class="font-bold text-sm" style="color: black; margin-bottom: 0.5rem;">Event Production Partner</h4>
-                            <p class="text-xs text-gray-500 flex-1 leading-relaxed">How we powered a global event with large-format LED displays.</p>
-                            <div class="text-purple-600 text-right mt-4 text-sm font-bold">&rarr;</div>
-                        </div>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col group">
-                        <div class="h-40 overflow-hidden bg-gray-100">
-                            <img src="./images/billboard.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="flex-1 flex flex-col" style="padding: 1.5rem;">
-                            <h4 class="font-bold text-sm" style="color: black; margin-bottom: 0.5rem;">Brand Activation Partner</h4>
-                            <p class="text-xs text-gray-500 flex-1 leading-relaxed">Creating immersive brand experiences in the heart of the city.</p>
-                            <div class="text-purple-600 text-right mt-4 text-sm font-bold">&rarr;</div>
-                        </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col group">
-                        <div class="h-40 overflow-hidden bg-gray-100">
-                            <img src="./images/corporate.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="flex-1 flex flex-col" style="padding: 1.5rem;">
-                            <h4 class="font-bold text-sm" style="color: black; margin-bottom: 0.5rem;">AV Integration Partner</h4>
-                            <p class="text-xs text-gray-500 flex-1 leading-relaxed">Seamless integration for stunning visual results.</p>
-                            <div class="text-purple-600 text-right mt-4 text-sm font-bold">&rarr;</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Let's Grow Together -->
-    <section class="bg-[#050508] relative overflow-hidden border-b border-white/5">
-        <div class="grid lg:grid-cols-2 min-h-[400px]">
-            <!-- Image Left -->
-            <div class="relative h-64 lg:h-auto">
-                <img src="./images/corporate.jpg" alt="Handshake" class="absolute inset-0 w-full h-full object-cover grayscale opacity-50">
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#050508]"></div>
-            </div>
-            <!-- Content Right -->
-            <div class="px-6 md:px-12 py-16 flex items-center justify-between gap-12 flex-wrap">
-                <div class="max-w-md">
-                    <span class="text-[10px] uppercase tracking-widest font-bold text-gray-400 block mb-2">LET'S GROW TOGETHER</span>
-                    <h2 class="text-3xl md:text-4xl font-outfit font-black mb-4 text-white">Become a Partner</h2>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
-                        Join our growing network and be a part of something bigger. Together, we can create extraordinary visual experiences and unlock new opportunities in the LED industry.
-                    </p>
-                    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold text-white border border-white/20 hover:bg-white/10 transition-colors">
-                        Apply Now &rarr;
-                    </a>
-                </div>
-                
-                <div class="flex flex-col gap-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-purple-400 text-xs">
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
-                        </div>
-                        <p class="text-[11px] text-gray-300 font-medium">Complete the Partner Application</p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-purple-400 text-xs">
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        </div>
-                        <p class="text-[11px] text-gray-300 font-medium">Our team will review your profile</p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-purple-400 text-xs">
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        </div>
-                        <p class="text-[11px] text-gray-300 font-medium">Get onboarded and start growing</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bottom CTA Banner -->
-    <section class="py-24 relative bg-cover bg-center" style="background-image: url('./images/5.png');">
-        <!-- Dark overlay to ensure contrast -->
-        <div class="absolute inset-0 bg-black/60"></div>
-        <div class="mx-auto px-6 relative z-10" style="max-width: 900px;">
-            <!-- Glassmorphism Card -->
-            <div class="rounded-[2rem] bg-white/5 backdrop-blur-md border border-white/10 flex flex-col md:flex-row items-center overflow-hidden p-8 md:p-12">
-                <!-- Content -->
-                <div class="flex-1">
-                    <span class="text-xs uppercase tracking-widest font-bold text-gray-400 block mb-2">PARTNERS</span>
-                    <h2 class="text-3xl md:text-4xl font-outfit font-bold text-white mb-4">
-                        Let's Build the Next <br>
-                        Big Experience — <span style="background: linear-gradient(to right, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Together.</span>
-                    </h2>
-                    <p class="text-sm text-gray-300 max-w-lg leading-relaxed">Partner with us and be part of a global network that brings ideas to life through the power of LED displays.</p>
-                </div>
-                <!-- Button -->
-                <div class="mt-8 md:mt-0 flex-shrink-0 md:ml-12">
-                    <a href="#" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold text-white transition-transform hover:scale-105" style="background: linear-gradient(to right, #8b5cf6, #3b82f6);">
-                        Get in Touch &rarr;
+                    <a href="contact.html" class="inline-block px-8 py-3 bg-[#0B1E36] text-white font-semibold rounded-sm hover:bg-[#1a365d] transition-colors">
+                        Partner With Us
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer CTA (Clean, matches index) -->
-    <footer class="relative z-10 bg-[#020202] pt-32 pb-12 overflow-hidden border-t border-black/5">
-
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-            <h2 class="text-4xl md:text-5xl font-outfit font-bold text-center mb-24 sec-title text-white">Ready to proceed?</h2>
-
-            <div class="grid md:grid-cols-3 gap-6 mb-32 stagger-section">
-                <a href="index.html" class="block p-10 rounded-2xl border border-white/5 bg-[#0a0a0a] hover:bg-[#111] transition-all duration-300 group stagger-card">
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-6">Hardware</p>
-                    <h3 class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">I Need an LED Wall</h3>
-                    <p class="text-gray-400 text-sm font-light">Custom builds for architecture, venues, and retail.</p>
+    <!-- Footer -->
+    <footer class="bg-[#071324] text-white py-12 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
+                <a href="index.html" class="flex items-center">
+                    <img src="./images/sanspng_white.png" alt="Logo" class="h-6 object-contain">
                 </a>
-                <a href="advertise.html" class="block p-10 rounded-2xl border border-white/10 bg-[#111] hover:bg-[#1a1a1a] transition-all duration-300 group stagger-card relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-cyan-400 opacity-50 group-hover:opacity-100 transition-opacity"></div>
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-cyan-400 mb-6">Media</p>
-                    <h3 class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors">I Want to Advertise</h3>
-                    <p class="text-gray-400 text-sm font-light">Launch campaigns on our premium global network.</p>
-                </a>
-                <a href="partners.html" class="block p-10 rounded-2xl border border-white/5 bg-[#0a0a0a] hover:bg-[#111] transition-all duration-300 group stagger-card">
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-6">Partnership</p>
-                    <h3 class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-pink-400 transition-colors">I Have a Location</h3>
-                    <p class="text-gray-400 text-sm font-light">Monetize your property with a digital display.</p>
-                </a>
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-gray-500 text-[10px] tracking-widest uppercase">
-                <img src="./images/sanspng.png" alt="SANS GLOWMETRIC Logo" class="h-8 object-contain mb-4 md:mb-0" style="height: 32px;">
-                <div class="flex gap-8 mb-4 md:mb-0">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <div class="flex flex-wrap justify-center gap-6 text-[12px] text-gray-400 font-medium">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="index.html#led-solutions" class="hover:text-white transition-colors">LED Solutions</a>
+                    <a href="advertise.html" class="hover:text-white transition-colors">Advertise</a>
+                    <a href="network.html" class="hover:text-white transition-colors">Our Screens</a>
+                    <a href="projects.html" class="hover:text-white transition-colors">Projects</a>
                     <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 text-[11px] text-gray-400 font-medium">
+                        <svg class="w-3.5 h-3.5 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        Columbus, Ohio, USA
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-500 border-t border-white/10 pt-6">
                 <p>&copy; 2026 SANS GLOWMETRIC. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0 font-medium">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
             </div>
         </div>
     </footer>
-
-    <!-- Mobile Sticky Action Bar -->
-    <div class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-[#050505]/90 border-t border-white/10 p-4 flex justify-between gap-2 backdrop-blur-xl">
-        <a href="tel:+1234567890" class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-white text-center">Call</a>
-        <a href="https://wa.me/1234567890" class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-green-400 text-center">WhatsApp</a>
-        <a href="contact.html" class="flex-1 py-3 rounded-lg bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-gray-200 text-center">Get Quote</a>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
-    <script src="./main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            gsap.registerPlugin(ScrollTrigger);
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".max-w-4xl",
-                    start: "top 80%",
-                }
-            });
-
-            // 1. Draw the horizontal line
-            tl.fromTo('.grid-hline', 
-                { scaleX: 0, opacity: 0 },
-                { scaleX: 1, opacity: 1, duration: 1, ease: "power3.inOut" }
-            )
-            // 2. Draw the vertical lines (staggered)
-            .fromTo('.grid-vline',
-                { scaleY: 0, opacity: 0 },
-                { scaleY: 1, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.inOut" },
-                "-=0.5" // Overlap with horizontal line
-            )
-            // 3. Fade in logos with a slight scale and stagger
-            .fromTo('.partner-logo-item',
-                { opacity: 0, scale: 0.8, y: 20 },
-                { opacity: 0.6, scale: 1, y: 0, duration: 0.6, stagger: 0.05, ease: "back.out(1.2)", clearProps: "opacity,scale,transform" },
-                "-=0.4"
-            );
-        });
-    </script>
-    <!-- Mobile Menu Drawer (Inline Styles - No Tailwind dependency) -->
-    <div id="mobile-menu" style="position: fixed; inset: 0; z-index: 200; display: none;">
-        <!-- Overlay -->
-        <div id="mobile-menu-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); opacity: 0; transition: opacity 0.3s ease;"></div>
-        <!-- Panel -->
-        <div id="mobile-menu-panel" style="position: absolute; top: 0; right: 0; width: 80%; max-width: 320px; height: 100%; background: #0a0a0a; border-left: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; padding: 2rem; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);">
-            <!-- Header -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
-                <img src="./images/sanspng.png" alt="SANS GLOWMETRIC Logo" style="height: 28px; object-fit: contain;">
-                <button id="mobile-menu-close" style="color: #9ca3af; background: none; border: none; cursor: pointer; padding: 0.25rem;">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <!-- Links -->
-            <nav style="display: flex; flex-direction: column; gap: 1.5rem; flex: 1;">
-                <a href="index.html" style="color: #ffffff; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Home</a>
-                <a href="about.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">About</a>
-                <a href="index.html#led-solutions" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">LED Solutions</a>
-                <a href="advertise.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Advertise</a>
-                <a href="network.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Our Screens</a>
-                <a href="projects.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Projects</a>
-                <a href="contact.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Contact</a>
-            </nav>
-            <!-- CTA -->
-            <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
-                <a href="advertise.html" style="display: block; width: 100%; padding: 1rem; background: #fff; color: #000; text-align: center; border-radius: 9999px; font-family: 'Outfit', sans-serif; font-weight: 700; text-decoration: none; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.3s ease;">
-                    Advertise
-                </a>
-            </div>
-        </div>
-    </div>
-    <script src="main.js"></script>
 
     <!-- Back to Top Button -->
     <button id="backToTopBtn" aria-label="Back to top"
@@ -508,14 +158,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
         </svg>
     </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
