@@ -136,6 +136,81 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Global Fade Up Elements
+    const fadeUpElements = document.querySelectorAll('.gsap-fade-up');
+    fadeUpElements.forEach((el) => {
+      gsap.fromTo(el, 
+        { y: 50, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out'
+        }
+      );
+    });
+
+    // Global Stagger Sections
+    const staggerSections = document.querySelectorAll('.stagger-section');
+    staggerSections.forEach((section) => {
+      const cards = section.querySelectorAll('.stagger-card');
+      if (cards.length > 0) {
+        gsap.fromTo(cards,
+          { y: 50, opacity: 0 },
+          {
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 80%',
+            },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out'
+          }
+        );
+      }
+    });
+
+    // GSAP Split-Screen Pinned Stack Layout
+    const pinnedSection = document.getElementById('gsap-pinned-stack');
+    const stackItems = gsap.utils.toArray('.stack-item');
+    
+    if (pinnedSection && stackItems.length > 0) {
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: pinnedSection,
+                pin: true,
+                start: "center center",
+                end: "+=2500", // Total scroll distance
+                scrub: 1
+            }
+        });
+
+        // Card 2 slides up over Card 1
+        tl.to(stackItems[1], { y: 0, duration: 1 })
+          .to(stackItems[0], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
+          
+        // Card 3 slides up over Card 2
+          .to(stackItems[2], { y: 0, duration: 1 })
+          .to(stackItems[1], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
+          
+        // Card 4 slides up over Card 3
+          .to(stackItems[3], { y: 0, duration: 1 })
+          .to(stackItems[2], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
+          
+        // Card 5 slides up over Card 4
+          .to(stackItems[4], { y: 0, duration: 1 })
+          .to(stackItems[3], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
+          
+          .to({}, {duration: 0.5}); // small pause at the end before unpinning
+    }
+
+    // Legacy nextStepsSection (from index.html)
     const nextStepsSection = document.getElementById('next-steps-section');
     if (nextStepsSection) {
       const cards = nextStepsSection.querySelectorAll('.grid > div');
