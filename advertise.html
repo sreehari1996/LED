@@ -4,669 +4,527 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advertise | Lumina Network</title>
+    <title>LUMIÈRE | Advertising Network</title>
     <link href="./style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-[#030303] text-white font-inter overflow-x-hidden">
-    <style>
-        html, body {
-            overflow-x: hidden !important;
-            max-width: 100vw !important;
-            width: 100% !important;
-            position: relative;
-        }
-    </style>
-
-    <div class="noise-overlay"></div>
-
-    <!-- Ambient Background Glows -->
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div
-            class="bg-glow-1 absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-purple-600/10 blur-[150px]">
-        </div>
-        <div
-            class="bg-glow-1 absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[120px]">
-        </div>
-    </div>
+<body class="bg-white text-[#111827] font-inter antialiased selection:bg-[#E5B05C] selection:text-white">
 
     <!-- Navbar -->
-        <nav class="fixed w-full z-50 transition-all duration-500 py-6 border-b border-transparent" id="navbar">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="index.html" class="flex items-center"><img src="./images/sanspng.png" alt="Lumina Logo" class="h-8 md:h-10 object-contain" style="height: 32px;"></a>
-            <div class="hidden lg:flex gap-8 text-sm font-medium text-gray-400">
-                <a href="index.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Home</a>
-                <a href="about.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">About</a>
-                <a href="network.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Our Screens</a>
-                <a href="advertise.html" class="text-white transition-colors tracking-wide uppercase text-xs">Advertise</a>
-                <a href="partners.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Partners</a>
-                <a href="projects.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Projects</a>
-                <a href="contact.html" class="hover:text-white transition-colors tracking-wide uppercase text-xs">Contact</a>
+    <nav class="w-full bg-white border-b border-gray-100 py-4 px-6 md:px-12 fixed top-0 z-[100]">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="./images/sanspng.png" alt="Logo" class="h-8 object-contain">
+            </a>
+
+            <!-- Center Links -->
+            <div class="hidden lg:flex gap-8 text-[13px] font-medium text-gray-500">
+                <a href="index.html" class="hover:text-[#0B1E36] transition-colors pb-1">Home</a>
+                <a href="network.html" class="hover:text-[#0B1E36] transition-colors pb-1">LED Solutions</a>
+                <a href="advertise.html" class="text-[#0B1E36] border-b-2 border-[#E5B05C] pb-1">Advertising</a>
+                <a href="network.html" class="hover:text-[#0B1E36] transition-colors pb-1">Our Screens</a>
+                <a href="projects.html" class="hover:text-[#0B1E36] transition-colors pb-1">Projects</a>
+                <a href="about.html" class="hover:text-[#0B1E36] transition-colors pb-1">About</a>
+                <a href="contact.html" class="hover:text-[#0B1E36] transition-colors pb-1">Contact</a>
             </div>
-            <div class="hidden md:flex gap-3">
-                <a href="contact.html" class="px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300">
+
+            <!-- Right Buttons -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-5 py-2 rounded-sm text-[13px] font-semibold text-[#0B1E36] border border-gray-300 hover:border-[#0B1E36] transition-colors">
                     Get an LED Wall
                 </a>
-                <a href="advertise.html" class="px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white text-black hover:bg-cyan-400 hover:text-black hover:border-cyan-400 transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                <a href="advertise.html"
+                    class="px-6 py-2 rounded-sm text-[13px] font-semibold text-white bg-[#0B1E36] hover:bg-[#1a365d] transition-colors">
                     Advertise
                 </a>
             </div>
-            <button id="mobile-menu-open" class="lg:hidden text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
         </div>
     </nav>
 
-    <!-- Mobile Menu Drawer (Inline Styles - No Tailwind dependency) -->
-    <div id="mobile-menu" style="position: fixed; inset: 0; z-index: 200; display: none;">
-        <!-- Overlay -->
-        <div id="mobile-menu-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); opacity: 0; transition: opacity 0.3s ease;"></div>
-        <!-- Panel -->
-        <div id="mobile-menu-panel" style="position: absolute; top: 0; right: 0; width: 80%; max-width: 320px; height: 100%; background: #0a0a0a; border-left: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; padding: 2rem; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);">
-            <!-- Header -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
-                <img src="./images/sanspng.png" alt="Lumina Logo" style="height: 28px; object-fit: contain;">
-                <button id="mobile-menu-close" style="color: #9ca3af; background: none; border: none; cursor: pointer; padding: 0.25rem;">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <!-- Links -->
-            <nav style="display: flex; flex-direction: column; gap: 1.5rem; flex: 1;">
-                <a href="index.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Home</a>
-                <a href="about.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">About</a>
-                <a href="network.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Our Screens</a>
-                <a href="advertise.html" style="color: #ffffff; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Advertise</a>
-                <a href="partners.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Partners</a>
-                <a href="projects.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Projects</a>
-                <a href="contact.html" style="color: #9ca3af; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; text-decoration: none;">Contact</a>
-            </nav>
-            <!-- CTAs -->
-            <div style="display: flex; flex-direction: column; gap: 0.75rem; padding-top: 2rem;">
-                <a href="contact.html" style="padding: 0.75rem 1.5rem; border-radius: 9999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; border: 1px solid rgba(255,255,255,0.2); color: #fff; text-align: center; text-decoration: none;">Get an LED Wall</a>
-                <a href="advertise.html" style="padding: 0.75rem 1.5rem; border-radius: 9999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; background: #ffffff; color: #000; text-align: center; text-decoration: none;">Advertise</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Hero Section -->
-    <section class="relative h-screen min-h-[700px] flex items-center" style="padding-top: clamp(6rem, 15vh, 10rem); background-image: linear-gradient(to right, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.2) 100%), url('./images/led_billboard.jpg'); background-size: cover; background-position: center;">
+    <section class="relative w-full h-[55vh] min-h-[450px] flex items-center mt-[72px] overflow-hidden" style="background-color: #0B1E36;">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0 w-full h-full">
+            <img src="./images/city_ny.jpg" class="w-full h-full object-cover" alt="Advertising Hero">
+            <!-- Inline gradient to guarantee a dark overlay even if Tailwind classes aren't compiled -->
+            <div class="absolute inset-0 w-full h-full" style="background: linear-gradient(to right, rgba(11, 30, 54, 0.98) 0%, rgba(11, 30, 54, 0.7) 50%, rgba(11, 30, 54, 0.1) 100%);"></div>
+        </div>
+        
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full">
             <div class="max-w-2xl">
                 <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-[2px] bg-[#3b82f6]"></div>
-                    <p class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-300">MEDIA & NETWORK</p>
+                    <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                    <span class="text-[11px] font-bold tracking-[0.2em] text-[#E5B05C] uppercase">Digital Advertising Network</span>
                 </div>
-                <h1 class="font-outfit font-black mb-6 tracking-tight" style="font-size: clamp(3.5rem, 12vw, 5.5rem); line-height: 1.05; overflow-wrap: break-word; word-break: break-word;">
-                    Advertise With<br>
-                    <span class="text-gradient">Lumina.</span>
+                <h1 class="text-4xl md:text-5xl lg:text-[64px] font-bold text-white leading-[1.05] mb-6 tracking-tight">
+                    Advertise With<br>Unmatched Impact.
                 </h1>
-                <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-xl">
+                <p class="text-gray-300 text-[15px] md:text-lg leading-relaxed mb-10 max-w-[500px]">
                     Access a meticulously curated network of ultra-premium digital displays across the most sought-after global locations. Play your campaign on high-impact outdoor screens.
                 </p>
-                <div class="flex gap-4" style="flex-wrap: wrap; width: 100%; max-width: 500px;">
-                    <!-- Since bg-gradient-btn might not be in advertise.html, we use inline style to ensure it works just like about.html -->
-                    <button class="px-6 py-4 rounded-full text-sm md:text-base font-semibold flex items-center justify-center gap-2 text-white transition-all hover:-translate-y-1" style="flex: 1 1 200px; background: linear-gradient(to right, #3b82f6, #a855f7); box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);">
-                        Explore Advertising Locations &rarr;
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Discovery (Bento Grid) -->
-    <section class="py-24 md:py-32 text-black border-t border-black/5" style="background-color: #f8f6f0;">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            
-            <!-- Header -->
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 stagger-section">
-                <div class="stagger-card">
-                    <p class="text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase mb-4">Our Network</p>
-                    <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] font-outfit font-black mb-4 leading-tight text-black">
-                        Strategic <span class="text-gradient-primary">Placements</span>
-                    </h2>
-                    <p class="text-gray-600 font-light max-w-md">High-visibility locations, carefully selected for maximum brand impact and audience reach.</p>
-                </div>
-                <a href="#" class="text-sm font-semibold transition-colors flex items-center gap-2 stagger-card" style="color: #9127ff;">
-                    View All Placements &rarr;
+                <a href="#locations" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#E5B05C] text-[#0B1E36] text-[13px] font-bold hover:bg-white transition-colors rounded-sm shadow-sm group">
+                    Explore Advertising Locations
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Grid Layout -->
-            <div class="stagger-section" style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <!-- Location Discovery -->
+    <section id="locations" class="py-24 bg-white border-t border-gray-100 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
                 
-                <!-- Left 3 Rows -->
-                <div style="flex: 1 1 55%; display: flex; flex-direction: column; gap: 20px;">
-                    
-                    <!-- Row 1 -->
-                    <div style="display: flex; gap: 20px; height: 180px;">
-                        <!-- Location 1 -->
-                        <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
-                            <img src="images/billboard.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Times Square Digital">
-                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
-                            <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-                                Times Square Digital
-                            </div>
-                            <a href="#" style="position: absolute; bottom: 16px; right: 16px; font-size: 11px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
-                                View Screen <span style="font-size: 14px;">&rarr;</span>
-                            </a>
-                        </div>
-                        <!-- Location 2 -->
-                        <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
-                            <img src="images/led_billboard.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: transform 0.7s;" class="group-hover:scale-105" alt="Dubai Marina Screen">
-                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
-                            <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-                                Dubai Marina Screen
-                            </div>
-                            <a href="#" style="position: absolute; bottom: 16px; right: 16px; font-size: 11px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
-                                View Screen <span style="font-size: 14px;">&rarr;</span>
-                            </a>
-                        </div>
+                <!-- Left Side: Heading & Content -->
+                <div class="w-full lg:w-[40%] flex flex-col justify-center">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] text-[#0B1E36] uppercase">Network Discovery</span>
                     </div>
+                    <h2 class="text-4xl md:text-[44px] font-bold text-[#0B1E36] mb-6 tracking-tight leading-[1.1]">
+                        Strategic Placements Worldwide.
+                    </h2>
+                    <p class="text-gray-500 text-[15px] leading-relaxed mb-8 max-w-md">
+                        Explore our premier network of high-visibility digital real estate. From immersive takeovers to dynamic highway billboards, secure placements in the world's most sought-after locations.
+                    </p>
                     
-                    <!-- Row 2 -->
-                    <div style="display: flex; gap: 20px; height: 180px;">
-                        <!-- Location 3 -->
-                        <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
-                            <img src="images/retail.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Shinjuku Station LED">
-                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
-                            <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-                                Shinjuku Station LED
-                            </div>
-                            <a href="#" style="position: absolute; bottom: 16px; right: 16px; font-size: 11px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
-                                View Screen <span style="font-size: 14px;">&rarr;</span>
-                            </a>
-                        </div>
-                        <!-- Location 4 -->
-                        <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="flex: 1; position: relative; border-radius: 16px; overflow: hidden; background-color: #111;">
-                            <img src="images/hero3.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Piccadilly Circus Board">
-                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
-                            <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-                                Piccadilly Circus Board
-                            </div>
-                            <a href="#" style="position: absolute; bottom: 16px; right: 16px; font-size: 11px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
-                                View Screen <span style="font-size: 14px;">&rarr;</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Row 3 Wide -->
-                    <div class="group stagger-card shadow-sm hover:shadow-xl transition-all duration-500" style="position: relative; border-radius: 16px; overflow: hidden; background-color: #111; height: 140px;">
-                        <img src="images/ad_hero.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s;" class="group-hover:scale-105" alt="Las Vegas Strip Mega-Screen">
-                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
-                        <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; color: white; font-size: 11px; font-weight: 600;">
-                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-                            Las Vegas Strip Mega-Screen
-                        </div>
-                        <a href="#" style="position: absolute; bottom: 16px; right: 24px; font-size: 12px; font-weight: 600; color: white; text-decoration: none; display: flex; align-items: center; gap: 4px;" class="hover:text-blue-400 transition-colors">
-                            View Screen Details <span style="font-size: 14px;">&rarr;</span>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#E5B05C] text-[#0B1E36] text-[13px] font-bold hover:bg-[#0B1E36] hover:text-white transition-colors rounded-sm shadow-sm group">
+                            Request Complete Directory
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
-                </div>
+                </div>                <!-- Right Side: Interactive Map + Directory -->
+                <div class="w-full lg:w-[60%] flex flex-col sm:flex-row rounded-sm border border-gray-200 overflow-hidden bg-white" style="height: 480px;">
+                    
+                    <!-- Directory Sidebar -->
+                    <div class="shrink-0 border-r border-gray-100 flex flex-col bg-white z-10 h-full" style="width: 320px; max-width: 100%;">
+                        
+                        <!-- Panel Header -->
+                        <div class="p-4 border-b border-gray-100 shrink-0 bg-slate-50">
+                            <h3 class="text-[15px] font-bold text-[#0B1E36] mb-3 tracking-tight">Available Screens</h3>
+                            
+                            <!-- Search Input -->
+                            <div class="relative w-full">
+                                <input type="text" placeholder="Search locations..." class="w-full bg-white border border-gray-200 text-[11px] px-8 py-2 rounded-sm outline-none focus:border-[#E5B05C] transition-colors shadow-sm">
+                                <svg class="absolute text-gray-400 pointer-events-none" style="width: 13px; height: 13px; left: 10px; top: 50%; transform: translateY(-50%);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                        </div>
 
-                <!-- Right Map Card -->
-                <div class="stagger-card shadow-xl" style="flex: 1 1 40%; position: relative; border-radius: 16px; overflow: hidden; background-color: #080a11; min-height: 540px; border: 1px solid rgba(255,255,255,0.05);">
-                    
-                    <!-- Exact Replica Dark Map via OpenStreetMap -->
-                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-74.02,40.70,-73.96,40.76&layer=mapnik" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(150%); pointer-events: none;" tabindex="-1"></iframe>
-                    
-                    <!-- Dark Gradient Overlay for Pin Visibility -->
-                    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(8,10,17,0.4) 0%, rgba(8,10,17,0.1) 100%); pointer-events: none;"></div>
+                        <!-- Scrollable Cards List -->
+                        <div class="flex-grow overflow-y-auto" style="scrollbar-width: thin;">
+                            
+                            <!-- Card 1 -->
+                            <div class="flex gap-3 p-3 border-b border-gray-50 hover:bg-slate-50 transition-colors cursor-pointer group">
+                                <div class="shrink-0 bg-gray-200 rounded-sm overflow-hidden relative" style="width: 70px; height: 50px;">
+                                    <img src="./images/city_ny.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="NY">
+                                </div>
+                                <div class="flex flex-col justify-center flex-grow">
+                                    <div class="flex justify-between items-start mb-0.5">
+                                        <h4 class="text-[12px] font-bold text-[#0B1E36] group-hover:text-[#E5B05C] transition-colors leading-tight">Times Square</h4>
+                                        <span class="text-[7px] font-bold bg-green-100 text-green-700 px-1 py-0.5 uppercase tracking-wider rounded-sm leading-none">Live</span>
+                                    </div>
+                                    <p class="text-[10px] text-gray-500 mb-1">New York City, NY</p>
+                                    <span class="text-[9px] font-medium text-gray-400 mt-auto">18,000 sq ft</span>
+                                </div>
+                            </div>
 
-                    <!-- Top Pill -->
-                    <div style="position: absolute; top: 24px; left: 24px; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); padding: 8px 16px; border-radius: 99px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; z-index: 20; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                        <span class="animate-pulse" style="width: 8px; height: 8px; border-radius: 50%; background-color: #10b981; box-shadow: 0 0 8px #10b981;"></span>
-                        <span style="color: white; font-size: 11px; font-weight: 700; letter-spacing: 0.5px;">Live Coverage</span>
+                            <!-- Card 2 -->
+                            <div class="flex gap-3 p-3 border-b border-gray-50 hover:bg-slate-50 transition-colors cursor-pointer group">
+                                <div class="shrink-0 bg-gray-200 rounded-sm overflow-hidden relative" style="width: 70px; height: 50px;">
+                                    <img src="./images/city_dubai.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Dubai">
+                                </div>
+                                <div class="flex flex-col justify-center flex-grow">
+                                    <div class="flex justify-between items-start mb-0.5">
+                                        <h4 class="text-[12px] font-bold text-[#0B1E36] group-hover:text-[#E5B05C] transition-colors leading-tight">Marina Screen</h4>
+                                    </div>
+                                    <p class="text-[10px] text-gray-500 mb-1">Dubai Marina, UAE</p>
+                                    <span class="text-[9px] font-medium text-gray-400 mt-auto">12,500 sq ft</span>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="flex gap-3 p-3 border-b border-gray-50 hover:bg-slate-50 transition-colors cursor-pointer group">
+                                <div class="shrink-0 bg-gray-200 rounded-sm overflow-hidden relative" style="width: 70px; height: 50px;">
+                                    <img src="./images/corporate.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="London">
+                                </div>
+                                <div class="flex flex-col justify-center flex-grow">
+                                    <div class="flex justify-between items-start mb-0.5">
+                                        <h4 class="text-[12px] font-bold text-[#0B1E36] group-hover:text-[#E5B05C] transition-colors leading-tight">Central Station</h4>
+                                    </div>
+                                    <p class="text-[10px] text-gray-500 mb-1">London, UK</p>
+                                    <span class="text-[9px] font-medium text-gray-400 mt-auto">8,200 sq ft</span>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="flex gap-3 p-3 hover:bg-slate-50 transition-colors cursor-pointer group">
+                                <div class="shrink-0 bg-gray-200 rounded-sm overflow-hidden relative" style="width: 70px; height: 50px;">
+                                    <img src="./images/led_billboard.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="LA">
+                                </div>
+                                <div class="flex flex-col justify-center flex-grow">
+                                    <div class="flex justify-between items-start mb-0.5">
+                                        <h4 class="text-[12px] font-bold text-[#0B1E36] group-hover:text-[#E5B05C] transition-colors leading-tight">Highway Billboard</h4>
+                                    </div>
+                                    <p class="text-[10px] text-gray-500 mb-1">Los Angeles, CA</p>
+                                    <span class="text-[9px] font-medium text-gray-400 mt-auto">14,000 sq ft</span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 text-center mt-2 border-t border-gray-100 border-dashed">
+                                <a href="#all" class="text-[10px] font-bold text-[#0B1E36] uppercase hover:text-[#E5B05C] transition-colors flex items-center justify-center gap-1">
+                                    Load 150+ More
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <!-- Map Pins -->
-                    <!-- Downtown -->
-                    <div class="group cursor-pointer" style="position: absolute; top: 40%; left: 35%; display: flex; flex-direction: row; align-items: center; gap: 10px;">
-                        <div style="position: relative; width: 16px; height: 16px; display: flex; justify-content: center; align-items: center; z-index: 10;">
-                            <div class="animate-ping" style="position: absolute; inset: -4px; border-radius: 50%; background-color: #a22cfc; opacity: 0.7;"></div>
-                            <div style="width: 14px; height: 14px; border-radius: 50%; background-color: #a22cfc; box-shadow: 0 0 10px #a22cfc; border: 2px solid white; position: relative; z-index: 10;"></div>
+                    <!-- Map Area -->
+                    <div class="flex-grow relative bg-gray-200 z-0 h-full min-h-[300px]" style="min-height: 300px;">
+                        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-74.05,40.68,-73.90,40.78&layer=mapnik" class="absolute inset-0 w-full h-full border-none" style="filter: grayscale(1) contrast(1.1) opacity(0.8);" tabindex="-1"></iframe>
+                        
+                        <!-- Map Pin -->
+                        <div class="absolute transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 group cursor-pointer" style="top: 45%; left: 45%;">
+                            <div class="w-6 h-6 bg-[#E5B05C] rounded-full border-[3px] border-white shadow-xl relative flex items-center justify-center">
+                                <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                            </div>
+                            <div class="bg-[#0B1E36] text-white text-[11px] font-bold px-2 py-1 shadow-2xl rounded-sm whitespace-nowrap group-hover:bg-[#E5B05C] transition-colors">Times Square, NY</div>
                         </div>
-                        <span class="group-hover:-translate-y-1 transition-transform" style="color: white; font-size: 11px; font-weight: 600; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">Downtown</span>
                     </div>
-                    
-                    <!-- Business District -->
-                    <div class="group cursor-pointer" style="position: absolute; top: 45%; left: 70%; display: flex; flex-direction: row; align-items: center; gap: 10px;">
-                        <div style="position: relative; width: 16px; height: 16px; display: flex; justify-content: center; align-items: center; z-index: 10;">
-                            <div class="animate-ping" style="position: absolute; inset: -4px; border-radius: 50%; background-color: #a22cfc; opacity: 0.7; animation-delay: 0.5s;"></div>
-                            <div style="width: 14px; height: 14px; border-radius: 50%; background-color: #a22cfc; box-shadow: 0 0 10px #a22cfc; border: 2px solid white; position: relative; z-index: 10;"></div>
-                        </div>
-                        <span class="group-hover:-translate-y-1 transition-transform" style="color: white; font-size: 11px; font-weight: 600; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">Business District</span>
-                    </div>
-                    
-                    <!-- Transit Hub -->
-                    <div class="group cursor-pointer" style="position: absolute; top: 75%; left: 25%; display: flex; flex-direction: row; align-items: center; gap: 10px;">
-                        <div style="position: relative; width: 16px; height: 16px; display: flex; justify-content: center; align-items: center; z-index: 10;">
-                            <div class="animate-ping" style="position: absolute; inset: -4px; border-radius: 50%; background-color: #a22cfc; opacity: 0.7; animation-delay: 1s;"></div>
-                            <div style="width: 14px; height: 14px; border-radius: 50%; background-color: #a22cfc; box-shadow: 0 0 10px #a22cfc; border: 2px solid white; position: relative; z-index: 10;"></div>
-                        </div>
-                        <span class="group-hover:-translate-y-1 transition-transform" style="color: white; font-size: 11px; font-weight: 600; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">Transit Hub</span>
-                    </div>
-                    
-                    <!-- Shopping Mall -->
-                    <div class="group cursor-pointer" style="position: absolute; top: 70%; left: 65%; display: flex; flex-direction: row; align-items: center; gap: 10px;">
-                        <div style="position: relative; width: 16px; height: 16px; display: flex; justify-content: center; align-items: center; z-index: 10;">
-                            <div class="animate-ping" style="position: absolute; inset: -4px; border-radius: 50%; background-color: #a22cfc; opacity: 0.7; animation-delay: 1.5s;"></div>
-                            <div style="width: 14px; height: 14px; border-radius: 50%; background-color: #a22cfc; box-shadow: 0 0 10px #a22cfc; border: 2px solid white; position: relative; z-index: 10;"></div>
-                        </div>
-                        <span class="group-hover:-translate-y-1 transition-transform" style="color: white; font-size: 11px; font-weight: 600; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">Shopping Mall</span>
-                    </div>
+
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Screen Detail Spotlight (Section 08 Requirement) -->
-    <section class="py-32 relative z-10 bg-[#080a11] overflow-hidden border-t border-white/5">
-        
-        <!-- Background subtle glow -->
-        <div style="position: absolute; top: -20%; right: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(145,39,255,0.05) 0%, transparent 70%); pointer-events: none;"></div>
-
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+    <!-- Screen Detail Spotlight -->
+    <section id="screen-detail" class="py-24 md:py-32 bg-[#0B1E36] text-white">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
                 
-                <!-- Left: Large Screen Visual -->
-                <div class="flex-1 relative w-full group stagger-section">
-                    <div style="position: absolute; inset: 0; background: linear-gradient(45deg, #3b82f6, #a855f7); transform: translate(-10px, 10px); border-radius: 24px; opacity: 0.2; filter: blur(20px);"></div>
-                    <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl" style="aspect-ratio: 4/3; background: #000;">
-                        <img src="images/billboard.jpg" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" alt="Times Square Digital">
-                        
-                        <!-- Overlay Tech Details -->
-                        <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px;">
-                            <span class="animate-pulse w-2 h-2 rounded-full bg-green-400"></span>
-                            <span class="text-white text-xs font-semibold tracking-wider">LIVE FEED</span>
-                        </div>
+                <!-- Screen Image -->
+                <div class="w-full lg:w-1/2 relative aspect-[4/3] rounded-md overflow-hidden shadow-2xl">
+                    <img src="./images/city_ny.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Featured Screen">
+                    <div class="absolute top-6 left-6 bg-black/60 backdrop-blur-md px-4 py-2 rounded-sm text-white text-[11px] font-bold tracking-[0.1em] uppercase border border-white/20 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> LIVE FEED
                     </div>
                 </div>
 
-                <!-- Right: Specifications -->
-                <div class="flex-1 w-full stagger-section">
-                    <p class="text-[10px] uppercase tracking-[0.3em] text-blue-400 font-semibold mb-4 drop-shadow-lg">Featured Placement Spotlight</p>
-                    <h2 class="text-4xl md:text-5xl font-outfit font-black mb-6 text-white leading-tight drop-shadow-2xl">
-                        Times Square <span class="text-gradient">Digital</span>
+                <!-- Specs -->
+                <div class="w-full lg:w-1/2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] text-[#E5B05C] uppercase">Featured Placement</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-[1.1] mb-6 tracking-tight">
+                        Times Square Digital
                     </h2>
-                    <p class="text-gray-400 text-lg font-light leading-relaxed mb-10 max-w-lg">
+                    <p class="text-gray-300 text-[15px] leading-relaxed mb-10 max-w-lg">
                         Dominate the world's most iconic intersection. This ultra-high-definition mega screen offers unparalleled brand visibility and millions of daily impressions.
                     </p>
 
-                    <!-- Specs Grid -->
-                    <div class="mb-12" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
-                        <!-- Location -->
-                        <div class="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors" style="padding: 24px;">
-                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Location</p>
-                            <p class="text-white font-semibold text-sm md:text-base">Broadway & 45th St, NY</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;" class="mb-12">
+                        <div class="border-l-2 border-[#E5B05C] pl-4">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Location</p>
+                            <p class="text-[14px] font-semibold text-white">Broadway & 45th St, NY</p>
                         </div>
-                        <!-- Size -->
-                        <div class="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors" style="padding: 24px;">
-                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Dimensions / Size</p>
-                            <p class="text-white font-semibold text-sm md:text-base">18,000 sq ft (4K LED)</p>
+                        <div class="border-l-2 border-[#E5B05C] pl-4">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Dimensions / Size</p>
+                            <p class="text-[14px] font-semibold text-white">18,000 sq ft (4K LED)</p>
                         </div>
-                        <!-- Operating Hours -->
-                        <div class="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors" style="padding: 24px;">
-                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Operating Hours</p>
-                            <p class="text-white font-semibold text-sm md:text-base">24/7 Continuous</p>
+                        <div class="border-l-2 border-[#E5B05C] pl-4">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Operating Hours</p>
+                            <p class="text-[14px] font-semibold text-white">24/7 Continuous</p>
                         </div>
-                        <!-- Formats -->
-                        <div class="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors" style="padding: 24px;">
-                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Supported Formats</p>
-                            <p class="text-white font-semibold text-sm md:text-base">MP4, MOV, Static (16:9)</p>
+                        <div class="border-l-2 border-[#E5B05C] pl-4">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Supported Formats</p>
+                            <p class="text-[14px] font-semibold text-white">MP4, MOV, Static (16:9)</p>
                         </div>
                     </div>
 
-                    <!-- Campaign Options & CTA -->
-                    <div class="flex flex-col sm:flex-row items-center gap-6">
-                        <button class="w-full sm:w-auto px-10 py-4 rounded-full text-sm font-semibold text-white shadow-xl transition-all hover:scale-105" style="background: linear-gradient(to right, #3b82f6, #a855f7); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);">
-                            Request Advertising Rates &rarr;
-                        </button>
-                        <p class="text-xs text-gray-500 font-light">
-                            <strong class="text-gray-300">Campaign Options:</strong> Flexible 10s, 15s, 30s loops
-                        </p>
-                    </div>
-
+                    <a href="contact.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#E5B05C] text-[#0B1E36] text-[13px] font-bold hover:bg-white transition-colors rounded-sm shadow-sm">
+                        Request Advertising Rates
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- How Advertising Works (Dark Bento Box Grid matching Custom LED Solutions) -->
-    <section class="py-32 relative z-10 bg-[#020202] overflow-hidden border-t border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-20 stagger-section">
-                <div>
-                    <p class="text-[10px] uppercase tracking-[0.3em] text-cyan-400 font-semibold mb-4 drop-shadow-lg">
-                        How Advertising Works</p>
-                    <h2 class="text-4xl md:text-6xl font-outfit font-black mb-0 leading-tight drop-shadow-2xl">
-                        A Frictionless<br>
-                        <span
-                            class="text-gradient-primary inline-block"
-                            style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">Campaign
-                            Journey</span>
-                    </h2>
-                </div>
-                <button
-                    class="px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 transition-all backdrop-blur-md shrink-0">
-                    Start a Campaign
-                </button>
-            </div>
-
-            <!-- Bento Grid 6 Steps -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 stagger-section"
-                style="grid-auto-rows: minmax(220px, auto);">
-
-                <!-- Tile 1 -->
-                <div
-                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
-                    <span
-                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">01</span>
-                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Choose Location</h3>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Select strategic screens based on
-                        precise demographic data and targeting goals.</p>
-                </div>
-
-                <!-- Tile 2 -->
-                <div
-                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
-                    <span
-                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">02</span>
-                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Ad Duration</h3>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Choose your format length—from quick 10s
-                        hits to immersive 60s storytelling spots.</p>
-                </div>
-
-                <!-- Tile 3 -->
-                <div
-                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
-                    <span
-                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">03</span>
-                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Frequency</h3>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Set plays per hour or guarantee a
-                        specific number of targeted impressions.</p>
-                </div>
-
-                <!-- Tile 4 -->
-                <div
-                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
-                    <span
-                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">04</span>
-                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Upload Creative</h3>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Upload standard formats. Our engine
-                        intelligently crops for all screen ratios.</p>
-                </div>
-
-                <!-- Tile 5 -->
-                <div
-                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
-                    <span
-                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">05</span>
-                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Approve & Schedule</h3>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Finalize your flight dates, review
-                        transparent cost breakdowns, and schedule.</p>
-                </div>
-
-                <!-- Tile 6 -->
-                <div
-                    class="rounded-[2rem] overflow-hidden relative group isolate border border-white/10 p-8 flex flex-col bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors stagger-card">
-                    <span
-                        class="text-5xl font-outfit font-black text-white/10 mb-4 transition-colors group-hover:text-cyan-400/30">06</span>
-                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Go Live</h3>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Your campaign hits the streets. Monitor
-                        real-time delivery via your dashboard.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section (Mirror Design) -->
-    <section id="pricing" class="py-24 md:py-32 text-black" style="background-color: #f8f6f0;">
+    <!-- How Advertising Works -->
+    <section class="py-24 md:py-32 bg-white border-t border-gray-100">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-8 items-start lg:items-stretch">
+                
+                <!-- Title -->
+                <div class="lg:w-[35%] shrink-0 lg:pr-12 py-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                        <span class="text-[11px] font-bold tracking-[0.2em] text-[#0B1E36] uppercase">How It Works</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0B1E36] leading-[1.1] mb-6 tracking-tight">
+                        A Frictionless Campaign Journey.
+                    </h2>
+                    <p class="text-gray-500 text-[15px] md:text-base leading-relaxed mb-8">
+                        Our platform makes booking out-of-home advertising as simple as digital. Execute high-impact campaigns in a matter of days, not months.
+                    </p>
+                    <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#0B1E36] text-white text-[13px] font-medium hover:bg-[#1a365d] transition-colors rounded-sm">
+                        Start a Campaign
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
 
-            <!-- Header -->
-            <div class="mb-16 md:mb-24 stagger-section text-left">
-                <p class="text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase mb-4">Pricing</p>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-outfit font-black mb-4 leading-tight text-black">
-                    Flexible Pricing <span class="text-gradient-primary">Model</span>
+                <!-- 6 Steps Grid -->
+                <div class="lg:w-[65%] w-full border-t border-l border-gray-200" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                    
+                    <!-- Step 1 -->
+                    <div class="p-6 lg:p-8 border-b border-r border-gray-200 flex flex-col bg-white hover:bg-slate-50 transition-colors group">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="text-[11px] font-bold tracking-[0.15em] text-[#E5B05C]">01</span>
+                        </div>
+                        <h3 class="text-[15px] font-bold text-[#0B1E36] mb-3">Choose Location</h3>
+                        <p class="text-[13px] text-gray-500 leading-relaxed mt-auto">Select strategic screens based on precise demographic data and targeting goals.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="p-6 lg:p-8 border-b border-r border-gray-200 flex flex-col bg-white hover:bg-slate-50 transition-colors group">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="text-[11px] font-bold tracking-[0.15em] text-[#E5B05C]">02</span>
+                        </div>
+                        <h3 class="text-[15px] font-bold text-[#0B1E36] mb-3">Ad Duration</h3>
+                        <p class="text-[13px] text-gray-500 leading-relaxed mt-auto">Choose your format length—from quick 10s hits to immersive 60s spots.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="p-6 lg:p-8 border-b border-r border-gray-200 flex flex-col bg-white hover:bg-slate-50 transition-colors group">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="text-[11px] font-bold tracking-[0.15em] text-[#E5B05C]">03</span>
+                        </div>
+                        <h3 class="text-[15px] font-bold text-[#0B1E36] mb-3">Frequency</h3>
+                        <p class="text-[13px] text-gray-500 leading-relaxed mt-auto">Set plays per hour or guarantee a specific number of targeted impressions.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="p-6 lg:p-8 border-b border-r border-gray-200 flex flex-col bg-white hover:bg-slate-50 transition-colors group">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="text-[11px] font-bold tracking-[0.15em] text-[#E5B05C]">04</span>
+                        </div>
+                        <h3 class="text-[15px] font-bold text-[#0B1E36] mb-3">Upload Creative</h3>
+                        <p class="text-[13px] text-gray-500 leading-relaxed mt-auto">Upload standard formats. Our engine intelligently scales for all screen ratios.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="p-6 lg:p-8 border-b border-r border-gray-200 flex flex-col bg-white hover:bg-slate-50 transition-colors group">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="text-[11px] font-bold tracking-[0.15em] text-[#E5B05C]">05</span>
+                        </div>
+                        <h3 class="text-[15px] font-bold text-[#0B1E36] mb-3">Approve & Schedule</h3>
+                        <p class="text-[13px] text-gray-500 leading-relaxed mt-auto">Finalize flight dates, review transparent cost breakdowns, and schedule.</p>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="p-6 lg:p-8 border-b border-r border-gray-200 flex flex-col bg-white hover:bg-slate-50 transition-colors group">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="text-[11px] font-bold tracking-[0.15em] text-[#E5B05C]">06</span>
+                        </div>
+                        <h3 class="text-[15px] font-bold text-[#0B1E36] mb-3">Go Live</h3>
+                        <p class="text-[13px] text-gray-500 leading-relaxed mt-auto">Your campaign hits the streets. Monitor real-time delivery via reporting.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Concept -->
+    <section class="py-24 md:py-32 bg-slate-50 border-t border-gray-100">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+            
+            <div class="mb-16 max-w-2xl mx-auto">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-[#0B1E36] uppercase">Pricing</span>
+                    <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0B1E36] leading-[1.1] mb-6 tracking-tight">
+                    Flexible Campaign Options.
                 </h2>
-                <p class="text-gray-600 font-light text-lg">Our pricing is highly flexible and dynamically calculated based on your specific location, chosen screen, campaign duration, frequency of plays, and overall campaign period.</p>
+                <p class="text-gray-500 text-[15px] leading-relaxed">
+                    Our pricing is flexible and dynamically calculated based on location, duration, frequency, and campaign period.
+                </p>
             </div>
 
-            <!-- Grid -->
-            <div class="stagger-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; align-items: center;">
-
-                <!-- 10s Card -->
-                <div class="stagger-card shadow-lg" style="background-color: #161821; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column;">
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="color: white; font-size: 40px; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1; margin-bottom: 8px;">10s</h3>
-                        <p style="color: #a0a3b2; font-size: 14px; font-weight: 400;">Quick Campaigns</p>
-                    </div>
-                    
-                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 16px;">
-                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Strategic placements
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;" class="text-left">
+                <!-- 10s -->
+                <div class="bg-white p-8 rounded-md shadow-sm border border-gray-100 flex flex-col hover:border-[#E5B05C] transition-colors">
+                    <h3 class="text-4xl font-bold text-[#0B1E36] mb-2">10s</h3>
+                    <p class="text-[13px] text-gray-500 mb-8 font-medium">Quick Campaigns</p>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3 text-[13px] text-gray-600">
+                            <svg class="w-4 h-4 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            High frequency
                         </li>
-                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Basic analytics
-                        </li>
-                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Dedicated support
+                        <li class="flex items-center gap-3 text-[13px] text-gray-600">
+                            <svg class="w-4 h-4 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Brand awareness
                         </li>
                     </ul>
-
-                    <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background-color: rgba(255,255,255,0.05); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
-                        Get Advertising Rates <span style="font-size: 14px;">&rarr;</span>
-                    </button>
+                    <a href="contact.html" class="block w-full py-3 text-center border border-gray-300 rounded-sm text-[12px] font-semibold text-[#0B1E36] hover:border-[#0B1E36] hover:bg-slate-50 transition-colors">
+                        Get Advertising Rates
+                    </a>
                 </div>
 
-                <!-- 15s Card (Highlighted) -->
-                <div class="stagger-card" style="background-color: #120f18; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column; position: relative; box-shadow: 0 20px 50px rgba(145, 39, 255, 0.2); border: 1px solid rgba(145, 39, 255, 0.3); transform: scale(1.05); z-index: 10;">
-                    
-                    <!-- Most Popular Pill -->
-                    <div style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(to right, #9127ff, #ff3b8d); color: white; padding: 6px 16px; border-radius: 99px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 15px rgba(145, 39, 255, 0.4);">
+                <!-- 15s -->
+                <div class="bg-[#0B1E36] p-8 rounded-md shadow-lg border border-[#0B1E36] flex flex-col relative transform lg:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#E5B05C] text-[#0B1E36] px-6 py-2 text-[12px] font-bold uppercase tracking-widest rounded-full shadow-md whitespace-nowrap" style="white-space: nowrap;">
                         Most Popular
                     </div>
-
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="color: white; font-size: 40px; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1; margin-bottom: 8px;">15s</h3>
-                        <p style="color: #e0e0e0; font-size: 14px; font-weight: 400;">Extended Reach</p>
-                    </div>
-                    
-                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 16px;">
-                        <li style="color: #e0e0e0; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #9127ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Premium locations
+                    <h3 class="text-4xl font-bold text-white mb-2">15s</h3>
+                    <p class="text-[13px] text-gray-400 mb-8 font-medium">Standard Spot</p>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3 text-[13px] text-gray-300">
+                            <svg class="w-4 h-4 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Industry standard
                         </li>
-                        <li style="color: #e0e0e0; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #9127ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Advanced analytics
-                        </li>
-                        <li style="color: #e0e0e0; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #9127ff;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Priority support
+                        <li class="flex items-center gap-3 text-[13px] text-gray-300">
+                            <svg class="w-4 h-4 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Balanced engagement
                         </li>
                     </ul>
-
-                    <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background: linear-gradient(to right, #9127ff, #ff3b8d); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(145, 39, 255, 0.4); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-                        Get Advertising Rates <span style="font-size: 14px;">&rarr;</span>
-                    </button>
+                    <a href="contact.html" class="block w-full py-3 text-center bg-[#E5B05C] text-[#0B1E36] rounded-sm text-[12px] font-bold hover:bg-white transition-colors">
+                        Get Advertising Rates
+                    </a>
                 </div>
 
-                <!-- 30s Card -->
-                <div class="stagger-card shadow-lg" style="background-color: #161821; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column;">
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="color: white; font-size: 40px; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1; margin-bottom: 8px;">30s</h3>
-                        <p style="color: #a0a3b2; font-size: 14px; font-weight: 400;">Maximum Impact</p>
-                    </div>
-                    
-                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 16px;">
-                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Top-tier placements
+                <!-- 30s -->
+                <div class="bg-white p-8 rounded-md shadow-sm border border-gray-100 flex flex-col hover:border-[#E5B05C] transition-colors">
+                    <h3 class="text-4xl font-bold text-[#0B1E36] mb-2">30s</h3>
+                    <p class="text-[13px] text-gray-500 mb-8 font-medium">Storytelling</p>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3 text-[13px] text-gray-600">
+                            <svg class="w-4 h-4 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Deep engagement
                         </li>
-                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Detailed reporting
-                        </li>
-                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Dedicated manager
+                        <li class="flex items-center gap-3 text-[13px] text-gray-600">
+                            <svg class="w-4 h-4 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Complex messages
                         </li>
                     </ul>
-
-                    <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background-color: rgba(255,255,255,0.05); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
-                        Get Advertising Rates <span style="font-size: 14px;">&rarr;</span>
-                    </button>
+                    <a href="contact.html" class="block w-full py-3 text-center border border-gray-300 rounded-sm text-[12px] font-semibold text-[#0B1E36] hover:border-[#0B1E36] hover:bg-slate-50 transition-colors">
+                        Get Advertising Rates
+                    </a>
                 </div>
 
-                <!-- 60s Card -->
-                <div class="stagger-card shadow-lg" style="background-color: #161821; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column;">
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="color: white; font-size: 40px; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1; margin-bottom: 8px;">60s</h3>
-                        <p style="color: #a0a3b2; font-size: 14px; font-weight: 400;">Full Brand Story</p>
-                    </div>
-                    
-                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 16px;">
-                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Nationwide coverage
+                <!-- 60s -->
+                <div class="bg-white p-8 rounded-md shadow-sm border border-gray-100 flex flex-col hover:border-[#E5B05C] transition-colors">
+                    <h3 class="text-4xl font-bold text-[#0B1E36] mb-2">60s</h3>
+                    <p class="text-[13px] text-gray-500 mb-8 font-medium">Domination</p>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3 text-[13px] text-gray-600">
+                            <svg class="w-4 h-4 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Full takeovers
                         </li>
-                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Custom reporting
-                        </li>
-                        <li style="color: #a0a3b2; font-size: 13px; display: flex; align-items: center; gap: 12px;">
-                            <svg style="width: 14px; height: 14px; color: #4a4d5e;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            VIP support
+                        <li class="flex items-center gap-3 text-[13px] text-gray-600">
+                            <svg class="w-4 h-4 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Immersive narrative
                         </li>
                     </ul>
-
-                    <button style="margin-top: auto; width: 100%; padding: 14px; border-radius: 99px; background-color: rgba(255,255,255,0.05); color: white; font-size: 13px; font-weight: 600; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)'">
-                        Get Advertising Rates <span style="font-size: 14px;">&rarr;</span>
-                    </button>
+                    <a href="contact.html" class="block w-full py-3 text-center border border-gray-300 rounded-sm text-[12px] font-semibold text-[#0B1E36] hover:border-[#0B1E36] hover:bg-slate-50 transition-colors">
+                        Get Advertising Rates
+                    </a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Full Bleed Image CTA Section -->
-    <section style="position: relative; width: 100%; min-height: 550px; display: flex; align-items: center; background-color: #020202; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05);">
-        
-        <!-- Background Image -->
-        <div style="position: absolute; inset: 0; background-image: url('images/bg-0.png'); background-size: cover; background-position: center;"></div>
-        
-        <!-- Left Dark Gradient Overlay for Text Legibility -->
-        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(2,2,2,0.95) 0%, rgba(2,2,2,0.8) 40%, rgba(2,2,2,0) 100%); pointer-events: none;"></div>
-
-        <!-- Content -->
-        <div class="max-w-[1400px] w-full mx-auto px-6 md:px-12 relative z-10">
-            <div style="max-width: 500px;" class="stagger-section">
-                
-                <p class="stagger-card" style="font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: #a0a3b2; text-transform: uppercase; margin-bottom: 24px;">Let's Get Started</p>
-                
-                <h2 class="stagger-card" style="font-size: 64px; font-weight: 800; font-family: 'Outfit', sans-serif; color: white; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em;">
-                    Ready to <span class="text-gradient-primary">Illuminate?</span>
-                </h2>
-                
-                <p class="stagger-card" style="font-size: 16px; color: #d1d5db; font-weight: 300; line-height: 1.6; margin-bottom: 40px;">
-                    Your brand deserves to be seen. Let's create something unforgettable together.
+    <!-- CTA Section -->
+    <section class="bg-[#0B1E36] text-white flex flex-col md:flex-row items-stretch">
+        <div class="w-full md:w-[40%] lg:w-[45%] shrink-0 relative min-h-[300px]">
+            <img src="./images/city_dubai.jpg" class="absolute inset-0 w-full h-full object-cover">
+        </div>
+        <div class="w-full md:w-[60%] lg:w-[55%] p-10 md:p-16 lg:p-24 xl:p-32 flex flex-col justify-center">
+            <div class="max-w-[800px]">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-[#E5B05C] uppercase">Let's Work Together</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold mb-6 leading-[1.1] tracking-tight">Have a Project in Mind?</h2>
+                <p class="text-gray-300 max-w-md mb-8 text-[13px] leading-relaxed">
+                    Whether you need an LED wall, want to advertise, or have a unique space, we're here to help.
                 </p>
-                
-                <a href="contact.html" class="stagger-card" style="display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: linear-gradient(to right, #813cff, #ff3b8d); color: white; padding: 18px 40px; border-radius: 99px; font-weight: 600; font-size: 15px; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 10px 30px rgba(129, 60, 255, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 40px rgba(129, 60, 255, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(129, 60, 255, 0.3)'">
-                    Get in Touch <span style="font-size: 16px;">&rarr;</span>
-                </a>
-
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html" class="flex items-center justify-center gap-2 px-8 py-3.5 bg-[#E5B05C] text-[#0B1E36] text-[13px] font-semibold hover:bg-[#d4af37] transition-colors rounded-sm">
+                        Get an LED Wall
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                    <a href="advertise.html" class="flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent border border-gray-500 text-white text-[13px] font-semibold hover:border-white transition-colors rounded-sm">
+                        Advertise With Us
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer CTA (Clean, matches index) -->
-    <footer class="relative z-10 bg-[#020202] pt-32 pb-12 overflow-hidden border-t border-black/5">
-
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-            <h2 class="text-4xl md:text-5xl font-outfit font-bold text-center mb-24 sec-title text-white">Ready to
-                proceed?</h2>
-
-            <div class="grid md:grid-cols-3 gap-6 mb-32 stagger-section">
-                <a href="index.html"
-                    class="block p-10 rounded-2xl border border-white/5 bg-[#0a0a0a] hover:bg-[#111] transition-all duration-300 group stagger-card">
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-6">Hardware</p>
-                    <h3
-                        class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
-                        I Need an LED Wall</h3>
-                    <p class="text-gray-400 text-sm font-light">Custom builds for architecture, venues, and retail.</p>
+    <!-- Footer -->
+    <footer class="bg-[#071324] text-white py-12 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
+                <a href="index.html" class="flex items-center">
+                    <img src="./images/sanspng.png" alt="Logo" class="h-6 object-contain">
                 </a>
-                <a href="advertise.html"
-                    class="block p-10 rounded-2xl border border-white/10 bg-[#111] hover:bg-[#1a1a1a] transition-all duration-300 group stagger-card relative overflow-hidden">
-                    <div
-                        class="absolute top-0 left-0 w-full h-[2px] bg-cyan-400 opacity-50 group-hover:opacity-100 transition-opacity">
-                    </div>
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-cyan-400 mb-6">Media</p>
-                    <h3
-                        class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors">
-                        I Want to Advertise</h3>
-                    <p class="text-gray-400 text-sm font-light">Launch campaigns on our premium global network.</p>
-                </a>
-                <a href="partners.html"
-                    class="block p-10 rounded-2xl border border-white/5 bg-[#0a0a0a] hover:bg-[#111] transition-all duration-300 group stagger-card">
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-6">Partnership</p>
-                    <h3
-                        class="text-2xl font-outfit font-bold mb-3 text-white group-hover:text-pink-400 transition-colors">
-                        I Have a Location</h3>
-                    <p class="text-gray-400 text-sm font-light">Monetize your property with a digital display.</p>
-                </a>
-            </div>
-
-            <div
-                class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-gray-500 text-[10px] tracking-widest uppercase">
-                <img src="./images/sanspng.png" alt="Lumina Logo" class="h-8 object-contain mb-4 md:mb-0" style="height: 32px;">
-                <div class="flex gap-8 mb-4 md:mb-0">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <div class="flex flex-wrap justify-center gap-6 text-[12px] text-gray-400 font-medium">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="network.html" class="hover:text-white transition-colors">LED Solutions</a>
+                    <a href="advertise.html" class="hover:text-white transition-colors">Advertising</a>
+                    <a href="network.html" class="hover:text-white transition-colors">Our Screens</a>
+                    <a href="projects.html" class="hover:text-white transition-colors">Projects</a>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
                     <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
-                <p>&copy; 2026 Lumina. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 text-[11px] text-gray-400 font-medium">
+                        <svg class="w-3.5 h-3.5 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Columbus, Ohio, USA
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-500 border-t border-white/10 pt-6">
+                <p>&copy; 2026 Lumière. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0 font-medium">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Sticky Action Bar -->
-    <div
-        class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-[#050505]/90 border-t border-white/10 p-4 flex justify-between gap-2 backdrop-blur-xl">
-        <a href="tel:+1234567890"
-            class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-white text-center">Call</a>
-        <a href="https://wa.me/1234567890"
-            class="flex-1 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-xs font-semibold uppercase tracking-wider text-green-400 text-center">WhatsApp</a>
-        <a href="contact.html"
-            class="flex-1 py-3 rounded-lg bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-gray-200 text-center">Get
-            Quote</a>
-    </div>
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top"
+        class="fixed bottom-8 right-8 z-50 p-3 bg-[#E5B05C] text-[#0B1E36] rounded-sm shadow-xl transition-all duration-300 hover:bg-[#d4af37] hover:shadow-2xl"
+        style="opacity: 0; transform: translateY(1rem); pointer-events: none;">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
-    <script src="./main.js"></script>
+    <script src="./main.js?v=2"></script>
 </body>
-
 </html>
-
