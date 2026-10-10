@@ -234,4 +234,60 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.addEventListener('resize', updateTestiSlider);
   }
+
+  // City Slider Logic
+  const citySlider = document.getElementById('city-slider');
+  const cityPrev = document.getElementById('city-prev');
+  const cityNext = document.getElementById('city-next');
+  
+  if (citySlider && cityPrev && cityNext) {
+    let currentCitySlide = 0;
+    const citySlides = citySlider.children;
+    
+    function getCityMaxSlides() {
+      if (window.innerWidth >= 1024) return citySlides.length - 4;
+      if (window.innerWidth >= 768) return citySlides.length - 2;
+      return citySlides.length - 1;
+    }
+    
+    function updateCitySlider() {
+      const maxSlides = getCityMaxSlides();
+      if (currentCitySlide > maxSlides) currentCitySlide = maxSlides;
+      if (currentCitySlide < 0) currentCitySlide = 0;
+      
+      let slidePercentage = 100; // mobile
+      if (window.innerWidth >= 1024) slidePercentage = 25; // lg
+      else if (window.innerWidth >= 768) slidePercentage = 50; // md
+      
+      // Bulletproof: Force the items to be the exact percentage width and padding
+      for(let i = 0; i < citySlides.length; i++) {
+          citySlides[i].style.flex = `0 0 ${slidePercentage}%`;
+          citySlides[i].style.maxWidth = `${slidePercentage}%`;
+          citySlides[i].style.paddingLeft = '12px';
+          citySlides[i].style.paddingRight = '12px';
+      }
+      
+      citySlider.style.transform = `translateX(-${currentCitySlide * slidePercentage}%)`;
+    }
+
+    // Call it once on load to initialize widths
+    updateCitySlider();
+
+    cityNext.addEventListener('click', () => {
+      const maxSlides = getCityMaxSlides();
+      if (currentCitySlide < maxSlides) {
+        currentCitySlide++;
+        updateCitySlider();
+      }
+    });
+
+    cityPrev.addEventListener('click', () => {
+      if (currentCitySlide > 0) {
+        currentCitySlide--;
+        updateCitySlider();
+      }
+    });
+    
+    window.addEventListener('resize', updateCitySlider);
+  }
 });

@@ -240,60 +240,104 @@
     <!-- Explore by City Section -->
     <section class="py-24 bg-white border-t border-gray-100">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            <div class="mb-12">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
-                    <span class="text-[10px] font-bold tracking-[0.2em] text-[#0B1E36] uppercase">Popular Cities</span>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] text-[#0B1E36] uppercase">Popular Cities</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0B1E36] leading-[1.1] mb-6 tracking-tight">
+                        Explore by City
+                    </h2>
+                    <p class="text-gray-500 text-[15px] leading-relaxed max-w-lg">
+                        Discover our top cities and their premium screen locations.
+                    </p>
                 </div>
-                <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0B1E36] leading-[1.1] mb-6 tracking-tight">
-                    Explore by City
-                </h2>
-                <p class="text-gray-500 text-[15px] leading-relaxed max-w-lg">
-                    Discover our top cities and their premium screen locations.
-                </p>
+                <!-- Navigation Arrows -->
+                <div class="flex gap-2">
+                    <button id="city-prev" class="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-400 hover:text-[#0B1E36] hover:border-[#0B1E36] transition-colors rounded-sm bg-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="city-next" class="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-400 hover:text-[#0B1E36] hover:border-[#0B1E36] transition-colors rounded-sm bg-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <!-- NY -->
-                <a href="#locations" class="group block relative h-64 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
-                    <img src="./images/city_ny.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="New York">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36] via-[#0B1E36]/40 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <h3 class="text-xl font-bold text-white mb-1">New York</h3>
-                        <p class="text-[12px] font-medium text-gray-300">12 Screens</p>
+            <div class="overflow-hidden -mx-3 px-3">
+                <div id="city-slider" class="flex transition-transform duration-500 ease-out" style="width: 100%;">
+                    <!-- NY -->
+                    <div class="w-full md:w-1/2 lg:w-1/4 shrink-0 px-3">
+                        <a href="#locations" class="group block relative h-64 md:h-72 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
+                            <img src="./images/city_ny.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="New York">
+                            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.3) 100%); pointer-events: none;"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <h3 class="text-xl font-bold text-white mb-1">New York</h3>
+                                <p class="text-[12px] font-medium text-gray-300">12 Screens</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                
-                <!-- Dubai -->
-                <a href="#locations" class="group block relative h-64 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
-                    <img src="./images/city_dubai.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Dubai">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36] via-[#0B1E36]/40 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <h3 class="text-xl font-bold text-white mb-1">Dubai</h3>
-                        <p class="text-[12px] font-medium text-gray-300">10 Screens</p>
+                    
+                    <!-- Dubai -->
+                    <div class="w-full md:w-1/2 lg:w-1/4 shrink-0 px-3">
+                        <a href="#locations" class="group block relative h-64 md:h-72 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
+                            <img src="./images/city_dubai.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Dubai">
+                            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.3) 100%); pointer-events: none;"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Dubai</h3>
+                                <p class="text-[12px] font-medium text-gray-300">10 Screens</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                
-                <!-- London -->
-                <a href="#locations" class="group block relative h-64 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
-                    <img src="./images/city_london.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="London">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36] via-[#0B1E36]/40 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <h3 class="text-xl font-bold text-white mb-1">London</h3>
-                        <p class="text-[12px] font-medium text-gray-300">8 Screens</p>
+                    
+                    <!-- London -->
+                    <div class="w-full md:w-1/2 lg:w-1/4 shrink-0 px-3">
+                        <a href="#locations" class="group block relative h-64 md:h-72 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
+                            <img src="./images/city_london.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="London">
+                            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.3) 100%); pointer-events: none;"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <h3 class="text-xl font-bold text-white mb-1">London</h3>
+                                <p class="text-[12px] font-medium text-gray-300">8 Screens</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                
-                <!-- Singapore -->
-                <a href="#locations" class="group block relative h-64 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
-                    <img src="./images/city_singapore.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Singapore">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36] via-[#0B1E36]/40 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <h3 class="text-xl font-bold text-white mb-1">Singapore</h3>
-                        <p class="text-[12px] font-medium text-gray-300">6 Screens</p>
+                    
+                    <!-- Singapore -->
+                    <div class="w-full md:w-1/2 lg:w-1/4 shrink-0 px-3">
+                        <a href="#locations" class="group block relative h-64 md:h-72 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
+                            <img src="./images/city_singapore.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Singapore">
+                            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.3) 100%); pointer-events: none;"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Singapore</h3>
+                                <p class="text-[12px] font-medium text-gray-300">6 Screens</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
+
+                    <!-- Tokyo -->
+                    <div class="w-full md:w-1/2 lg:w-1/4 shrink-0 px-3">
+                        <a href="#locations" class="group block relative h-64 md:h-72 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
+                            <img src="./images/premium_tech_world_map.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Tokyo">
+                            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.3) 100%); pointer-events: none;"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Tokyo</h3>
+                                <p class="text-[12px] font-medium text-gray-300">5 Screens</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Paris -->
+                    <div class="w-full md:w-1/2 lg:w-1/4 shrink-0 px-3">
+                        <a href="#locations" class="group block relative h-64 md:h-72 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-shadow">
+                            <img src="./images/premium_led_display.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Paris">
+                            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.3) 100%); pointer-events: none;"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <h3 class="text-xl font-bold text-white mb-1">Paris</h3>
+                                <p class="text-[12px] font-medium text-gray-300">3 Screens</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
         </div>
     </section>
     <!-- Our LED Solutions -->

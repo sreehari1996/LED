@@ -78,8 +78,8 @@
 
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#0B1E36]">
-        <img src="./images/premium_led_display.jpg" onerror="this.src='./images/city_ny.jpg'" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" alt="Projects Hero">
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36] to-transparent"></div>
+        <img src="./images/hero2.jpg" onerror="this.src='./images/city_ny.jpg'" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" alt="Projects Hero">
+        <div class="absolute inset-0" style="background: linear-gradient(to top, #0B1E36 0%, transparent 100%); pointer-events: none;"></div>
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 text-center">
             <div class="inline-flex items-center gap-3 mb-6">
                 <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
@@ -101,13 +101,13 @@
             
             <!-- Filter Categories -->
             <div class="flex flex-wrap items-center justify-center gap-2 mb-16" id="portfolio-filters">
-                <button data-filter="all" class="filter-btn px-5 py-2 text-[12px] font-bold tracking-wider uppercase bg-[#0B1E36] text-white rounded-sm">All Projects</button>
-                <button data-filter="Outdoor LED" class="filter-btn px-5 py-2 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-sm">Outdoor LED</button>
-                <button data-filter="Facades" class="filter-btn px-5 py-2 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-sm">Facades</button>
-                <button data-filter="Billboards" class="filter-btn px-5 py-2 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-sm">Billboards</button>
-                <button data-filter="Indoor LED" class="filter-btn px-5 py-2 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-sm">Indoor LED</button>
-                <button data-filter="Retail" class="filter-btn px-5 py-2 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-sm">Retail</button>
-                <button data-filter="Advertising Network" class="filter-btn px-5 py-2 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-sm">Advertising Network</button>
+                <button data-filter="all" class="filter-btn px-6 py-2.5 text-[12px] font-bold tracking-wider uppercase bg-[#0B1E36] text-white rounded-full">All Projects</button>
+                <button data-filter="Outdoor LED" class="filter-btn px-6 py-2.5 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-full">Outdoor LED</button>
+                <button data-filter="Facades" class="filter-btn px-6 py-2.5 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-full">Facades</button>
+                <button data-filter="Billboards" class="filter-btn px-6 py-2.5 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-full">Billboards</button>
+                <button data-filter="Indoor LED" class="filter-btn px-6 py-2.5 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-full">Indoor LED</button>
+                <button data-filter="Retail" class="filter-btn px-6 py-2.5 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-full">Retail</button>
+                <button data-filter="Advertising Network" class="filter-btn px-6 py-2.5 text-[12px] font-bold tracking-wider uppercase text-gray-500 hover:text-[#0B1E36] hover:bg-gray-100 transition-colors rounded-full">Advertising Network</button>
             </div>
 
             <!-- Grid -->
@@ -116,9 +116,11 @@
                 <!-- Project 1 -->
                 <a href="contact.html" data-category="Facades" class="portfolio-item group block relative w-full overflow-hidden rounded-sm bg-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-500" style="aspect-ratio: 1/1;">
                     <img src="./images/city_ny.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Times Square Mega Screen">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/95 via-[#0B1E36]/40 to-transparent opacity-100"></div>
+                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.8) 40%, rgba(11,30,54, 0.2) 100%); pointer-events: none;"></div>
+                    <div class="absolute top-6 right-6 z-10">
+                        <div class="inline-block px-4 py-1.5 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm shadow-md">Facades</div>
+                    </div>
                     <div class="absolute bottom-0 left-0 w-full p-8">
-                        <div class="inline-block px-3 py-1 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm mb-3">Facades</div>
                         <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Times Square Mega Screen</h3>
                         <p class="text-gray-300 text-[13px]">8,000 sq ft 3D capable wrap</p>
                     </div>
@@ -127,9 +129,11 @@
                 <!-- Project 2 -->
                 <a href="contact.html" data-category="Billboards" class="portfolio-item group block relative w-full overflow-hidden rounded-sm bg-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-500" style="aspect-ratio: 1/1;">
                     <img src="./images/led_billboard.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Highway Spectacular Network">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/95 via-[#0B1E36]/40 to-transparent opacity-100"></div>
+                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.8) 40%, rgba(11,30,54, 0.2) 100%); pointer-events: none;"></div>
+                    <div class="absolute top-6 right-6 z-10">
+                        <div class="inline-block px-4 py-1.5 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm shadow-md">Billboards</div>
+                    </div>
                     <div class="absolute bottom-0 left-0 w-full p-8">
-                        <div class="inline-block px-3 py-1 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm mb-3">Billboards</div>
                         <h3 class="text-2xl font-bold text-white mb-2 leading-tight">I-95 Spectaculars</h3>
                         <p class="text-gray-300 text-[13px]">High-frequency commuter network</p>
                     </div>
@@ -138,9 +142,11 @@
                 <!-- Project 3 -->
                 <a href="contact.html" data-category="Retail" class="portfolio-item group block relative w-full overflow-hidden rounded-sm bg-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-500" style="aspect-ratio: 1/1;">
                     <img src="./images/retail.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Luxury Retail Display">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/95 via-[#0B1E36]/40 to-transparent opacity-100"></div>
+                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.8) 40%, rgba(11,30,54, 0.2) 100%); pointer-events: none;"></div>
+                    <div class="absolute top-6 right-6 z-10">
+                        <div class="inline-block px-4 py-1.5 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm shadow-md">Retail</div>
+                    </div>
                     <div class="absolute bottom-0 left-0 w-full p-8">
-                        <div class="inline-block px-3 py-1 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm mb-3">Retail</div>
                         <h3 class="text-2xl font-bold text-white mb-2 leading-tight">5th Ave Flagship Store</h3>
                         <p class="text-gray-300 text-[13px]">Transparent window displays</p>
                     </div>
@@ -149,9 +155,11 @@
                 <!-- Project 4 -->
                 <a href="contact.html" data-category="Outdoor LED" class="portfolio-item group block relative w-full overflow-hidden rounded-sm bg-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-500" style="aspect-ratio: 1/1;">
                     <img src="./images/city_dubai.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Dubai Corner Screen">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/95 via-[#0B1E36]/40 to-transparent opacity-100"></div>
+                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.8) 40%, rgba(11,30,54, 0.2) 100%); pointer-events: none;"></div>
+                    <div class="absolute top-6 right-6 z-10">
+                        <div class="inline-block px-4 py-1.5 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm shadow-md">Outdoor LED</div>
+                    </div>
                     <div class="absolute bottom-0 left-0 w-full p-8">
-                        <div class="inline-block px-3 py-1 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm mb-3">Outdoor LED</div>
                         <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Downtown Dubai Wrap</h3>
                         <p class="text-gray-300 text-[13px]">Curved 3D immersive display</p>
                     </div>
@@ -160,9 +168,11 @@
                 <!-- Project 5 -->
                 <a href="contact.html" data-category="Indoor LED" class="portfolio-item group block relative w-full overflow-hidden rounded-sm bg-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-500" style="aspect-ratio: 1/1;">
                     <img src="./images/corporate.jpg" onerror="this.src='./images/hero_macro.jpg'" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Corporate Lobby">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/95 via-[#0B1E36]/40 to-transparent opacity-100"></div>
+                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.8) 40%, rgba(11,30,54, 0.2) 100%); pointer-events: none;"></div>
+                    <div class="absolute top-6 right-6 z-10">
+                        <div class="inline-block px-4 py-1.5 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm shadow-md">Indoor LED</div>
+                    </div>
                     <div class="absolute bottom-0 left-0 w-full p-8">
-                        <div class="inline-block px-3 py-1 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm mb-3">Indoor LED</div>
                         <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Tech Hub Lobby</h3>
                         <p class="text-gray-300 text-[13px]">Fine-pitch interactive wall</p>
                     </div>
@@ -171,9 +181,11 @@
                 <!-- Project 6 -->
                 <a href="contact.html" data-category="Advertising Network" class="portfolio-item group block relative w-full overflow-hidden rounded-sm bg-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-500" style="aspect-ratio: 1/1;">
                     <img src="./images/city_singapore.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Exhibition Floor">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/95 via-[#0B1E36]/40 to-transparent opacity-100"></div>
+                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.8) 40%, rgba(11,30,54, 0.2) 100%); pointer-events: none;"></div>
+                    <div class="absolute top-6 right-6 z-10">
+                        <div class="inline-block px-4 py-1.5 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm shadow-md">Advertising Network</div>
+                    </div>
                     <div class="absolute bottom-0 left-0 w-full p-8">
-                        <div class="inline-block px-3 py-1 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm mb-3">Advertising Network</div>
                         <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Global Expo Center</h3>
                         <p class="text-gray-300 text-[13px]">Immersive LED flooring & canopy</p>
                     </div>
@@ -181,9 +193,11 @@
                 <!-- Project 7 -->
                 <a href="contact.html" data-category="Billboards" class="portfolio-item group block relative w-full overflow-hidden rounded-sm bg-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-500" style="aspect-ratio: 1/1;">
                     <img src="./images/premium_led_display.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="London Gateway">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/95 via-[#0B1E36]/40 to-transparent opacity-100"></div>
+                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.8) 40%, rgba(11,30,54, 0.2) 100%); pointer-events: none;"></div>
+                    <div class="absolute top-6 right-6 z-10">
+                        <div class="inline-block px-4 py-1.5 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm shadow-md">Billboards</div>
+                    </div>
                     <div class="absolute bottom-0 left-0 w-full p-8">
-                        <div class="inline-block px-3 py-1 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm mb-3">Billboards</div>
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">London Gateway</h3>
                         <p class="text-gray-300 text-[13px]">High-definition dual roadside</p>
                     </div>
@@ -192,9 +206,11 @@
                 <!-- Project 8 -->
                 <a href="contact.html" data-category="Indoor LED" class="portfolio-item group block relative w-full overflow-hidden rounded-sm bg-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-500" style="aspect-ratio: 1/1;">
                     <img src="./images/hero.jpg" onerror="this.src='./images/hero_macro.jpg'" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Flagship Concert Hall">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/95 via-[#0B1E36]/40 to-transparent opacity-100"></div>
+                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(11,30,54, 0.95) 0%, rgba(11,30,54, 0.8) 40%, rgba(11,30,54, 0.2) 100%); pointer-events: none;"></div>
+                    <div class="absolute top-6 right-6 z-10">
+                        <div class="inline-block px-4 py-1.5 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm shadow-md">Indoor LED</div>
+                    </div>
                     <div class="absolute bottom-0 left-0 w-full p-8">
-                        <div class="inline-block px-3 py-1 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase rounded-sm mb-3">Indoor LED</div>
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">Flagship Concert Hall</h3>
                         <p class="text-gray-300 text-[13px]">Dynamic stage backdrop</p>
                     </div>
