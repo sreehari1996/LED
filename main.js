@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileMenuEl && mobileMenuOpenBtn) {
     function openMobileMenu() {
+      mobileMenuEl.classList.remove('hidden');
       mobileMenuEl.style.display = 'block';
       requestAnimationFrame(() => {
         mobileMenuOverlay.style.opacity = '1';
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenuOverlay.style.opacity = '0';
       mobileMenuPanel.style.transform = 'translateX(100%)';
       setTimeout(() => {
+        mobileMenuEl.classList.add('hidden');
         mobileMenuEl.style.display = 'none';
       }, 350);
       document.body.style.overflow = '';
@@ -26,6 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuOpenBtn.addEventListener('click', openMobileMenu);
     if (mobileMenuCloseBtn) mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
     if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+    if (mobileMenuPanel) {
+      mobileMenuPanel.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+    }
   }
 
   // Hero Slider Logic
@@ -139,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Global Fade Up Elements
     const fadeUpElements = document.querySelectorAll('.gsap-fade-up');
     fadeUpElements.forEach((el) => {
-      gsap.fromTo(el, 
+      gsap.fromTo(el,
         { y: 50, opacity: 0 },
         {
           scrollTrigger: {
@@ -179,42 +186,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // GSAP Split-Screen Pinned Stack Layout
     const pinnedSection = document.getElementById('gsap-pinned-stack');
     const stackItems = gsap.utils.toArray('.stack-item');
-    
-    if (pinnedSection && stackItems.length > 0) {
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: pinnedSection,
-                pin: true,
-                start: "center center",
-                end: "+=2500", // Total scroll distance
-                scrub: 1
-            }
-        });
 
-        // Card 2 slides up over Card 1
-        tl.to(stackItems[1], { y: 0, duration: 1 })
-          .to(stackItems[0], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
-          
+    if (pinnedSection && stackItems.length > 0) {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: pinnedSection,
+          pin: true,
+          start: "center center",
+          end: "+=2500", // Total scroll distance
+          scrub: 1
+        }
+      });
+
+      // Card 2 slides up over Card 1
+      tl.to(stackItems[1], { y: 0, duration: 1 })
+        .to(stackItems[0], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
+
         // Card 3 slides up over Card 2
-          .to(stackItems[2], { y: 0, duration: 1 })
-          .to(stackItems[1], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
-          
+        .to(stackItems[2], { y: 0, duration: 1 })
+        .to(stackItems[1], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
+
         // Card 4 slides up over Card 3
-          .to(stackItems[3], { y: 0, duration: 1 })
-          .to(stackItems[2], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
-          
+        .to(stackItems[3], { y: 0, duration: 1 })
+        .to(stackItems[2], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
+
         // Card 5 slides up over Card 4
-          .to(stackItems[4], { y: 0, duration: 1 })
-          .to(stackItems[3], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
-          
-          .to({}, {duration: 0.5}); // small pause at the end before unpinning
+        .to(stackItems[4], { y: 0, duration: 1 })
+        .to(stackItems[3], { scale: 0.95, opacity: 0.5, duration: 1 }, "<")
+
+        .to({}, { duration: 0.5 }); // small pause at the end before unpinning
     }
 
     // Legacy nextStepsSection (from index.html)
     const nextStepsSection = document.getElementById('next-steps-section');
     if (nextStepsSection) {
       const cards = nextStepsSection.querySelectorAll('.grid > div');
-      
+
       // Set initial state
       gsap.set(cards, { y: 60, opacity: 0 });
 
@@ -269,26 +276,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const testiSlider = document.getElementById('testimonial-slider');
   const testiPrev = document.getElementById('testi-prev');
   const testiNext = document.getElementById('testi-next');
-  
+
   if (testiSlider && testiPrev && testiNext) {
     let currentTestiSlide = 0;
     const slides = testiSlider.children;
-    
+
     function getMaxSlides() {
       if (window.innerWidth >= 1024) return slides.length - 3;
       if (window.innerWidth >= 768) return slides.length - 2;
       return slides.length - 1;
     }
-    
+
     function updateTestiSlider() {
       const maxSlides = getMaxSlides();
       if (currentTestiSlide > maxSlides) currentTestiSlide = maxSlides;
       if (currentTestiSlide < 0) currentTestiSlide = 0;
-      
+
       let slidePercentage = 100; // mobile
       if (window.innerWidth >= 1024) slidePercentage = 33.333333; // lg
       else if (window.innerWidth >= 768) slidePercentage = 50; // md
-      
+
       testiSlider.style.transform = `translateX(-${currentTestiSlide * slidePercentage}%)`;
     }
 
@@ -306,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTestiSlider();
       }
     });
-    
+
     window.addEventListener('resize', updateTestiSlider);
   }
 
@@ -314,34 +321,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const citySlider = document.getElementById('city-slider');
   const cityPrev = document.getElementById('city-prev');
   const cityNext = document.getElementById('city-next');
-  
+
   if (citySlider && cityPrev && cityNext) {
     let currentCitySlide = 0;
     const citySlides = citySlider.children;
-    
+
     function getCityMaxSlides() {
       if (window.innerWidth >= 1024) return citySlides.length - 4;
       if (window.innerWidth >= 768) return citySlides.length - 2;
       return citySlides.length - 1;
     }
-    
+
     function updateCitySlider() {
       const maxSlides = getCityMaxSlides();
       if (currentCitySlide > maxSlides) currentCitySlide = maxSlides;
       if (currentCitySlide < 0) currentCitySlide = 0;
-      
+
       let slidePercentage = 100; // mobile
       if (window.innerWidth >= 1024) slidePercentage = 25; // lg
       else if (window.innerWidth >= 768) slidePercentage = 50; // md
-      
+
       // Bulletproof: Force the items to be the exact percentage width and padding
-      for(let i = 0; i < citySlides.length; i++) {
-          citySlides[i].style.flex = `0 0 ${slidePercentage}%`;
-          citySlides[i].style.maxWidth = `${slidePercentage}%`;
-          citySlides[i].style.paddingLeft = '12px';
-          citySlides[i].style.paddingRight = '12px';
+      for (let i = 0; i < citySlides.length; i++) {
+        citySlides[i].style.flex = `0 0 ${slidePercentage}%`;
+        citySlides[i].style.maxWidth = `${slidePercentage}%`;
+        citySlides[i].style.paddingLeft = '12px';
+        citySlides[i].style.paddingRight = '12px';
       }
-      
+
       citySlider.style.transform = `translateX(-${currentCitySlide * slidePercentage}%)`;
     }
 
@@ -362,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCitySlider();
       }
     });
-    
+
     window.addEventListener('resize', updateCitySlider);
   }
 });
