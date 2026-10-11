@@ -43,14 +43,101 @@
                 padding-right: 1.25rem !important;
             }
             #hero-card {
+                background: transparent !important;
+                background-color: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
                 margin-top: 0 !important;
                 margin-bottom: 1rem !important;
-                padding: 1.5rem !important;
+                padding: 0 !important;
             }
             #hero-controls {
                 bottom: 1.25rem !important;
                 right: 1.25rem !important;
             }
+        }
+
+        /* Recent Installations Slider */
+        .installation-card {
+            flex-shrink: 0 !important;
+            width: 85vw !important;
+            max-width: 320px !important;
+            background-color: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 4px !important;
+            overflow: hidden !important;
+            scroll-snap-align: start !important;
+            display: flex !important;
+            flex-direction: column !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        @media (min-width: 640px) {
+            .installation-card {
+                width: 360px !important;
+                max-width: 360px !important;
+            }
+        }
+        @media (min-width: 1024px) {
+            .installation-card {
+                width: 400px !important;
+                max-width: 400px !important;
+            }
+        }
+        .installation-card:hover {
+            border-color: #E5B05C !important;
+            box-shadow: 0 16px 32px -4px rgba(11, 30, 54, 0.12) !important;
+            transform: translateY(-2px) !important;
+        }
+        .installation-img-wrap {
+            position: relative !important;
+            width: 100% !important;
+            height: 230px !important;
+            overflow: hidden !important;
+            background-color: #0B1E36 !important;
+        }
+        @media (min-width: 640px) {
+            .installation-img-wrap {
+                height: 250px !important;
+            }
+        }
+        .installation-img-wrap img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .installation-card:hover .installation-img-wrap img {
+            transform: scale(1.06) !important;
+        }
+        .installations-btn {
+            width: 48px !important;
+            height: 48px !important;
+            padding: 12px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border-radius: 4px !important;
+            border: 1px solid #e2e8f0 !important;
+            background-color: #ffffff !important;
+            color: #0B1E36 !important;
+            cursor: pointer !important;
+            transition: all 0.25s ease !important;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+        }
+        .installations-btn:hover {
+            background-color: #0B1E36 !important;
+            color: #ffffff !important;
+            border-color: #0B1E36 !important;
+            box-shadow: 0 4px 12px rgba(11, 30, 54, 0.15) !important;
+            transform: translateY(-1px) !important;
+        }
+        .installations-btn svg {
+            width: 20px !important;
+            height: 20px !important;
+            display: block !important;
         }
     </style>
 </head>
@@ -258,7 +345,7 @@
             <!-- Increased lg:pr-24 to keep text safely away from the chevron edge -->
             <div
                 id="hero-card"
-                class="w-full md:w-[60%] lg:w-[45%] pr-0 md:pr-8 lg:pr-24 xl:pr-28 pointer-events-auto bg-[#0B1E36]/95 md:bg-transparent p-6 md:p-0 rounded-lg md:rounded-none mt-8 md:mt-0 shadow-xl md:shadow-none backdrop-blur-md md:backdrop-blur-none border border-white/10 md:border-none">
+                class="w-full md:w-[60%] lg:w-[45%] pr-0 md:pr-8 lg:pr-24 xl:pr-28 pointer-events-auto bg-transparent p-0 rounded-none shadow-none border-none">
 
                 <!-- Eyebrow -->
                 <div class="flex items-center gap-3 mb-6">
@@ -572,7 +659,7 @@
     </section>
 
     <!-- Billboard Conversion -->
-    <section class="py-24 bg-slate-50">
+    <section class="bg-slate-50" style="padding-top: 4.5rem; padding-bottom: 2.5rem;">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
 
@@ -654,7 +741,217 @@
         </div>
     </section>
 
-    <!-- Global Scale Metrics Section -->
+    <!-- Recent Installations Slider Section -->
+    <section id="recent-installations" class="bg-slate-50/60 border-t border-gray-200/80 overflow-hidden relative" style="padding-top: 3rem; padding-bottom: 3.5rem;">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            
+            <!-- Section Header & Controls -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+                <div>
+                    <div class="flex items-center gap-2.5 mb-2">
+                        <div class="w-8 h-[2px] bg-[#E5B05C]"></div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] text-[#0B1E36] uppercase">Flagship Portfolio</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#0B1E36] leading-[1.1] tracking-tight">
+                        Recent Installations.
+                    </h2>
+                    <p class="text-gray-500 text-[14px] leading-relaxed mt-1.5 max-w-xl">
+                        A curated showcase of our latest custom-engineered LED walls and digital display deployments across high-profile spaces.
+                    </p>
+                </div>
+
+                <!-- Slider Controls & View All -->
+                <div class="flex items-center gap-4 shrink-0">
+                    <a href="projects.html" class="hidden sm:inline-flex items-center gap-2 text-[13px] font-semibold text-[#0B1E36] hover:text-[#E5B05C] transition-colors mr-2">
+                        <span>View All Projects</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                    
+                    <div class="flex items-center gap-3">
+                        <button id="installations-prev" aria-label="Previous Installation" class="installations-btn group" style="width: 46px; height: 46px; padding: 12px; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; border: 1px solid #d1d5db; background: #ffffff; color: #0B1E36; cursor: pointer;">
+                            <svg class="w-5 h-5 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 20px; height: 20px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="installations-next" aria-label="Next Installation" class="installations-btn group" style="width: 46px; height: 46px; padding: 12px; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; border: 1px solid #d1d5db; background: #ffffff; color: #0B1E36; cursor: pointer;">
+                            <svg class="w-5 h-5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 20px; height: 20px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Container -->
+            <div id="installations-slider-wrap" class="relative">
+                <!-- Track -->
+                <div id="installations-track" class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar pb-3 pt-1" style="scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory;">
+                    
+                    <!-- Card 1 -->
+                    <div class="installation-card group flex flex-col">
+                        <div class="installation-img-wrap">
+                            <img src="./images/screen-1.webp" alt="Times Square Curved Mega LED">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/90 via-[#0B1E36]/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-sm shadow-sm">Outdoor 3D Wrap</span>
+                            <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-sm border border-white/10">10,000 Nits</span>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-[12px]">
+                                <span class="flex items-center gap-1.5 font-medium">
+                                    <svg class="w-3.5 h-3.5 text-[#E5B05C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                    Times Square, NY
+                                </span>
+                                <span class="text-gray-300">8,200 sq ft</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow bg-white">
+                            <h3 class="text-[18px] font-bold text-[#0B1E36] mb-2 group-hover:text-[#E5B05C] transition-colors leading-snug">Times Square Landmark 3D Display</h3>
+                            <p class="text-[13px] text-gray-500 leading-relaxed mb-4">Continuous corner-wrap LED structure supporting naked-eye 3D visual content and high-frequency digital out-of-home advertising.</p>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-[12px]">
+                                <span class="font-semibold text-gray-700">Pitch: <strong class="text-[#0B1E36]">P6.67 Outdoor</strong></span>
+                                <a href="projects.html" class="font-bold text-[#0B1E36] group-hover:text-[#E5B05C] inline-flex items-center gap-1">Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="installation-card group flex flex-col">
+                        <div class="installation-img-wrap">
+                            <img src="./images/sr-2.png" alt="Luxury Retail Curved Ribbon Wall">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/90 via-[#0B1E36]/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-sm shadow-sm">Luxury Retail</span>
+                            <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-sm border border-white/10">3,840Hz Refresh</span>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-[12px]">
+                                <span class="flex items-center gap-1.5 font-medium">
+                                    <svg class="w-3.5 h-3.5 text-[#E5B05C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                    5th Avenue, NY
+                                </span>
+                                <span class="text-gray-300">1,450 sq ft</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow bg-white">
+                            <h3 class="text-[18px] font-bold text-[#0B1E36] mb-2 group-hover:text-[#E5B05C] transition-colors leading-snug">Flagship Store Ribbon LED Installation</h3>
+                            <p class="text-[13px] text-gray-500 leading-relaxed mb-4">Ultra-fine pixel pitch curved architectural display wrapping two levels of a high-fashion boutique for brand story immersion.</p>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-[12px]">
+                                <span class="font-semibold text-gray-700">Pitch: <strong class="text-[#0B1E36]">P1.56 COB</strong></span>
+                                <a href="projects.html" class="font-bold text-[#0B1E36] group-hover:text-[#E5B05C] inline-flex items-center gap-1">Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="installation-card group flex flex-col">
+                        <div class="installation-img-wrap">
+                            <img src="./images/corporate.jpg" alt="Corporate Headquarters Atrium">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/90 via-[#0B1E36]/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-sm shadow-sm">Corporate Atrium</span>
+                            <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-sm border border-white/10">8K Native</span>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-[12px]">
+                                <span class="flex items-center gap-1.5 font-medium">
+                                    <svg class="w-3.5 h-3.5 text-[#E5B05C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                    Columbus, OH
+                                </span>
+                                <span class="text-gray-300">2,600 sq ft</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow bg-white">
+                            <h3 class="text-[18px] font-bold text-[#0B1E36] mb-2 group-hover:text-[#E5B05C] transition-colors leading-snug">Tech Hub Headquarters Video Wall</h3>
+                            <p class="text-[13px] text-gray-500 leading-relaxed mb-4">Floor-to-ceiling fine-pitch LED centerpiece displaying live company dashboards, investor broadcasts, and custom generative artwork.</p>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-[12px]">
+                                <span class="font-semibold text-gray-700">Pitch: <strong class="text-[#0B1E36]">P1.8 Indoor</strong></span>
+                                <a href="projects.html" class="font-bold text-[#0B1E36] group-hover:text-[#E5B05C] inline-flex items-center gap-1">Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="installation-card group flex flex-col">
+                        <div class="installation-img-wrap">
+                            <img src="./images/led_billboard.jpg" alt="Highway Spectacular Digital Billboard">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/90 via-[#0B1E36]/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-sm shadow-sm">DOOH Billboard</span>
+                            <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-sm border border-white/10">IP68 Rated</span>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-[12px]">
+                                <span class="flex items-center gap-1.5 font-medium">
+                                    <svg class="w-3.5 h-3.5 text-[#E5B05C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                    Interstate 71 Hub, OH
+                                </span>
+                                <span class="text-gray-300">1,200 sq ft</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow bg-white">
+                            <h3 class="text-[18px] font-bold text-[#0B1E36] mb-2 group-hover:text-[#E5B05C] transition-colors leading-snug">I-71 High-Frequency Digital Monolith</h3>
+                            <p class="text-[13px] text-gray-500 leading-relaxed mb-4">Complete conversion of legacy static billboard to ultra-bright digital advertising billboard generating high annual advertising yield.</p>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-[12px]">
+                                <span class="font-semibold text-gray-700">Pitch: <strong class="text-[#0B1E36]">P10 Outdoor</strong></span>
+                                <a href="projects.html" class="font-bold text-[#0B1E36] group-hover:text-[#E5B05C] inline-flex items-center gap-1">Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="installation-card group flex flex-col">
+                        <div class="installation-img-wrap">
+                            <img src="./images/city_dubai.jpg" alt="Marina Waterfront Spectacular">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/90 via-[#0B1E36]/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-sm shadow-sm">Waterfront Facade</span>
+                            <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-sm border border-white/10">12,500 sq ft</span>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-[12px]">
+                                <span class="flex items-center gap-1.5 font-medium">
+                                    <svg class="w-3.5 h-3.5 text-[#E5B05C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                    Marina District, UAE
+                                </span>
+                                <span class="text-gray-300">Custom Arch</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow bg-white">
+                            <h3 class="text-[18px] font-bold text-[#0B1E36] mb-2 group-hover:text-[#E5B05C] transition-colors leading-snug">Marina Waterfront Architectural Display</h3>
+                            <p class="text-[13px] text-gray-500 leading-relaxed mb-4">Iconic architectural LED installation integrated into high-profile waterfront commercial development with smart automated light sensors.</p>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-[12px]">
+                                <span class="font-semibold text-gray-700">Pitch: <strong class="text-[#0B1E36]">P8 Facade</strong></span>
+                                <a href="projects.html" class="font-bold text-[#0B1E36] group-hover:text-[#E5B05C] inline-flex items-center gap-1">Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="installation-card group flex flex-col">
+                        <div class="installation-img-wrap">
+                            <img src="./images/retail.jpg" alt="Transparent Retail Window Screen">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1E36]/90 via-[#0B1E36]/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-[#E5B05C] text-[#0B1E36] text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-sm shadow-sm">Transparent LED</span>
+                            <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-sm border border-white/10">75% Transparency</span>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-[12px]">
+                                <span class="flex items-center gap-1.5 font-medium">
+                                    <svg class="w-3.5 h-3.5 text-[#E5B05C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                    Downtown Chicago, IL
+                                </span>
+                                <span class="text-gray-300">950 sq ft</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow bg-white">
+                            <h3 class="text-[18px] font-bold text-[#0B1E36] mb-2 group-hover:text-[#E5B05C] transition-colors leading-snug">Downtown Showcase Transparent Glass Wall</h3>
+                            <p class="text-[13px] text-gray-500 leading-relaxed mb-4">High-transparency window video wall that delivers vivid visuals while maintaining full natural daylight into the interior showroom.</p>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-[12px]">
+                                <span class="font-semibold text-gray-700">Pitch: <strong class="text-[#0B1E36]">P3.9 / P7.8 Glass</strong></span>
+                                <a href="projects.html" class="font-bold text-[#0B1E36] group-hover:text-[#E5B05C] inline-flex items-center gap-1">Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Progress Bar & Mobile Touch Indicator -->
+                <div class="mt-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span id="installations-counter" class="text-[12px] font-bold tracking-wider text-[#0B1E36]">01 / 06</span>
+                        <div class="w-28 sm:w-44 h-1 bg-gray-200 rounded-full overflow-hidden">
+                            <div id="installations-progress" class="h-full bg-[#E5B05C] transition-all duration-300" style="width: 16.66%;"></div>
+                        </div>
+                    </div>
+                    <div class="sm:hidden">
+                        <span class="text-[11px] font-medium text-gray-400 flex items-center gap-1">Swipe to explore &rarr;</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
 
     <!-- Our Process -->
@@ -1095,18 +1392,18 @@
     </footer>
 
     <!-- Mobile Sticky Quick Action Bar (Luxury Touch & High Conversion) -->
-    <div class="fixed bottom-0 left-0 right-0 lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200/90 px-4 py-2.5 shadow-[0_-4px_25px_rgba(11,30,54,0.12)] flex items-center justify-between gap-2.5" style="z-index: 90;">
-        <a href="tel:+16145550199" class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-md bg-gray-50 border border-gray-200 text-[#0B1E36] text-[12px] font-semibold hover:bg-gray-100 transition-colors">
-            <svg class="w-4 h-4 text-[#E5B05C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-            <span>Call</span>
+    <div class="fixed bottom-0 left-0 right-0 lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200/90 shadow-[0_-4px_25px_rgba(11,30,54,0.12)] flex items-center justify-between" style="z-index: 90; padding: 0.65rem 1.25rem; gap: 0.75rem;">
+        <a href="tel:+16145550199" class="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-md bg-gray-50 border border-gray-200 text-[#0B1E36] text-[12px] font-semibold hover:bg-gray-100 transition-colors" style="flex: 1 1 0%; min-width: 0;">
+            <svg class="w-4 h-4 text-[#E5B05C] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <span class="truncate">Call</span>
         </a>
-        <a href="https://wa.me/16145550199" target="_blank" class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 text-[12px] font-semibold hover:bg-emerald-100 transition-colors">
-            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.586 1.777.879 2.796.879 3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.505-4.495 10-10 10-1.748 0-3.385-.45-4.823-1.24l-7.177 1.88 1.909-6.983c-.933-1.499-1.469-3.267-1.469-5.157 0-5.505 4.495-10 10-10s10 4.495 10 10z"/></svg>
-            <span>WhatsApp</span>
+        <a href="https://wa.me/16145550199" target="_blank" class="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 text-[12px] font-semibold hover:bg-emerald-100 transition-colors" style="flex: 1 1 0%; min-width: 0;">
+            <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.586 1.777.879 2.796.879 3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.505-4.495 10-10 10-1.748 0-3.385-.45-4.823-1.24l-7.177 1.88 1.909-6.983c-.933-1.499-1.469-3.267-1.469-5.157 0-5.505 4.495-10 10-10s10 4.495 10 10z"/></svg>
+            <span class="truncate">WhatsApp</span>
         </a>
-        <a href="contact.html" class="flex-[1.4] flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-md bg-[#E5B05C] text-[#0B1E36] text-[12px] font-bold shadow-sm hover:bg-[#d4af37] transition-colors">
-            <span>Get Quote</span>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        <a href="contact.html" class="flex items-center justify-center gap-1 py-2.5 px-2 rounded-md bg-[#E5B05C] text-[#0B1E36] text-[12px] font-bold shadow-sm hover:bg-[#d4af37] transition-colors" style="flex: 1 1 0%; min-width: 0;">
+            <span class="truncate">Get Quote</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </a>
     </div>
 

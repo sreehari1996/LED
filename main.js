@@ -372,4 +372,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', updateCitySlider);
   }
+
+  // --- Recent Installations Slider ---
+  const installTrack = document.getElementById('installations-track');
+  const installPrev = document.getElementById('installations-prev');
+  const installNext = document.getElementById('installations-next');
+  const installCounter = document.getElementById('installations-counter');
+  const installProgress = document.getElementById('installations-progress');
+
+  if (installTrack && installPrev && installNext) {
+    const getScrollAmount = () => {
+      const card = installTrack.querySelector('.installation-card');
+      return card ? card.offsetWidth + 24 : 400;
+    };
+
+    installNext.addEventListener('click', () => {
+      const maxScroll = installTrack.scrollWidth - installTrack.clientWidth;
+      if (installTrack.scrollLeft >= maxScroll - 10) {
+        installTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        installTrack.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      }
+    });
+
+    installPrev.addEventListener('click', () => {
+      const maxScroll = installTrack.scrollWidth - installTrack.clientWidth;
+      if (installTrack.scrollLeft <= 10) {
+        installTrack.scrollTo({ left: maxScroll, behavior: 'smooth' });
+      } else {
+        installTrack.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      }
+    });
+
+    installTrack.addEventListener('scroll', () => {
+      const maxScroll = installTrack.scrollWidth - installTrack.clientWidth;
+      if (maxScroll <= 0) return;
+      const progress = Math.min(Math.max(installTrack.scrollLeft / maxScroll, 0), 1);
+      if (installProgress) {
+        const barWidth = 16.66 + (progress * (100 - 16.66));
+        installProgress.style.width = `${barWidth}%`;
+      }
+      if (installCounter) {
+        const cards = installTrack.querySelectorAll('.installation-card');
+        const total = cards.length;
+        const current = Math.min(Math.round(progress * (total - 1)) + 1, total);
+        installCounter.textContent = `0${current} / 0${total}`;
+      }
+    }, { passive: true });
+  }
 });
+
