@@ -1,0 +1,45 @@
+/* ==========================================================================
+   SANS GLOWMETRIC - Projects Page SCSS (projects.scss)
+   ========================================================================== */
+
+/* Mobile Horizontal Slider for Portfolio Filters (Mobile View Only) */
+@media (max-width: 767px) {
+    #portfolio-filters {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-behavior: smooth !important;
+        scroll-snap-type: x proximity !important;
+        scrollbar-width: none !important; /* Firefox */
+        -ms-overflow-style: none !important; /* IE and Edge */
+        margin-left: -1.5rem !important; /* Full width edge bleed */
+        margin-right: -1.5rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.5rem !important;
+        gap: 0.625rem !important;
+        margin-bottom: 2.25rem !important;
+
+        &::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        .filter-btn {
+            flex-shrink: 0 !important;
+            white-space: nowrap !important;
+            scroll-snap-align: start !important;
+            font-size: 11px !important;
+            padding: 0.55rem 1.15rem !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            touch-action: pan-x !important;
+        }
+    }
+}
