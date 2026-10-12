@@ -108,14 +108,17 @@
 }
 
 /* Hero Section & Decorative Glass */
+.hero-slider-wrap {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
+    mask-image: linear-gradient(to right, transparent 0%, black 15%);
+}
+
 .hero-chevron-glass {
     clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
-    background: linear-gradient(135deg, rgba(11, 30, 54, 0.94) 0%, rgba(11, 30, 54, 0.88) 60%, rgba(11, 30, 54, 0.72) 100%);
-    backdrop-filter: blur(32px);
-    -webkit-backdrop-filter: blur(32px);
-    border-right: 1px solid rgba(255, 255, 255, 0.12);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: inset 0 0 80px rgba(255, 255, 255, 0.03), 20px 0 50px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, rgba(11, 30, 54, 0.82) 0%, rgba(11, 30, 54, 0.62) 45%, rgba(11, 30, 54, 0.35) 75%, rgba(11, 30, 54, 0.18) 100%);
+    backdrop-filter: blur(52px) saturate(190%) brightness(1.04);
+    -webkit-backdrop-filter: blur(52px) saturate(190%) brightness(1.04);
+    box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.04), 15px 0 35px rgba(0, 0, 0, 0.35);
 }
 
 /* Hero Slider Overlays: Luxury Cinematic Multi-Stop Grade */
@@ -127,13 +130,13 @@
     pointer-events: none;
     background: 
         /* Brand Color Multiply Wash */
-        linear-gradient(rgba(11, 30, 54, 0.32), rgba(11, 30, 54, 0.32)),
-        /* Horizontal Cinematic Transition (deep navy on left to clear vibrant billboard on right) */
-        linear-gradient(to right, rgba(11, 30, 54, 0.94) 0%, rgba(11, 30, 54, 0.7) 25%, rgba(11, 30, 54, 0.3) 55%, rgba(11, 30, 54, 0.08) 85%, transparent 100%),
-        /* Bottom Grounding Vignette (solid contrast for slide counter and location badge) */
-        linear-gradient(to top, rgba(11, 30, 54, 0.95) 0%, rgba(11, 30, 54, 0.5) 20%, transparent 55%),
-        /* Top Subtle Vignette (meets header seamlessly) */
-        linear-gradient(to bottom, rgba(11, 30, 54, 0.5) 0%, transparent 22%),
+        linear-gradient(rgba(11, 30, 54, 0.22), rgba(11, 30, 54, 0.22)),
+        /* Horizontal Cinematic Transition */
+        linear-gradient(to right, rgba(11, 30, 54, 0.5) 0%, rgba(11, 30, 54, 0.22) 35%, rgba(11, 30, 54, 0.05) 70%, transparent 100%),
+        /* Bottom Grounding Vignette */
+        linear-gradient(to top, rgba(11, 30, 54, 0.95) 0%, rgba(11, 30, 54, 0.45) 20%, transparent 55%),
+        /* Top Subtle Vignette */
+        linear-gradient(to bottom, rgba(11, 30, 54, 0.45) 0%, transparent 20%),
         /* Warm ambient sunset/gold accent harmonizing with #E5B05C */
         radial-gradient(circle at 85% 20%, rgba(229, 176, 92, 0.12) 0%, transparent 50%);
 }
