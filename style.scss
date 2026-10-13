@@ -8,9 +8,18 @@
 @import 'projects';
 
 :root {
-  --neon-blue: #00f0ff;
-  --neon-purple: #8a2be2;
-  --neon-pink: #ff007f;
+  --color-deep-charcoal-navy: #071521;
+  --color-logo-deep-blue: #0D2942;
+  --color-electric-blue: #168BEB;
+  --color-logo-cyan: #35C1F4;
+  --color-pure-white: #FFFFFF;
+  --color-cool-offwhite: #F4F7FA;
+  --color-ink-text: #17212B;
+  --color-muted-slate: #5B778D;
+  --color-soft-border: #DCE4EC;
+  --neon-blue: #35C1F4;
+  --neon-purple: #168BEB;
+  --neon-pink: #168BEB;
 }
 
 @layer base {
@@ -21,12 +30,14 @@
   body {
     @apply antialiased;
     overflow-x: hidden;
+    color: #17212B;
+    background-color: #FFFFFF;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#168BEB] via-[#35C1F4] to-[#168BEB];
   }
 }
 
@@ -47,3 +58,43 @@
 .FeaturedCanvases {
   padding: 30px;
 }
+
+#backToTopBtn {
+  color: #ffffff !important;
+  svg {
+    stroke: #ffffff !important;
+  }
+}
+
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+
+.gap-3\.5 {
+  gap: 0.875rem !important;
+}
+
+/* Custom Premium Scrollbar for Screen Directory */
+.screens-directory-scroll {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(13, 41, 66, 0.18);
+    border-radius: 9999px;
+    &:hover {
+      background: #168BEB;
+    }
+  }
+}
+
+.screen-item {
+  gap: 16px !important;
+}
+

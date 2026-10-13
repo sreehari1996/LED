@@ -13,9 +13,17 @@ module.exports = {
       },
       colors: {
         brand: {
-          dark: '#050505',
-          light: '#f5f5f5',
-          accent: '#4f46e5',
+          dark: '#071521',
+          deepBlue: '#0D2942',
+          electric: '#168BEB',
+          cyan: '#35C1F4',
+          white: '#FFFFFF',
+          offwhite: '#F4F7FA',
+          ink: '#17212B',
+          slate: '#5B778D',
+          border: '#DCE4EC',
+          light: '#F4F7FA',
+          accent: '#168BEB',
         }
       },
       keyframes: {

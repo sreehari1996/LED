@@ -1,25 +1,25 @@
 .network-hero-bg {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.2) 100%), url('./images/led_network_realistic.jpg');
+    background-image: linear-gradient(to right, rgba(7, 21, 33, 0.94) 20%, rgba(7, 21, 33, 0.65) 50%, rgba(7, 21, 33, 0.2) 100%), url('./images/led_network_realistic.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .bg-gradient-btn {
-    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    background: linear-gradient(to right, #168BEB, #0D2942);
     color: white;
-    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+    box-shadow: 0 4px 14px 0 rgba(22, 139, 235, 0.35);
 }
 
 .bg-gradient-btn:hover {
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 6px 20px rgba(22, 139, 235, 0.5);
     transform: translateY(-1px);
 }
 
 .explore-cities {
-    background-color: #f8f9fa;
-    color: #000;
+    background-color: #F4F7FA;
+    color: #17212B;
     padding: 6rem 0;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #DCE4EC;
 
     .explore-container {
         max-width: 1400px;
@@ -55,7 +55,7 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             font-weight: 700;
-            color: #6b7280;
+            color: #5B778D;
             margin-bottom: 1rem;
         }
 
@@ -64,7 +64,7 @@
             font-family: 'Outfit', sans-serif;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #0a1128;
+            color: #17212B;
 
             @media (min-width: 768px) {
                 font-size: 3rem;
@@ -72,7 +72,7 @@
         }
 
         .desc {
-            color: #6b7280;
+            color: #5B778D;
             font-size: 13px;
             line-height: 1.625;
             margin-bottom: 2rem;
@@ -84,16 +84,16 @@
             gap: 0.5rem;
             padding: 0.625rem 1.5rem;
             border-radius: 9999px;
-            border: 1px solid #d1d5db;
-            color: #4b5563;
+            border: 1px solid #DCE4EC;
+            color: #5B778D;
             font-size: 0.75rem;
             font-weight: 600;
             transition: all 0.2s;
             text-decoration: none;
 
             &:hover {
-                border-color: #8b5cf6;
-                color: #8b5cf6;
+                border-color: #168BEB;
+                color: #168BEB;
             }
         }
     }
@@ -148,7 +148,7 @@
             .overlay {
                 position: absolute;
                 inset: 0;
-                background: linear-gradient(to top, #050714 0%, rgba(5, 7, 20, 0.4) 50%, transparent 100%);
+                background: linear-gradient(to top, #071521 0%, rgba(7, 21, 33, 0.4) 50%, transparent 100%);
                 opacity: 0.9;
             }
 
@@ -195,7 +195,7 @@
 
 /* Network at a Glance Section */
 .network-glance-section {
-    background-color: #050714;
+    background-color: #071521;
     color: #fff;
     padding: 3rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -237,7 +237,7 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             font-weight: 700;
-            color: #8b5cf6;
+            color: #168BEB;
             margin-bottom: 1rem;
         }
 
@@ -262,7 +262,7 @@
             gap: 0.5rem;
             padding: 0.625rem 1.5rem;
             border-radius: 9999px;
-            border: 1px solid rgba(139, 92, 246, 0.5);
+            border: 1px solid rgba(22, 139, 235, 0.5);
             color: #fff;
             font-size: 0.75rem;
             font-weight: 600;
@@ -271,8 +271,8 @@
             width: fit-content;
 
             &:hover {
-                border-color: #8b5cf6;
-                background: rgba(139, 92, 246, 0.1);
+                border-color: #168BEB;
+                background: rgba(22, 139, 235, 0.1);
             }
         }
     }
@@ -356,15 +356,15 @@
                         border-radius: 4px;
 
                         &.blue {
-                            background: #3b82f6;
+                            background: #168BEB;
                         }
 
                         &.purple {
-                            background: #8b5cf6;
+                            background: #35C1F4;
                         }
 
                         &.pink {
-                            background: #ec4899;
+                            background: #0D2942;
                         }
                     }
                 }
@@ -381,7 +381,7 @@
             width: 160px;
             height: 160px;
             border-radius: 50%;
-            background: conic-gradient(from -90deg, #3b82f6 0deg, #ec4899 180deg, #8b5cf6 360deg);
+            background: conic-gradient(from -90deg, #168BEB 0deg, #35C1F4 180deg, #0D2942 360deg);
             padding: 5px;
             display: flex;
             align-items: center;
@@ -390,7 +390,7 @@
             .donut-inner {
                 width: 100%;
                 height: 100%;
-                background: #050714;
+                background: #071521;
                 border-radius: 50%;
                 display: flex;
                 flex-direction: column;
@@ -421,9 +421,9 @@
 /* Why Lumina Network Section */
 .why-lumina-section {
     background-color: #ffffff;
-    color: #000;
+    color: #17212B;
     padding: 6rem 0;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #DCE4EC;
 
     .why-lumina-container {
         max-width: 1400px;
@@ -462,7 +462,7 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             font-weight: 700;
-            color: #8b5cf6;
+            color: #168BEB;
             margin-bottom: 1rem;
         }
 
@@ -471,11 +471,11 @@
             font-family: 'Outfit', sans-serif;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #0a1128;
+            color: #17212B;
         }
 
         .desc {
-            color: #6b7280;
+            color: #5B778D;
             font-size: 13px;
             line-height: 1.625;
             margin-bottom: 0;
@@ -494,7 +494,7 @@
 
         @media (min-width: 1024px) {
             grid-template-columns: repeat(4, 1fr);
-            border-left: 1px solid #e5e7eb;
+            border-left: 1px solid #DCE4EC;
             padding-left: 2rem;
         }
 
@@ -503,7 +503,7 @@
             flex-direction: column;
 
             .icon {
-                color: #2b1154;
+                color: #168BEB;
                 margin-bottom: 1rem;
 
                 svg {
@@ -515,12 +515,12 @@
             h3 {
                 font-size: 1rem;
                 font-weight: 700;
-                color: #0a1128;
+                color: #17212B;
                 margin: 0 0 0.5rem 0;
             }
 
             p {
-                color: #6b7280;
+                color: #5B778D;
                 font-size: 0.875rem;
                 line-height: 1.5;
                 margin: 0;

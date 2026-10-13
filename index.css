@@ -12,7 +12,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 999999;
-    background-color: #0B1E36;
+    background-color: #071521;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +51,7 @@
 .loader-bar {
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, transparent, #E5B05C 50%, transparent);
+    background: linear-gradient(90deg, transparent, #168BEB 50%, transparent);
     border-radius: 9999px;
     transform: translateX(-100%);
     animation: loaderSlide 1.4s ease-in-out infinite;
@@ -115,7 +115,7 @@
 
 .hero-chevron-glass {
     clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
-    background: linear-gradient(135deg, rgba(11, 30, 54, 0.82) 0%, rgba(11, 30, 54, 0.62) 45%, rgba(11, 30, 54, 0.35) 75%, rgba(11, 30, 54, 0.18) 100%);
+    background: linear-gradient(135deg, rgba(7, 21, 33, 0.85) 0%, rgba(7, 21, 33, 0.65) 45%, rgba(13, 41, 66, 0.38) 75%, rgba(13, 41, 66, 0.2) 100%);
     backdrop-filter: blur(52px) saturate(190%) brightness(1.04);
     -webkit-backdrop-filter: blur(52px) saturate(190%) brightness(1.04);
     box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.04), 15px 0 35px rgba(0, 0, 0, 0.35);
@@ -130,15 +130,15 @@
     pointer-events: none;
     background: 
         /* Brand Color Multiply Wash */
-        linear-gradient(rgba(11, 30, 54, 0.22), rgba(11, 30, 54, 0.22)),
+        linear-gradient(rgba(7, 21, 33, 0.22), rgba(7, 21, 33, 0.22)),
         /* Horizontal Cinematic Transition */
-        linear-gradient(to right, rgba(11, 30, 54, 0.5) 0%, rgba(11, 30, 54, 0.22) 35%, rgba(11, 30, 54, 0.05) 70%, transparent 100%),
+        linear-gradient(to right, rgba(7, 21, 33, 0.52) 0%, rgba(7, 21, 33, 0.22) 35%, rgba(13, 41, 66, 0.05) 70%, transparent 100%),
         /* Bottom Grounding Vignette */
-        linear-gradient(to top, rgba(11, 30, 54, 0.95) 0%, rgba(11, 30, 54, 0.45) 20%, transparent 55%),
+        linear-gradient(to top, rgba(7, 21, 33, 0.95) 0%, rgba(7, 21, 33, 0.45) 20%, transparent 55%),
         /* Top Subtle Vignette */
-        linear-gradient(to bottom, rgba(11, 30, 54, 0.45) 0%, transparent 20%),
-        /* Warm ambient sunset/gold accent harmonizing with #E5B05C */
-        radial-gradient(circle at 85% 20%, rgba(229, 176, 92, 0.12) 0%, transparent 50%);
+        linear-gradient(to bottom, rgba(7, 21, 33, 0.45) 0%, transparent 20%),
+        /* Restrained secondary cyan accent harmonizing with #35C1F4 */
+        radial-gradient(circle at 85% 20%, rgba(53, 193, 244, 0.14) 0%, transparent 50%);
 }
 
 /* Mobile-only Hero Adjustments: Ensures complete content visibility without cutting off height */
@@ -185,8 +185,8 @@
 
     .hero-slide-overlay {
         background: 
-            linear-gradient(to bottom, rgba(11, 30, 54, 0.9) 0%, rgba(11, 30, 54, 0.68) 45%, rgba(11, 30, 54, 0.95) 100%),
-            linear-gradient(rgba(11, 30, 54, 0.35), rgba(11, 30, 54, 0.35)) !important;
+            linear-gradient(to bottom, rgba(7, 21, 33, 0.92) 0%, rgba(7, 21, 33, 0.7) 45%, rgba(7, 21, 33, 0.96) 100%),
+            linear-gradient(rgba(7, 21, 33, 0.35), rgba(7, 21, 33, 0.35)) !important;
     }
 }
 
@@ -254,8 +254,8 @@
 }
 
 .installation-card:hover {
-    border-color: #E5B05C !important;
-    box-shadow: 0 16px 32px -4px rgba(11, 30, 54, 0.12) !important;
+    border-color: #168BEB !important;
+    box-shadow: 0 16px 32px -4px rgba(7, 21, 33, 0.12) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -264,7 +264,7 @@
     width: 100% !important;
     height: 230px !important;
     overflow: hidden !important;
-    background-color: #0B1E36 !important;
+    background-color: #071521 !important;
 }
 
 @media (min-width: 640px) {
@@ -293,19 +293,19 @@
     align-items: center !important;
     justify-content: center !important;
     border-radius: 8px !important;
-    border: 1px solid #d1d5db !important;
+    border: 1px solid #DCE4EC !important;
     background-color: #ffffff !important;
-    color: #0B1E36 !important;
+    color: #071521 !important;
     cursor: pointer !important;
     transition: all 0.25s ease !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
 
 .installations-btn:hover {
-    background-color: #0B1E36 !important;
+    background-color: #071521 !important;
     color: #ffffff !important;
-    border-color: #0B1E36 !important;
-    box-shadow: 0 4px 12px rgba(11, 30, 54, 0.15) !important;
+    border-color: #071521 !important;
+    box-shadow: 0 4px 12px rgba(7, 21, 33, 0.15) !important;
     transform: translateY(-1px) !important;
 }
 
@@ -334,11 +334,11 @@
     right: 1.5rem;
     z-index: 9999;
     padding: 0.75rem;
-    background: #E5B05C;
-    color: #0B1E36;
+    background: #168BEB;
+    color: #ffffff;
     border: none;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 25px rgba(22, 139, 235, 0.35);
     cursor: pointer;
     opacity: 0;
     transform: translateY(1rem);

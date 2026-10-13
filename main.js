@@ -420,5 +420,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
+
+  // Available Screens Real-time Search Filter
+  const screenSearchInputs = document.querySelectorAll('.screen-search-input');
+  screenSearchInputs.forEach(input => {
+    input.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      const parent = input.closest('.shrink-0');
+      if (parent) {
+        const list = parent.querySelector('.screens-directory-scroll');
+        if (list) {
+          const cards = list.querySelectorAll('.screen-item');
+          cards.forEach(card => {
+            const loc = (card.getAttribute('data-location') || card.textContent).toLowerCase();
+            if (!query || loc.includes(query)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
+      }
+    });
+  });
 });
 
